@@ -214,6 +214,11 @@ export default function Intelligence({
       scene.add(floor);
     }
     makeFloor();
+    let needsRender = true;
+    const markDirty = () => {
+      needsRender = true;
+    };
+    controls.addEventListener("change", markDirty);
     const raycaster = new THREE.Raycaster();
     const pointer = new THREE.Vector2();
     let down = { x: 0, y: 0 };
@@ -238,6 +243,7 @@ export default function Intelligence({
       const n = pick(e);
       el.style.cursor = n ? "pointer" : "grab";
       if (n && focused.current.id !== n.userData.project.id) {
+        needsRender = true;
         focused.current = n.userData.project;
         setFocusProject(n.userData.project);
       }
@@ -249,30 +255,55 @@ export default function Intelligence({
       renderer.setSize(el.clientWidth, el.clientHeight);
       camera.aspect = el.clientWidth / el.clientHeight;
       camera.updateProjectionMatrix();
+      needsRender = true;
     });
     resize.observe(el);
     let visible = true;
     const observer = new IntersectionObserver(([e]) => {
       visible = e.isIntersecting;
+      needsRender = true;
     });
     observer.observe(el);
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0,
-      last = 0;
+      last = 0,
+      transitionUntil = 0,
+      lastDistrict = state.current.district;
     const render = (time: number) => {
       frame = requestAnimationFrame(render);
       if (!visible || document.hidden || time - last < 28) return;
       last = time;
       controls.autoRotate = !state.current.paused && !reduced.matches;
       controls.update();
+      if (lastDistrict !== state.current.district) {
+        lastDistrict = state.current.district;
+        transitionUntil = reduced.matches ? 0 : time + 1800;
+        needsRender = true;
+      }
+      if (transitionUntil && time >= transitionUntil) {
+        transitionUntil = 0;
+        needsRender = true;
+      }
+      const settle = reduced.matches || transitionUntil === 0;
+      // A stationary sculpture should not repeatedly redraw expensive physical materials.
+      if (!needsRender && time >= transitionUntil) return;
+      needsRender = false;
       const selected = disciplines.indexOf(state.current.district);
       bands.forEach((band, i) => {
         const explode = selected < 0 ? 0 : i === selected ? 0.6 : 0.15;
         const angle = (i / 4) * Math.PI * 2;
         const x = Math.cos(angle) * explode,
           y = Math.sin(angle) * explode;
-        band.position.x = THREE.MathUtils.lerp(band.position.x, x, 0.04);
-        band.position.y = THREE.MathUtils.lerp(band.position.y, y, 0.04);
+        band.position.x = THREE.MathUtils.lerp(
+          band.position.x,
+          x,
+          settle ? 1 : 0.04,
+        );
+        band.position.y = THREE.MathUtils.lerp(
+          band.position.y,
+          y,
+          settle ? 1 : 0.04,
+        );
         bandMaterials[i].color.lerp(
           new THREE.Color(
             i === (selected < 0 ? 0 : selected)
@@ -281,7 +312,7 @@ export default function Intelligence({
                 ? 0xd4d5d1
                 : 0x999e9c,
           ),
-          0.08,
+          settle ? 1 : 0.08,
         );
       });
       const focusNode = nodes.find(
@@ -303,6 +334,7 @@ export default function Intelligence({
       cancelAnimationFrame(frame);
       observer.disconnect();
       resize.disconnect();
+      controls.removeEventListener("change", markDirty);
       controls.dispose();
       resources.forEach((r) => r.dispose());
       env.dispose();

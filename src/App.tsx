@@ -195,7 +195,7 @@ export default function App() {
               <Suspense fallback={<div className="scene-loading" />}>
                 <Intelligence
                   district={district}
-                  paused={paused}
+                  paused={paused || chatOpen || !!selected}
                   onSelect={chooseProject}
                 />
               </Suspense>
