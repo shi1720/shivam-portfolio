@@ -371,6 +371,7 @@ export default function App() {
                 <ProjectVisual
                   type={story?.visual || "graph"}
                   name={active.name}
+                  projectId={active.id}
                 />
                 <div className="preview-footer">
                   <span>LESS CLAIM. MORE EVIDENCE.</span>

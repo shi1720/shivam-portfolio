@@ -281,3 +281,25 @@ test("career reflects the supplied corrections and broader roles", async ({
     "Scale AI and micro1",
   );
 });
+
+test("project diagrams match their own fixture and evidence", async ({ page }) => {
+  for (const [id, label, before, after] of [
+    ["toolstorm", "TOOLSTORM / FAILURE 001", "2 shipments", "1 shipment"],
+    ["agent-rehearsal", "AGENT REHEARSAL / CHECKOUT FIXTURE", "2 charges", "1 charge"],
+    ["casecrop", "CASECROP / CACHE FIXTURE", "36 events", "6 events"],
+  ]) {
+    await page.goto(`/#project=${id}`);
+    const visual = page.getByRole("dialog").locator(".project-visual");
+    await expect(visual).toContainText(label);
+    expect(await visual.evaluate((element) => element.scrollWidth <= element.clientWidth + 1)).toBe(
+      true,
+    );
+    await expect(visual).toContainText(before);
+    await expect(visual).toContainText(after);
+    if (id !== "toolstorm") await expect(visual).not.toContainText("shipments");
+    if (id === "casecrop") await expect(visual).not.toContainText("ack lost");
+    await expect(
+      page.getByRole("dialog").getByRole("link", { name: "Try the project" }),
+    ).toHaveAttribute("href", `https://${id}.web.app`);
+  }
+});

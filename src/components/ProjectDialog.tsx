@@ -42,7 +42,11 @@ export default function ProjectDialog({
               </div>
               {story && (
                 <>
-                  <ProjectVisual type={story.visual} name={project.name} />
+                  <ProjectVisual
+                    type={story.visual}
+                    name={project.name}
+                    projectId={project.id}
+                  />
                   <div className="case-sections">
                     <section>
                       <h3>The problem</h3>

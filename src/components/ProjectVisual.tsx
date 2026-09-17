@@ -11,9 +11,11 @@ import {
 export default function ProjectVisual({
   type,
   name,
+  projectId,
 }: {
   type: string;
   name: string;
+  projectId: string;
 }) {
   if (type === "voice")
     return (
@@ -134,12 +136,51 @@ export default function ProjectVisual({
         </div>
       </div>
     );
+  if (type === "fault" && projectId === "casecrop")
+    return (
+      <div className="project-visual fault-visual" aria-hidden="true">
+        <div className="visual-topline">
+          <span>
+            <GitBranch size={14} /> CASECROP / CACHE FIXTURE
+          </span>
+          <span>SAME FAILURE</span>
+        </div>
+        <div className="fault-nodes">
+          <div>
+            TRACE<span>recorded events</span>
+          </div>
+          <i>→</i>
+          <div>
+            REPLAY<span>keep dependencies</span>
+          </div>
+          <i>→</i>
+          <div>
+            CASE<span>failure preserved</span>
+          </div>
+        </div>
+        <div className="fault-policies">
+          <div>
+            <span>Recorded trace</span>
+            <strong>36 events</strong>
+          </div>
+          <div>
+            <span>Reduced trace</span>
+            <strong>
+              6 events <Check size={15} />
+            </strong>
+          </div>
+        </div>
+        <p className="visual-caption">Bundled cache fixture. Smaller trace, same failure.</p>
+      </div>
+    );
+  const checkout = projectId === "agent-rehearsal";
   if (type === "fault")
     return (
       <div className="project-visual fault-visual" aria-hidden="true">
         <div className="visual-topline">
           <span>
-            <GitBranch size={14} /> TOOLSTORM / FAILURE 001
+            <GitBranch size={14} />{" "}
+            {checkout ? "AGENT REHEARSAL / CHECKOUT FIXTURE" : "TOOLSTORM / FAILURE 001"}
           </span>
           <span>DETERMINISTIC</span>
         </div>
@@ -149,7 +190,8 @@ export default function ProjectVisual({
           </div>
           <i>→</i>
           <div className="fault-tool">
-            TOOL<span>committed ✓</span>
+            {checkout ? "PAYMENT" : "TOOL"}
+            <span>committed ✓</span>
           </div>
           <i>→</i>
           <div className="lost-response">
@@ -159,12 +201,12 @@ export default function ProjectVisual({
         <div className="fault-policies">
           <div>
             <span>Blind retry</span>
-            <strong>2 shipments</strong>
+            <strong>{checkout ? "2 charges" : "2 shipments"}</strong>
           </div>
           <div>
             <span>Verified recovery</span>
             <strong>
-              1 shipment <Check size={15} />
+              {checkout ? "1 charge" : "1 shipment"} <Check size={15} />
             </strong>
           </div>
         </div>
