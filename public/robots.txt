@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shivam-web-app.web.app/sitemap.xml
