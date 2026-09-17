@@ -81,7 +81,7 @@ export const stories: Record<string, Story> = {
     boundary:
       "Scripted recovery experiments, not an LLM performance benchmark. Source-install beta; no PyPI release or production adoption claim.",
     tags: ["Python", "Fault injection", "Pyodide", "Replay"],
-    demo: "https://toolstorm-shi1720.sg127977958.chatgpt.site",
+    demo: "https://toolstorm.web.app",
     architecture:
       "https://github.com/shi1720/toolstorm/blob/main/docs/architecture.md",
     visual: "fault",
@@ -118,7 +118,7 @@ export const stories: Record<string, Story> = {
       "Scoring parity and browser tests cover the journey. Answers stay local to the browser.",
     boundary: "Entertainment, not psychometrics or a personality diagnosis.",
     tags: ["TypeScript", "Creative coding", "Private by design"],
-    demo: "https://plottwist.sg127977958.chatgpt.site",
+    demo: "https://plottwist-shi1720.web.app",
     visual: "type",
   },
   casecrop: {
@@ -135,7 +135,24 @@ export const stories: Record<string, Story> = {
     boundary:
       "This fixture is not a universal reduction rate. A minimal trace is not proof of root cause or a global minimum.",
     tags: ["Python", "Delta debugging", "Agent traces"],
-    demo: "https://casecrop-shi1720.sg127977958.chatgpt.site",
+    demo: "https://casecrop.web.app",
+    visual: "fault",
+  },
+  "agent-rehearsal": {
+    kicker: "AGENT ENGINEERING / FAILURE RECOVERY",
+    title: "Rehearse the failure before it costs you.",
+    summary:
+      "A retry-policy simulator and trace inspector for understanding what happens when a tool commits an action but loses the response.",
+    problem:
+      "A payment can succeed while its acknowledgement disappears. A blind retry can charge twice.",
+    built:
+      "A deterministic workflow simulator, local trace inspector, and zero-dependency Python SDK for recording and injecting tool failures.",
+    evidence:
+      "A checkout regression compares duplicate charges with guarded recovery. The browser makes each decision and resulting effect inspectable.",
+    boundary:
+      "A fixed-workflow simulator and testing toolkit. Outcomes describe scripted experiments, not general model performance.",
+    tags: ["Python", "TypeScript", "Fault injection", "Idempotency"],
+    demo: "https://agent-rehearsal.web.app",
     visual: "fault",
   },
   "AI-Infra-Summit-Hackathon": {
@@ -220,7 +237,7 @@ export const stories: Record<string, Story> = {
     boundary:
       "Season 001 has ended. Preview data is fictional and not a representative research dataset.",
     tags: ["Geospatial UI", "Cloudflare D1", "Privacy"],
-    demo: "https://mixed-signals-atlas.sg127977958.chatgpt.site",
+    demo: "https://mixed-signals.web.app",
     visual: "graph",
   },
 };

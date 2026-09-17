@@ -206,7 +206,7 @@
         "Creative coding",
         "Private by design"
       ],
-      "demo": "https://plottwist.sg127977958.chatgpt.site",
+      "demo": "https://plottwist-shi1720.web.app",
       "visual": "type"
     }
   },
@@ -227,7 +227,7 @@
         "Cloudflare D1",
         "Privacy"
       ],
-      "demo": "https://mixed-signals-atlas.sg127977958.chatgpt.site",
+      "demo": "https://mixed-signals.web.app",
       "visual": "graph"
     }
   },
@@ -292,7 +292,7 @@
         "Delta debugging",
         "Agent traces"
       ],
-      "demo": "https://casecrop-shi1720.sg127977958.chatgpt.site",
+      "demo": "https://casecrop.web.app",
       "visual": "fault"
     }
   },
@@ -300,7 +300,23 @@
     "id": "agent-rehearsal",
     "title": "Agent Rehearsal",
     "url": "https://github.com/shi1720/agent-rehearsal",
-    "content": "Reproducible fault testing for agent tools: retry policy simulator, local trace inspector, and Python SDK."
+    "content": {
+      "kicker": "AGENT ENGINEERING / FAILURE RECOVERY",
+      "title": "Rehearse the failure before it costs you.",
+      "summary": "A retry-policy simulator and trace inspector for understanding what happens when a tool commits an action but loses the response.",
+      "problem": "A payment can succeed while its acknowledgement disappears. A blind retry can charge twice.",
+      "built": "A deterministic workflow simulator, local trace inspector, and zero-dependency Python SDK for recording and injecting tool failures.",
+      "evidence": "A checkout regression compares duplicate charges with guarded recovery. The browser makes each decision and resulting effect inspectable.",
+      "boundary": "A fixed-workflow simulator and testing toolkit. Outcomes describe scripted experiments, not general model performance.",
+      "tags": [
+        "Python",
+        "TypeScript",
+        "Fault injection",
+        "Idempotency"
+      ],
+      "demo": "https://agent-rehearsal.web.app",
+      "visual": "fault"
+    }
   },
   {
     "id": "toolstorm",
@@ -320,7 +336,7 @@
         "Pyodide",
         "Replay"
       ],
-      "demo": "https://toolstorm-shi1720.sg127977958.chatgpt.site",
+      "demo": "https://toolstorm.web.app",
       "architecture": "https://github.com/shi1720/toolstorm/blob/main/docs/architecture.md",
       "visual": "fault"
     }
