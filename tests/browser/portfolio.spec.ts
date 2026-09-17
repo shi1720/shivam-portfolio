@@ -14,11 +14,11 @@ test("studio navigation, deep links, back and readable layout", async ({
   await expect(
     page.getByRole("heading", { name: "Proof of curiosity." }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "01 Benchback", exact: true }).click();
+  await page.getByRole("button", { name: "01 OfferLoop", exact: true }).click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(
     page.getByRole("link", { name: "Try the project" }),
-  ).toHaveAttribute("href", "https://benchback-ai.web.app");
+  ).toHaveAttribute("href", "https://offerloop.web.app");
   await page.getByRole("button", { name: "Close project" }).click();
   await expect(page.getByRole("dialog")).not.toBeVisible();
   await page.getByRole("link", { name: "02 The human", exact: true }).click();
@@ -42,7 +42,7 @@ test("project search and category filter have honest empty states", async ({
     .selectOption("human");
   await expect(page.getByText("No projects found.")).toBeVisible();
   await page.getByRole("button", { name: "Clear filters" }).click();
-  await expect(page.locator(".work-list>button")).toHaveCount(29);
+  await expect(page.locator(".work-list>button")).toHaveCount(24);
 });
 test("deep-linked case study preserves scope and keyboard escape", async ({
   page,
@@ -199,7 +199,7 @@ test("contact points to the requested public email and exact profile", async ({
   const bg = await page
     .locator(".studio-shell")
     .evaluate((el) => getComputedStyle(el).backgroundColor);
-  expect(bg).toBe("rgb(231, 221, 210)");
+  expect(bg).toBe("rgb(241, 232, 206)");
 });
 
 test("malformed project URLs recover to the work index", async ({ page }) => {
@@ -223,7 +223,6 @@ test("sculpture labels stay separate from explanatory copy", async ({
     "01 Agents",
     "02 Applied AI",
     "03 Experiences",
-    "04 Learning",
   ]) {
     await page.getByRole("button", { name: category, exact: true }).click();
     await label.hover();
@@ -240,7 +239,7 @@ test("sculpture labels stay separate from explanatory copy", async ({
     const bg = await label.evaluate(
       (el) => getComputedStyle(el).backgroundColor,
     );
-    expect(bg).toBe("rgba(241, 240, 234, 0.98)");
+    expect(bg).toBe("rgba(245, 246, 238, 0.96)");
   }
 });
 
@@ -303,4 +302,43 @@ test("project diagrams match their own fixture and evidence", async ({ page }) =
       page.getByRole("dialog").getByRole("link", { name: "Try the project" }),
     ).toHaveAttribute("href", `https://${id}.web.app`);
   }
+});
+
+
+test("OfferLoop opens the studio and leads the curated project index", async ({ page }) => {
+  await page.goto("/#studio");
+  const primary = page.locator(".sculpture-project-label");
+  await expect(primary).toContainText("OfferLoop");
+  await expect(page.locator(".studio-featured-project")).toContainText("OfferLoop");
+  await expect(page.locator(".studio-featured-project")).not.toContainText("Benchback");
+  await primary.click();
+  await expect(page.getByRole("dialog")).toContainText("A job-search CRM");
+  await expect(page.getByRole("link", { name: "Try the project" })).toHaveAttribute("href", "https://offerloop.web.app");
+  await page.goto("/#work");
+  await expect(page.locator(".work-list > button").first()).toContainText("OfferLoop");
+  await expect(page.locator(".work-preview")).toContainText("Give your next chapter a system.");
+  await expect(page.locator(".work-list > button")).toHaveCount(24);
+  for (const id of ["ap-article-review", "ap-frq-review", "math-question-editor", "speechace-proxy", "sat-pdf-to-csv"]) {
+    await page.goto(`/#project=${id}`);
+    await expect(page.getByRole("dialog")).not.toBeVisible();
+    await expect(page.locator(".work-list > button")).toHaveCount(24);
+  }
+});
+
+test("each room has its own quiet palette and an integrated visual detail", async ({ page }) => {
+  const colors = [];
+  for (const [room, detail] of [["studio", ".intelligence"], ["work", ".archive-ruler"], ["about", ".human-design-seal"], ["lab", ".lab-signal-strip"], ["contact", ".contact-route"]]) {
+    await page.goto(`/#${room}`);
+    await expect(page.locator(detail)).toBeVisible();
+    colors.push(await page.locator(".studio-shell").evaluate(el => getComputedStyle(el).backgroundColor));
+  }
+  expect(new Set(colors).size).toBe(5);
+  await expect(page.locator(".contact-right")).toContainText("product management");
+  await expect(page.locator(".contact-right")).toContainText("forward-deployed engineering");
+  await expect(page.locator(".contact-right")).toContainText("full-time roles");
+  await expect(page.locator(".contact-right")).toContainText("relocation");
+  await expect(page.locator(".contact-right")).toContainText("Project contracts");
+  await page.goto("/#about");
+  await expect(page.locator(".human-numbers")).toContainText("clients at Siloed");
+  await expect(page.locator("main")).not.toContainText("consultancy");
 });

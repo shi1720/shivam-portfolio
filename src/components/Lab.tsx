@@ -63,7 +63,7 @@ export default function Lab() {
   }
   const complete = result && !running;
   return (
-    <section className="section lab" id="lab">
+    <section className="section lab" aria-label="Agent reliability lab">
       <div className="section-heading">
         <div>
           <p className="eyebrow">03 / THE HANDS-ON PART</p>
@@ -78,6 +78,9 @@ export default function Lab() {
           <br />
           Build a recovery policy. See the difference.
         </p>
+      </div>
+      <div className="lab-signal-strip" aria-hidden="true">
+        <span>INPUT</span><svg viewBox="0 0 300 36"><path d="M0 18H42l8 -12 12 24 12 -24 12 12h56l8 -12 12 24 12 -24 12 12h114" /></svg><span>OBSERVE / VERIFY</span>
       </div>
       <div className="lab-workbench">
         <div className="lab-config">

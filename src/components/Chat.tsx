@@ -250,6 +250,7 @@ export default function Chat({
                 {projects
                   .filter((p) =>
                     [
+                      "OfferLoop-Job-CRM",
                       "AssemblyAI",
                       "repogym",
                       "toolstorm",

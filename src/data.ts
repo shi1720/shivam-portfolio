@@ -1,5 +1,5 @@
 import catalog from "./catalog.json";
-export type District = "all" | "agents" | "systems" | "human" | "learning";
+export type District = "all" | "agents" | "systems" | "human";
 export type Project = (typeof catalog)[number];
 export const projects: Project[] = catalog;
 export const categories: { id: District; label: string; short: string }[] = [
@@ -7,9 +7,9 @@ export const categories: { id: District; label: string; short: string }[] = [
   { id: "agents", label: "Agent infrastructure", short: "Agents" },
   { id: "systems", label: "Applied AI", short: "Applied AI" },
   { id: "human", label: "Human experiences", short: "Experiences" },
-  { id: "learning", label: "Learning systems", short: "Learning" },
 ];
 export const featured = [
+  "OfferLoop-Job-CRM",
   "AssemblyAI",
   "repogym",
   "RevenueCat-Shipaton",
@@ -25,10 +25,10 @@ export const career = [
     role: "Founder & CEO",
     period: "2025 to present",
     summary:
-      "An AI product consultancy. From a difficult business problem to a working product, with teams across finance, healthcare, SaaS, and beyond.",
+      "End-to-end software and product delivery. From understanding the business problem to designing, building, and deploying the product, with teams across finance, healthcare, SaaS, and beyond.",
     metric: "10+ clients",
     detail:
-      "Product strategy, custom AI agents, full-stack delivery, and hands-on AI adoption. Based in Dubai; working globally.",
+      "Product strategy, design, full-stack engineering, custom AI systems, and support through deployment. Project contracts through Siloed. Based in Dubai; working globally.",
   },
   {
     company: "Khoros",
@@ -58,6 +58,6 @@ export const career = [
       "Built AI learning products, adaptive content systems, and generation pipelines. Promoted to Senior in December 2024.",
     metric: "5,000+ learners",
     detail:
-      "AlphaLearn and AlphaVocab; co-built PowerPath and co-developed Incept. The resume reports $1M+ annual authoring savings from Incept.",
+      "Alpha learning apps and AlphaVocab; co-built PowerPath and co-developed Incept. The resume reports $1M+ annual authoring savings from Incept.",
   },
 ];

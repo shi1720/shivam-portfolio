@@ -4,7 +4,7 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { projects, type District, type Project } from "../data";
 
-// The four folded bands are the four project disciplines. Nodes open real work.
+// The three folded bands are the three public-project disciplines. Nodes open real work.
 export default function Intelligence({
   district,
   onSelect,
@@ -16,21 +16,25 @@ export default function Intelligence({
 }) {
   const host = useRef<HTMLDivElement>(null);
   const [focusProject, setFocusProject] = useState(
-    projects.find((p) => p.id === "AssemblyAI")!,
+    projects.find((p) => p.id === "OfferLoop-Job-CRM")!,
   );
   const focused = useRef(focusProject);
   const state = useRef({ district, onSelect, paused });
   const [failed, setFailed] = useState(false);
   useEffect(() => {
     state.current = { district, onSelect, paused };
-    if (district !== "all") {
-      const p = projects.find((p) => p.district === district);
-      if (p) {
-        focused.current = p;
-        setFocusProject(p);
-      }
-    }
   }, [district, onSelect, paused]);
+  useEffect(() => {
+    const project = projects.find((p) =>
+      district === "all"
+        ? p.id === "OfferLoop-Job-CRM"
+        : p.district === district,
+    );
+    if (project) {
+      focused.current = project;
+      setFocusProject(project);
+    }
+  }, [district]);
   useEffect(() => {
     const el = host.current!;
     let renderer: THREE.WebGLRenderer;
@@ -107,8 +111,8 @@ export default function Intelligence({
       | THREE.MeshPhysicalMaterial
       | THREE.MeshPhongMaterial
     )[] = [];
-    const disciplines = ["agents", "systems", "human", "learning"];
-    for (let b = 0; b < 4; b++) {
+    const disciplines = ["agents", "systems", "human"];
+    for (let b = 0; b < disciplines.length; b++) {
       const group = new THREE.Group();
       artifact.add(group);
       bands.push(group);
@@ -117,9 +121,9 @@ export default function Intelligence({
         indices: number[] = [];
       const steps = 80;
       const across = 8;
-      const start = b / 4;
+      const start = b / disciplines.length;
       for (let i = 0; i <= steps; i++) {
-        const t = start + (i / steps) * 0.238;
+        const t = start + (i / steps) * (1 / disciplines.length - 0.012);
         const p = curve.getPoint(t);
         const f = Math.min(320, Math.round(t * 320));
         const n = frames.normals[f],
@@ -177,7 +181,7 @@ export default function Intelligence({
       for (let strand = 0; strand < 13; strand++) {
         const points = [];
         for (let i = 0; i <= steps; i++) {
-          const t = start + (i / steps) * 0.238;
+          const t = start + (i / steps) * (1 / disciplines.length - 0.012);
           const f = Math.min(320, Math.round(t * 320));
           const v = (strand / 12 - 0.5) * 1.02;
           const p = curve
@@ -202,10 +206,10 @@ export default function Intelligence({
       const members = projects.filter((p) => p.district === disciplines[b]);
       members.forEach((project, index) => {
         const t =
-          start + 0.018 + (index / Math.max(1, members.length - 1)) * 0.19;
+          start + 0.018 + (index / Math.max(1, members.length - 1)) * (1 / disciplines.length - 0.045);
         const p = curve.getPoint(t);
         const f = Math.min(320, Math.round(t * 320));
-        const geo = new THREE.SphereGeometry(0.045, 12, 8);
+        const geo = new THREE.SphereGeometry(project.id === "OfferLoop-Job-CRM" ? 0.08 : 0.045, 12, 8);
         const m = new THREE.MeshBasicMaterial({
           color: b === 0 ? 0xf4eee4 : 0xff4a12,
         });
@@ -313,7 +317,7 @@ export default function Intelligence({
       const selected = disciplines.indexOf(state.current.district);
       bands.forEach((band, i) => {
         const explode = selected < 0 ? 0 : i === selected ? 0.6 : 0.15;
-        const angle = (i / 4) * Math.PI * 2;
+        const angle = (i / disciplines.length) * Math.PI * 2;
         const x = Math.cos(angle) * explode,
           y = Math.sin(angle) * explode;
         band.position.x = THREE.MathUtils.lerp(
@@ -357,7 +361,7 @@ export default function Intelligence({
       className="intelligence is-ready"
       ref={host}
       role="group"
-      aria-label="Folded 3D map of four project disciplines. Drag to rotate; use the labeled project links for keyboard access."
+      aria-label="Folded 3D map of three project disciplines. Drag to rotate; use the labeled project links for keyboard access."
     >
       {!failed && (
         <button

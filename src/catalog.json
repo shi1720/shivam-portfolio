@@ -1,5 +1,13 @@
 [
   {
+    "id": "OfferLoop-Job-CRM",
+    "name": "OfferLoop",
+    "district": "human",
+    "description": "A job-search CRM with grounded drafts, application tracking, follow-ups and analytics.",
+    "language": "Python",
+    "url": "https://github.com/shi1720/OfferLoop-Job-CRM"
+  },
+  {
     "id": "AssemblyAI",
     "name": "Benchback",
     "district": "systems",
@@ -120,14 +128,6 @@
     "url": "https://github.com/shi1720/OffHire"
   },
   {
-    "id": "OfferLoop-Job-CRM",
-    "name": "OfferLoop",
-    "district": "human",
-    "description": "A job-search CRM with grounded drafts, application tracking, follow-ups and analytics.",
-    "language": "Python",
-    "url": "https://github.com/shi1720/OfferLoop-Job-CRM"
-  },
-  {
     "id": "plottwist",
     "name": "Plot Twist",
     "district": "human",
@@ -184,51 +184,11 @@
     "url": "https://github.com/shi1720/toolstorm"
   },
   {
-    "id": "sat-pdf-to-csv",
-    "name": "SAT PDF to CSV",
-    "district": "learning",
-    "description": "Extract text from SAT question PDFs and use a model-assisted parsing step to produce a reviewable CSV question bank.",
-    "language": "Python",
-    "url": "https://github.com/shi1720/sat-pdf-to-csv"
-  },
-  {
-    "id": "ap-frq-review",
-    "name": "AP FRQ Review",
-    "district": "learning",
-    "description": "Review AP free-response questions in batches using configurable evaluation prompts, parallel requests and downloadable feedback.",
-    "language": "Python",
-    "url": "https://github.com/shi1720/ap-frq-review"
-  },
-  {
-    "id": "ap-article-review",
-    "name": "AP Article Review",
-    "district": "learning",
-    "description": "Review batches of AP learning articles against configurable quality prompts, inspect model feedback and export review results.",
-    "language": "Python",
-    "url": "https://github.com/shi1720/ap-article-review"
-  },
-  {
-    "id": "math-question-editor",
-    "name": "Math Question Editor",
-    "district": "learning",
-    "description": "Edit, preview and export math question banks without manually restructuring each question. Supports JSON, tabular review and PowerPath-compatible output.",
-    "language": "Python",
-    "url": "https://github.com/shi1720/math-question-editor"
-  },
-  {
     "id": "stepfree",
     "name": "StepFree",
     "district": "agents",
     "description": "An accessibility-repair workflow that combines coding agents with independent scans, content-integrity checks and human review.",
     "language": "HTML",
     "url": "https://github.com/shi1720/stepfree"
-  },
-  {
-    "id": "speechace-proxy",
-    "name": "Speechace Proxy",
-    "district": "learning",
-    "description": "Keep pronunciation-scoring credentials server-side while forwarding bounded audio uploads to Speechace.",
-    "language": "JavaScript",
-    "url": "https://github.com/shi1720/speechace-proxy"
   }
 ]

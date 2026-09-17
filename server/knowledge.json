@@ -1,5 +1,28 @@
 [
   {
+    "id": "OfferLoop-Job-CRM",
+    "title": "OfferLoop",
+    "url": "https://github.com/shi1720/OfferLoop-Job-CRM",
+    "content": {
+      "kicker": "APPLIED AI / PERSONAL WORKFLOWS",
+      "title": "Give your next chapter a system.",
+      "summary": "A job-search CRM that turns scattered applications into a working pipeline, with grounded AI drafts, follow-up reminders, and a clear next action.",
+      "problem": "A job search gets fragmented across tabs, drafts, and forgotten follow-ups. The candidate needs a system that keeps the next step visible.",
+      "built": "A React workspace and Python API with application tracking, job-posting capture, grounded outreach drafts, interview preparation, CSV import and export, and scheduled follow-up nudges. Firebase authentication and per-user storage support the live workspace.",
+      "evidence": "Sample postings and drafts run through the same import pipeline as user data. Tests cover import idempotency, draft provenance, and workflow behavior.",
+      "boundary": "A personal job-search product. AI drafts need review, outreach stays user-directed, and no hiring outcome or employer adoption is claimed.",
+      "tags": [
+        "Python",
+        "React",
+        "Gemini",
+        "Google Cloud"
+      ],
+      "demo": "https://offerloop.web.app",
+      "architecture": "https://github.com/shi1720/OfferLoop-Job-CRM#architecture",
+      "visual": "pipeline"
+    }
+  },
+  {
     "id": "AssemblyAI",
     "title": "Benchback",
     "url": "https://github.com/shi1720/AssemblyAI",
@@ -184,12 +207,6 @@
     }
   },
   {
-    "id": "OfferLoop-Job-CRM",
-    "title": "OfferLoop",
-    "url": "https://github.com/shi1720/OfferLoop-Job-CRM",
-    "content": "A job-search CRM with grounded drafts, application tracking, follow-ups and analytics."
-  },
-  {
     "id": "plottwist",
     "title": "Plot Twist",
     "url": "https://github.com/shi1720/plottwist",
@@ -342,52 +359,22 @@
     }
   },
   {
-    "id": "sat-pdf-to-csv",
-    "title": "SAT PDF to CSV",
-    "url": "https://github.com/shi1720/sat-pdf-to-csv",
-    "content": "Extract text from SAT question PDFs and use a model-assisted parsing step to produce a reviewable CSV question bank."
-  },
-  {
-    "id": "ap-frq-review",
-    "title": "AP FRQ Review",
-    "url": "https://github.com/shi1720/ap-frq-review",
-    "content": "Review AP free-response questions in batches using configurable evaluation prompts, parallel requests and downloadable feedback."
-  },
-  {
-    "id": "ap-article-review",
-    "title": "AP Article Review",
-    "url": "https://github.com/shi1720/ap-article-review",
-    "content": "Review batches of AP learning articles against configurable quality prompts, inspect model feedback and export review results."
-  },
-  {
-    "id": "math-question-editor",
-    "title": "Math Question Editor",
-    "url": "https://github.com/shi1720/math-question-editor",
-    "content": "Edit, preview and export math question banks without manually restructuring each question. Supports JSON, tabular review and PowerPath-compatible output."
-  },
-  {
     "id": "stepfree",
     "title": "StepFree",
     "url": "https://github.com/shi1720/stepfree",
     "content": "An accessibility-repair workflow that combines coding agents with independent scans, content-integrity checks and human review."
   },
   {
-    "id": "speechace-proxy",
-    "title": "Speechace Proxy",
-    "url": "https://github.com/shi1720/speechace-proxy",
-    "content": "Keep pronunciation-scoring credentials server-side while forwarding bounded audio uploads to Speechace."
-  },
-  {
     "id": "experience",
     "title": "Professional experience",
-    "url": "https://shivam-web-app.web.app/#about",
+    "url": "https://shivamgupta.web.app/#about",
     "content": {
       "source": "Shivam Gupta supplied resume and direct career clarifications, September 2026. Professional outcomes are self-reported, not independently validated.",
       "roles": [
-        "Siloed: Founder and CEO since March 2025, Dubai. AI consultancy serving 10+ global clients across finance, healthcare, SaaS and other sectors. Custom AI apps, agents, product strategy, evaluation, and adoption workshops. Reports 25+ hours saved per team per week.",
+        "Siloed: Founder and CEO since March 2025, Dubai. Software development and AI product studio serving 10+ global clients across finance, healthcare, SaaS and other sectors. Custom AI apps, agents, product strategy, evaluation, and adoption workshops. Reports 25+ hours saved per team per week.",
         "Khoros: Senior AI Product Engineer, contract, September 2025 to present. Led AI and analytics engineering on IRIS AI, transforming an enterprise social care and marketing suite built over years into a new product in three months, with five engineers and one designer. Earlier, worked as lead engineer to deliver IRIS for X in one month. Delivered 10 production AI features.",
         "IgniteTech: Senior AI Product Engineer, contract, September 2025 to present. Product and engineering across multiple products; 12+ features and reported 25% activation improvement. Built various products across the product portfolio. Structured LLM outputs, prompt versioning, and graceful fallbacks. Full-stack development, AI engineering, and product management with technical and non-technical teams. Wore many hats including forward-deployed engineer and technical product manager, meeting customers to understand requirements and helping them deploy products.",
-        "Trilogy and portfolio assignment 2 Hour Learning: April 2024 to September 2025. Promoted to Senior December 2024. Helped ship AlphaLearn/AlphaVocab to 5,000+ learners; co-built PowerPath and co-developed Incept. Resume reports 18% higher assessment scores, 32% engagement improvement, $1M+ annual Incept savings. Helped develop learning products and end-to-end AI systems for a pioneering, successful AI-first school network. These are overlapping portfolio roles, not additive years.",
+        "Trilogy and portfolio assignment 2 Hour Learning: April 2024 to September 2025. Promoted to Senior December 2024. Helped ship Alpha learning apps to 5,000+ learners; co-built PowerPath and co-developed Incept. Resume reports 18% higher assessment scores, 32% engagement improvement, $1M+ annual Incept savings. Helped develop learning products and end-to-end AI systems for a pioneering, successful AI-first school network. These are overlapping portfolio roles, not additive years.",
         "Earlier: Spilll product management intern 2024; IIIT Delhi undergraduate researcher on LLM journalism extension 2023; Sensight Labs chatbot intern 2023; Giggles founder 2022 to 2023 (six-person team and resume-reported 2,000+ downloads); Bharat Electronics Limited summer researcher 2022.",
         "AI training: Contributed to AI training projects through Scale AI and micro1, spanning software engineering and AI engineering. Dates and specific project details were not supplied; do not invent them.",
         "Earlier career overview: Worked on founding Giggles, a product company, alongside research work and engineering and product roles at various startups.",
@@ -398,7 +385,7 @@
   {
     "id": "background",
     "title": "Background and approach to building products",
-    "url": "https://shivam-web-app.web.app/#about",
+    "url": "https://shivamgupta.web.app/#about",
     "content": {
       "source": "First-person background and leadership strengths supplied by Shivam. These are his own account, not independently measured claims.",
       "chapters": [
@@ -436,13 +423,13 @@
   {
     "id": "contact",
     "title": "Work with Shivam / Siloed",
-    "url": "https://shivam-web-app.web.app/#contact",
-    "content": "Shivam Gupta is an applied AI engineer, product builder and founder of Siloed, based in Dubai / Delhi. Open to applied AI and product engineering roles, remote work and relocation, and selected Siloed engagements. Email shivam1720406@gmail.com. LinkedIn https://www.linkedin.com/in/shivamgupta-ai/. Services: AI workflow design, agents and internal tools, full-stack prototypes and products, evaluation and reliability, product modernization, AI adoption workshops. Do not invent rates, available calendar slots, client names, salaries or commitments. Visitors can email; this guide cannot send email or book meetings."
+    "url": "https://shivamgupta.web.app/#contact",
+    "content": "Shivam Gupta is an applied AI engineer, product builder and founder of Siloed, based in Dubai / Delhi. Open to full-time AI engineering, product engineering, product manager, technical product manager, and forward-deployed engineer roles, including remote work and relocation. Also available for project-based and contract software development and end-to-end product delivery through Siloed. Email shivam1720406@gmail.com. LinkedIn https://www.linkedin.com/in/shivamgupta-ai/. Services: AI workflow design, agents and internal tools, full-stack prototypes and products, evaluation and reliability, product modernization, AI adoption workshops. Do not invent rates, available calendar slots, client names, salaries or commitments. Visitors can email; this guide cannot send email or book meetings."
   },
   {
     "id": "lab",
     "title": "Agent reliability lab",
-    "url": "https://shivam-web-app.web.app/#lab",
+    "url": "https://shivamgupta.web.app/#lab",
     "content": "A deterministic local JavaScript simulation, not a live LLM test. Visitors select lost acknowledgement, service unavailable, or malformed response; choose stop, blind retry, or idempotent retry plus validation. A lost acknowledgement after a committed shipment causes blind retry to create two shipments. A stable operation key and response validation recovers one verified shipment. Runnable Python export reproduces each configuration. Inspired by ToolStorm and Agent Rehearsal; not the complete library."
   }
 ]

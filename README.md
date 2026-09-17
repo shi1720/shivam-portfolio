@@ -1,6 +1,6 @@
 # Shivam Gupta | A mind in motion
 
-**[Enter the studio →](https://shivam-web-app.web.app)**
+**[Enter the studio →](https://shivamgupta.web.app)**
 
 A spatial portfolio for my work in applied AI, engineering, and product. The studio is a folded 3D map of 29 public projects, with a searchable work index, source-linked case studies, a career room, and ways to work together through Siloed.
 
@@ -58,7 +58,7 @@ The site does not publish the original resume PDF or its phone number. Public co
 
 ## Deployment and rollback
 
-See [operations](docs/operations.md). Hosting deploys only `shivam-web-app`; server deploys only `shivam-portfolio-ai`. Credentials remain outside the repository. There is no automatic production deployment on push.
+See [operations](docs/operations.md). Hosting deploys `shivamgupta` and the legacy compatibility site `shivam-web-app`; server deploys only `shivam-portfolio-ai`. Credentials remain outside the repository. There is no automatic production deployment on push.
 
 ## License
 

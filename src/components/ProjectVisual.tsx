@@ -17,6 +17,19 @@ export default function ProjectVisual({
   name: string;
   projectId: string;
 }) {
+  if (type === "pipeline")
+    return (
+      <div className="project-visual pipeline-visual" aria-hidden="true">
+        <div className="visual-topline"><span>◎ OFFERLOOP / YOUR NEXT MOVE</span><span>JOB SEARCH CRM</span></div>
+        <div className="pipeline-heading">Less scattered.<br /><em>More forward.</em></div>
+        <div className="pipeline-stages">
+          <div><span>01 / CAPTURE</span><i /><strong>The right role</strong><small>Posting + context</small></div>
+          <div><span>02 / FOLLOW UP</span><i /><strong>Your next action</strong><small>A grounded draft</small></div>
+          <div><span>03 / PREPARE</span><i /><strong>A real conversation</strong><small>Your own proof points</small></div>
+        </div>
+        <p className="visual-caption">Your applications. Your voice. A system to keep moving.</p>
+      </div>
+    );
   if (type === "voice")
     return (
       <div className="project-visual voice-visual" aria-hidden="true">

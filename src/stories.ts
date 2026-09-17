@@ -12,6 +12,19 @@ export type Story = {
   visual: string;
 };
 export const stories: Record<string, Story> = {
+  "OfferLoop-Job-CRM": {
+    kicker: "APPLIED AI / PERSONAL WORKFLOWS",
+    title: "Give your next chapter a system.",
+    summary: "A job-search CRM that turns scattered applications into a working pipeline, with grounded AI drafts, follow-up reminders, and a clear next action.",
+    problem: "A job search gets fragmented across tabs, drafts, and forgotten follow-ups. The candidate needs a system that keeps the next step visible.",
+    built: "A React workspace and Python API with application tracking, job-posting capture, grounded outreach drafts, interview preparation, CSV import and export, and scheduled follow-up nudges. Firebase authentication and per-user storage support the live workspace.",
+    evidence: "Sample postings and drafts run through the same import pipeline as user data. Tests cover import idempotency, draft provenance, and workflow behavior.",
+    boundary: "A personal job-search product. AI drafts need review, outreach stays user-directed, and no hiring outcome or employer adoption is claimed.",
+    tags: ["Python", "React", "Gemini", "Google Cloud"],
+    demo: "https://offerloop.web.app",
+    architecture: "https://github.com/shi1720/OfferLoop-Job-CRM#architecture",
+    visual: "pipeline",
+  },
   AssemblyAI: {
     kicker: "VOICE AI / OPERATIONAL SYSTEMS",
     title: "A conversation that actually closes the loop.",

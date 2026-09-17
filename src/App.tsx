@@ -49,7 +49,7 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<District>("all");
   const [copied, setCopied] = useState(false);
-  const [activeId, setActiveId] = useState("AssemblyAI");
+  const [activeId, setActiveId] = useState("OfferLoop-Job-CRM");
   const useQuestion = useCallback(() => setQuestion(""), []);
   const ask = (q = "") => {
     setQuestion(q);
@@ -238,7 +238,7 @@ export default function App() {
                 <div>
                   NOTHING HERE IS ISOLATED.
                   <br />
-                  <b>FOUR DISCIPLINES. ONE BUILDER.</b>
+                  <b>THREE DISCIPLINES. ONE BUILDER.</b>
                 </div>
               </div>
             </div>
@@ -255,11 +255,15 @@ export default function App() {
                 className="studio-project-links"
                 aria-label="Explore real projects"
               >
-                {visibleNodes.slice(0, 2).map((p) => (
-                  <button key={p.id} onClick={() => chooseProject(p)}>
-                    {p.name} <ArrowUpRight size={12} />
+                {visibleNodes.slice(0, 1).map((p) => (
+                  <button className="studio-featured-project" key={p.id} onClick={() => chooseProject(p)}>
+                    <span>START HERE / FEATURED PROJECT</span>
+                    <strong>{p.name} <ArrowUpRight size={16} /></strong>
                   </button>
                 ))}
+                <button className="studio-browse-projects" onClick={() => navigate("work")}>
+                  Explore all {projects.length} projects <ArrowRight size={15} />
+                </button>
               </div>
               <span className="studio-ai-note">
                 The AI guide is one click away. <ArrowDownLeft size={15} />
@@ -285,6 +289,9 @@ export default function App() {
                 <br />
                 Real source. Honest boundaries.
               </p>
+            </div>
+            <div className="archive-ruler" aria-hidden="true">
+              <span>FIELD NOTES / SELECTED WORK</span><i /><span>{projects.length} PUBLIC PROJECTS</span>
             </div>
             <div className="work-layout">
               <div className="work-index">
@@ -397,6 +404,9 @@ export default function App() {
                     curious.
                   </em>
                 </h1>
+                <div className="human-design-seal" aria-hidden="true">
+                  <span>PEOPLE</span><i>×</i><span>SYSTEMS</span>
+                </div>
                 <div className="human-signature">
                   Shivam Gupta <ArrowDownLeft size={28} />
                 </div>
@@ -412,12 +422,12 @@ export default function App() {
                   Computer Science & Design at IIIT Delhi taught me to think about
                   the person and the system together. I’ve taken that into
                   learning tools for 5,000+ learners, enterprise AI at Khoros and
-                  IgniteTech, and my own consultancy.
+                  IgniteTech, and the products we deliver through Siloed.
                 </p>
                 <p>
                   I'm an applied AI engineer and product builder. I founded{" "}
-                  <strong>Siloed</strong> to help teams turn difficult workflows
-                  into useful systems. My work spans enterprise software,
+                  <strong>Siloed</strong> to take software and products from the first customer
+                  conversation through design, engineering, and deployment. My work spans enterprise software,
                   education, agents, and the occasional experiment that simply
                   needed to exist.
                 </p>
@@ -428,7 +438,7 @@ export default function App() {
                   </div>
                   <div>
                     <strong>10+</strong>
-                    <span>consultancy clients</span>
+                    <span>clients at Siloed</span>
                   </div>
                 </div>
               </div>
@@ -507,6 +517,9 @@ export default function App() {
                 <br />
                 Something worth putting into the world.
               </p>
+              <div className="contact-route" aria-hidden="true">
+                <span>YOUR IDEA</span><i /><b>↗</b><span>SOMETHING REAL</span>
+              </div>
               <a
                 className="contact-immediate text-link"
                 href={`mailto:${email}`}
@@ -529,9 +542,10 @@ export default function App() {
                   <br />A lot more possibility.
                 </h2>
                 <p>
-                  Applied AI and product engineering roles.
+                  AI engineering, full-stack engineering, product management,
+                  and forward-deployed engineering.
                   <br />
-                  Remote, relocation, and ambitious problems.
+                  Open to full-time roles, remote work, and relocation.
                 </p>
                 <ArrowUpRight />
               </a>
@@ -542,9 +556,8 @@ export default function App() {
                 <span>02 / BUILD THE THING</span>
                 <h2>Bring it to Siloed.</h2>
                 <p>
-                  AI products, agent systems, internal tools,
-                  <br />
-                  evaluation, and hands-on AI adoption.
+                  Project contracts for end-to-end software and product delivery.
+                  Strategy, design, full-stack engineering, AI systems, and deployment.
                 </p>
                 <ArrowUpRight />
               </a>

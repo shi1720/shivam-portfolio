@@ -1,8 +1,8 @@
 # Operating the studio
 
-Production: https://shivam-web-app.web.app
+Production: https://shivamgupta.web.app
 
-Hosting site: `shivam-web-app`. Cloud Run: `shivam-portfolio-ai`, `us-central1`. Google Cloud project: `gen-lang-client-0444960702`. Firestore database: `shivam-portfolio`. These names are deployment identifiers, not credentials.
+Hosting site: `shivamgupta`. Cloud Run: `shivam-portfolio-ai`, `us-central1`. Google Cloud project: `gen-lang-client-0444960702`. Firestore database: `shivam-portfolio`. These names are deployment identifiers, not credentials.
 
 ## Static site updates
 
@@ -16,7 +16,7 @@ npm run test:e2e
 npx firebase-tools@15.30.1 deploy --only hosting --project gen-lang-client-0444960702 --non-interactive
 ```
 
-The checked-in Hosting configuration targets only this site. Do not replace it with a default project-wide configuration. Hosting pins the Cloud Run revision at deployment time; redeploy Hosting after a backend revision change to update its pinned target.
+The checked-in Hosting configuration targets the canonical `shivamgupta` site and the legacy `shivam-web-app` compatibility site. The legacy root redirects to the canonical root; browsers retain hash-based deep links. Legacy assets and API rewrites remain available for already-open sessions. Do not replace it with a default project-wide configuration. The canonical site pins the Cloud Run revision at deployment time; the legacy compatibility API follows the service traffic target. Redeploy Hosting after a backend revision change to update its pinned target.
 
 ## Backend updates
 
