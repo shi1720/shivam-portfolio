@@ -1,2 +1,28 @@
-import { defineConfig, devices } from '@playwright/test';
-export default defineConfig({testDir:'./tests/browser',fullyParallel:true,workers:3,timeout:30000,reporter:[['list'],['html',{open:'never'}]],use:{baseURL:'http://127.0.0.1:5181',trace:'retain-on-failure',reducedMotion:'reduce'},projects:[{name:'desktop',use:{...devices['Desktop Chrome'],viewport:{width:1440,height:1000}}},{name:'mobile',use:{...devices['iPhone 13'],browserName:'webkit'}}],webServer:{command:'npm run dev -- --port 5181',url:'http://127.0.0.1:5181',reuseExistingServer:!process.env.CI}});
+import { defineConfig, devices } from "@playwright/test";
+export default defineConfig({
+  testDir: "./tests/browser",
+  fullyParallel: true,
+  workers: 3,
+  timeout: 30000,
+  reporter: [["list"], ["html", { open: "never" }]],
+  use: {
+    baseURL: "http://127.0.0.1:5181",
+    trace: "retain-on-failure",
+    reducedMotion: "reduce",
+  },
+  projects: [
+    {
+      name: "desktop",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1440, height: 1000 },
+      },
+    },
+    { name: "mobile", use: { ...devices["iPhone 13"], browserName: "webkit" } },
+  ],
+  webServer: {
+    command: "npm run dev -- --port 5181",
+    url: "http://127.0.0.1:5181",
+    reuseExistingServer: !process.env.CI,
+  },
+});

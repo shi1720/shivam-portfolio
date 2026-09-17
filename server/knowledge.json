@@ -11,12 +11,7 @@
       "built": "A voice agent with scoped tools, server-owned workflow state, integer-cent transactions, revision checks, and idempotent credit reconciliation. Human approval stays explicit.",
       "evidence": "A fictional $240 deposit runs from inspection through dispatch and two partial credits. Unit, integration, and browser tests cover the lifecycle.",
       "boundary": "Working hackathon product. No paid pilot, ERP integration, carrier purchase, or automatic supplier submission is claimed.",
-      "tags": [
-        "AssemblyAI",
-        "Next.js",
-        "Firebase",
-        "State machines"
-      ],
+      "tags": ["AssemblyAI", "Next.js", "Firebase", "State machines"],
       "demo": "https://benchback-ai.web.app",
       "architecture": "https://github.com/shi1720/AssemblyAI/blob/main/docs/architecture.md",
       "visual": "voice"
@@ -34,11 +29,7 @@
       "built": "A MuJoCo execution service, dual SO101 arms, learned joint-target proposals, numerical correction, OpenVINO safety signals, and event exports.",
       "evidence": "Backend simulation evidence is distinguished from the illustrative browser animation.",
       "boundary": "Simulation MVP, not a physical robot deployment, end-to-end VLA policy, or safety certification.",
-      "tags": [
-        "MuJoCo",
-        "OpenVINO",
-        "FastAPI"
-      ],
+      "tags": ["MuJoCo", "OpenVINO", "FastAPI"],
       "demo": "https://granted-robotics.web.app",
       "visual": "graph"
     }
@@ -55,11 +46,7 @@
       "built": "Nemotron extraction with schema and evidence validation, human-approved records, asynchronous processing, and deterministic graph traversal without double counting.",
       "evidence": "A fictional food-recall scenario, documented provider run, fixture variants, and graph checks against an independent fixed-point oracle.",
       "boundary": "Evaluated MVP, not a certified food-safety product. No independent extraction accuracy, ERP connector, or automated customer messaging is claimed.",
-      "tags": [
-        "NVIDIA Nemotron",
-        "Graph reasoning",
-        "Human review"
-      ],
+      "tags": ["NVIDIA Nemotron", "Graph reasoning", "Human review"],
       "demo": "https://recallroom.web.app",
       "architecture": "https://github.com/shi1720/Nebius-x-NVIDIA/blob/main/docs/architecture.md",
       "visual": "graph"
@@ -77,12 +64,7 @@
       "built": "A local-first web and native experience with durable project storage, restart-safe timers, checkpoint history, portable backups, and purchase/restore integration.",
       "evidence": "Web and native tests, plus documented emulator and test-store evidence. A public web app and Android preview are available.",
       "boundary": "Projects stay on the device; accounts do not sync them. App-store launch, production billing, and remaining physical-device gates are separate.",
-      "tags": [
-        "React Native",
-        "Local-first",
-        "RevenueCat",
-        "Product design"
-      ],
+      "tags": ["React Native", "Local-first", "RevenueCat", "Product design"],
       "demo": "https://unpause-studio.web.app",
       "visual": "checkpoint"
     }
@@ -117,11 +99,7 @@
       "built": "A Streamable HTTP MCP server, scoped tokens, separate helper sessions, dependency gates, and versioned acknowledgements.",
       "evidence": "A reproducible multi-session flow and inspectable MCP trace with fictional households.",
       "boundary": "Alexa+ browser simulation is labeled. Native Alexa+ deployment is a separate step.",
-      "tags": [
-        "MCP",
-        "Firebase",
-        "State machines"
-      ],
+      "tags": ["MCP", "Firebase", "State machines"],
       "demo": "https://kindhandoff.web.app",
       "visual": "graph"
     }
@@ -174,11 +152,7 @@
       "built": "CALL-E integration, persistent request identity, idempotency keys, account budgets, and transcript-grounded extraction.",
       "evidence": "Offline workflow and Firebase emulator checks; public rehearsal uses labeled synthetic transcripts.",
       "boundary": "A real owned-number CALL-E test has not been conducted. No verified supplier pilot or savings claim.",
-      "tags": [
-        "CALL-E",
-        "Evidence extraction",
-        "B2B"
-      ],
+      "tags": ["CALL-E", "Evidence extraction", "B2B"],
       "demo": "https://offhire.web.app",
       "visual": "voice"
     }
@@ -201,11 +175,7 @@
       "built": "Thirty-six scenes, sixteen original characters, transparent TypeScript scoring, a Python reference implementation, and browser-generated sharing cards.",
       "evidence": "Scoring parity and browser tests cover the journey. Answers stay local to the browser.",
       "boundary": "Entertainment, not psychometrics or a personality diagnosis.",
-      "tags": [
-        "TypeScript",
-        "Creative coding",
-        "Private by design"
-      ],
+      "tags": ["TypeScript", "Creative coding", "Private by design"],
       "demo": "https://plottwist.sg127977958.chatgpt.site",
       "visual": "type"
     }
@@ -222,11 +192,7 @@
       "built": "An interactive geographic globe, accessible list, retry-safe submissions, frozen reveals, deletion receipts, and metric suppression.",
       "evidence": "Illustrative fixtures remain separate from real submissions. Database rules enforce reveal boundaries.",
       "boundary": "Season 001 has ended. Preview data is fictional and not a representative research dataset.",
-      "tags": [
-        "Geospatial UI",
-        "Cloudflare D1",
-        "Privacy"
-      ],
+      "tags": ["Geospatial UI", "Cloudflare D1", "Privacy"],
       "demo": "https://mixed-signals-atlas.sg127977958.chatgpt.site",
       "visual": "graph"
     }
@@ -243,12 +209,7 @@
       "built": "A Python control plane, manifest validation, fresh workspaces, overlay allowlists, distinct failure classes, and normalized report hashes.",
       "evidence": "Five language packs and fifteen committed control reports. The browser replays those reports.",
       "boundary": "An evidence viewer, not a browser runtime for arbitrary code. The local runner assumes trusted task authors.",
-      "tags": [
-        "Python",
-        "Polyglot",
-        "CI",
-        "Evaluation"
-      ],
+      "tags": ["Python", "Polyglot", "CI", "Evaluation"],
       "demo": "https://shi1720.github.io/repo-gauntlet/",
       "visual": "terminal"
     }
@@ -265,11 +226,7 @@
       "built": "Declarative repository tasks, a reset/step interface, composable graders, protected test files, sandbox adapters, and golden/no-op validation.",
       "evidence": "Executable examples and a Python test suite verify task lifecycle and grading. The site explains how to build and validate an environment.",
       "boundary": "A framework and example environments; not a claim that a frontier model was trained or improved. Local execution is not hostile-code isolation.",
-      "tags": [
-        "Python",
-        "Agent evaluation",
-        "RL environments"
-      ],
+      "tags": ["Python", "Agent evaluation", "RL environments"],
       "demo": "https://shi1720.github.io/repogym/",
       "architecture": "https://github.com/shi1720/repogym/blob/main/ARCHITECTURE.md",
       "visual": "terminal"
@@ -287,11 +244,7 @@
       "built": "A Python reduction engine with dependency closure, pinned events, failure signatures, oracle budgets, a deletion audit, and a fresh final replay.",
       "evidence": "The bundled cache fixture reduces 36 events to 6. Native/browser engine parity is tested.",
       "boundary": "This fixture is not a universal reduction rate. A minimal trace is not proof of root cause or a global minimum.",
-      "tags": [
-        "Python",
-        "Delta debugging",
-        "Agent traces"
-      ],
+      "tags": ["Python", "Delta debugging", "Agent traces"],
       "demo": "https://casecrop-shi1720.sg127977958.chatgpt.site",
       "visual": "fault"
     }
@@ -314,12 +267,7 @@
       "built": "A zero-dependency Python library for seeded tool failures, explicit side effects, call budgets, virtual clocks, and strict offline replay. The browser lab runs the same Python in Pyodide.",
       "evidence": "Native/browser parity and property tests cover fault and replay behavior. The public lab lets you compare recovery policies.",
       "boundary": "Scripted recovery experiments, not an LLM performance benchmark. Source-install beta; no PyPI release or production adoption claim.",
-      "tags": [
-        "Python",
-        "Fault injection",
-        "Pyodide",
-        "Replay"
-      ],
+      "tags": ["Python", "Fault injection", "Pyodide", "Replay"],
       "demo": "https://toolstorm-shi1720.sg127977958.chatgpt.site",
       "architecture": "https://github.com/shi1720/toolstorm/blob/main/docs/architecture.md",
       "visual": "fault"
