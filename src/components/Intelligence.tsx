@@ -45,7 +45,15 @@ export default function Intelligence({
       setFailed(true);
       return;
     }
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.65));
+    const gl = renderer.getContext();
+    const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+    const rendererName = debugInfo
+      ? String(gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL))
+      : "";
+    const software = /swiftshader|llvmpipe|lavapipe|software/i.test(
+      rendererName,
+    );
+    renderer.setPixelRatio(Math.min(devicePixelRatio, software ? 1 : 1.65));
     renderer.setClearColor(0xeeeeea, 0);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
@@ -60,12 +68,17 @@ export default function Intelligence({
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
     controls.autoRotateSpeed = 0.25;
-    const pmrem = new THREE.PMREMGenerator(renderer);
-    const room = new RoomEnvironment();
-    const env = pmrem.fromScene(room, 0.04);
-    scene.environment = env.texture;
-    room.dispose();
-    pmrem.dispose();
+    let env: THREE.WebGLRenderTarget | undefined;
+    if (!software) {
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      const room = new RoomEnvironment();
+      env = pmrem.fromScene(room, 0.04);
+      scene.environment = env.texture;
+      room.dispose();
+      pmrem.dispose();
+    }
+    // Software graphics retain the sculpture and its interactions with cheaper lighting.
+
     scene.add(new THREE.AmbientLight(0xffffff, 1));
     const sun = new THREE.DirectionalLight(0xffffff, 3);
     sun.position.set(-3, 7, 5);
@@ -91,7 +104,10 @@ export default function Intelligence({
     const frames = curve.computeFrenetFrames(320, true);
     const nodes: THREE.Mesh[] = [];
     const bands: THREE.Group[] = [];
-    const bandMaterials: THREE.MeshPhysicalMaterial[] = [];
+    const bandMaterials: (
+      | THREE.MeshPhysicalMaterial
+      | THREE.MeshPhongMaterial
+    )[] = [];
     const disciplines = ["agents", "systems", "human", "learning"];
     for (let b = 0; b < 4; b++) {
       const group = new THREE.Group();
@@ -140,14 +156,21 @@ export default function Intelligence({
       geo.setIndex(indices);
       geo.computeVertexNormals();
       resources.push(geo);
-      const mat = new THREE.MeshPhysicalMaterial({
-        color: b === 0 ? 0xff4a12 : b === 2 ? 0xd4d5d1 : 0x999e9c,
-        metalness: b === 0 ? 0.25 : 1,
-        roughness: b === 0 ? 0.32 : 0.24,
-        side: THREE.DoubleSide,
-        clearcoat: 0.35,
-        clearcoatRoughness: 0.25,
-      });
+      const mat = software
+        ? new THREE.MeshPhongMaterial({
+            color: b === 0 ? 0xff4a12 : b === 2 ? 0xd4d5d1 : 0x999e9c,
+            side: THREE.DoubleSide,
+            shininess: 65,
+            specular: 0xb7b9b2,
+          })
+        : new THREE.MeshPhysicalMaterial({
+            color: b === 0 ? 0xff4a12 : b === 2 ? 0xd4d5d1 : 0x999e9c,
+            metalness: b === 0 ? 0.25 : 1,
+            roughness: b === 0 ? 0.32 : 0.24,
+            side: THREE.DoubleSide,
+            clearcoat: 0.35,
+            clearcoatRoughness: 0.25,
+          });
       resources.push(mat);
       bandMaterials.push(mat);
       group.add(new THREE.Mesh(geo, mat));
@@ -337,7 +360,7 @@ export default function Intelligence({
       controls.removeEventListener("change", markDirty);
       controls.dispose();
       resources.forEach((r) => r.dispose());
-      env.dispose();
+      env?.dispose();
       renderer.dispose();
       renderer.domElement.remove();
     };
