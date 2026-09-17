@@ -201,3 +201,14 @@ test("contact points to the requested public email and exact profile", async ({
     .evaluate((el) => getComputedStyle(el).backgroundColor);
   expect(bg).toBe("rgb(250, 77, 32)");
 });
+
+test("malformed project URLs recover to the work index", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.goto("/#project=%E0%A4%A");
+  await expect(
+    page.getByRole("heading", { name: "Proof of curiosity." }),
+  ).toBeVisible();
+  await expect(page.getByRole("dialog")).not.toBeVisible();
+  expect(errors).toEqual([]);
+});

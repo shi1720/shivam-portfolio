@@ -6,7 +6,7 @@ Initial release verified on 17 September 2026.
 
 - `npm test`: 20 passing tests, including all nine JavaScript/Python simulator parity combinations and backend input, grounding, budget, cancellation and deadline regression tests.
 - `npm run build`: TypeScript and production Vite build pass.
-- `npm run test:e2e`: 16 passing checks across desktop Chromium and mobile WebKit (iPhone viewport). Includes the five rooms, project search, filters, deep links, browser back, dialogs, lab results, Python export, simulated provider errors/retry and IME input.
+- `npm run test:e2e`: 18 passing checks across desktop Chromium and mobile WebKit (iPhone viewport). Includes the five rooms, project search, filters, deep links, browser back, malformed URL recovery, dialogs, lab results, Python export, simulated provider errors/retry and IME input.
 - Axe WCAG A/AA checks found no serious or critical violations in any of the five rooms at the tested viewports. No horizontal overflow at those sizes. These checks are not complete accessibility or device certification.
 - `npm audit --omit=dev --audit-level=moderate`: zero production dependency vulnerabilities at verification time.
 

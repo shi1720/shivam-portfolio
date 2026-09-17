@@ -72,13 +72,15 @@ export default function App() {
     const readHash = () => {
       const hash = window.location.hash.slice(1);
       if (hash.startsWith("project=")) {
-        const p = projects.find(
-          (p) => p.id === decodeURIComponent(hash.slice(8)),
-        );
-        if (p) {
-          setRoom("work");
-          setSelected(p);
+        let id = "";
+        try {
+          id = decodeURIComponent(hash.slice(8));
+        } catch {
+          // A malformed shared URL should still lead to usable project browsing.
         }
+        const p = projects.find((p) => p.id === id);
+        setRoom("work");
+        setSelected(p || null);
       } else if (rooms.some((r) => r.id === hash)) {
         setSelected(null);
         setRoom(hash as Room);
