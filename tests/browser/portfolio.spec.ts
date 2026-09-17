@@ -283,6 +283,7 @@ test("career reflects the supplied corrections and broader roles", async ({
 });
 
 test("project diagrams match their own fixture and evidence", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
   for (const [id, label, before, after] of [
     ["toolstorm", "TOOLSTORM / FAILURE 001", "2 shipments", "1 shipment"],
     ["agent-rehearsal", "AGENT REHEARSAL / CHECKOUT FIXTURE", "2 charges", "1 charge"],

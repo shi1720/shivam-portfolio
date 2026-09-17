@@ -147,15 +147,15 @@ export default function ProjectVisual({
         </div>
         <div className="fault-nodes">
           <div>
-            TRACE<span>recorded events</span>
+            TRACE<span>events</span>
           </div>
           <i>→</i>
           <div>
-            REPLAY<span>keep dependencies</span>
+            REPLAY<span>links kept</span>
           </div>
           <i>→</i>
           <div>
-            CASE<span>failure preserved</span>
+            CASE<span>failing</span>
           </div>
         </div>
         <div className="fault-policies">
