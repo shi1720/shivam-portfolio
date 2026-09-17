@@ -47,6 +47,23 @@ export default function Chat({
   const controller = useRef<AbortController | null>(null);
   const log = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
+  const [viewportSize, setViewportSize] = useState(() => ({ height: innerHeight, top: 0 }));
+  useEffect(() => {
+    if (!open) return;
+    const viewport = window.visualViewport;
+    const fit = () => {
+      setViewportSize({ height: viewport?.height ?? innerHeight, top: viewport?.offsetTop ?? 0 });
+    };
+    fit();
+    viewport?.addEventListener("resize", fit);
+    viewport?.addEventListener("scroll", fit);
+    window.addEventListener("resize", fit);
+    return () => {
+      viewport?.removeEventListener("resize", fit);
+      viewport?.removeEventListener("scroll", fit);
+      window.removeEventListener("resize", fit);
+    };
+  }, [open]);
   useEffect(() => {
     if (question && open) {
       setDraft(question);
@@ -125,7 +142,8 @@ export default function Chat({
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="dialog-overlay chat-overlay" />
-        <Dialog.Content className="chat-dialog">
+        <Dialog.Content className="chat-dialog" data-compact={viewportSize.height < 500}
+          style={{ '--chat-height': `${viewportSize.height}px`, '--chat-top': `${viewportSize.top}px` } as React.CSSProperties}>
           <div className="chat-header">
             <div className="chat-avatar">
               <Sparkles size={20} />

@@ -3713,3 +3713,77 @@ select:focus-visible {
     font-size: 12px;
   }
 }
+
+/* Touch layouts reserve real space for the sculpture, dock and on-screen keyboard. */
+@media (min-width: 541px) and (max-width: 1000px) {
+  .studio-room {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 185px;
+    grid-template-areas: "intro side" "art art" "name name" "bottom bottom";
+    gap: 24px 40px;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    padding: 35px 5% 145px;
+  }
+  .studio-intro { grid-area: intro; max-width: 360px; }
+  .studio-side { grid-area: side; width: 100%; }
+  .studio-art { grid-area: art; width: 100%; height: 460px; margin: -20px 0; }
+  .monument-name { grid-area: name; font-size: 22vw; line-height: .9; }
+  .studio-bottom { grid-area: bottom; }
+  .studio-intro, .studio-side, .studio-art, .monument-name, .studio-bottom {
+    position: relative; inset: auto;
+  }
+}
+.studio-dock-wrap { padding-bottom: calc(18px + env(safe-area-inset-bottom)); }
+@media (max-width: 1000px) {
+  .room-main { padding-bottom: calc(155px + env(safe-area-inset-bottom)); }
+  .availability, .text-link, .contact-social > a, .contact-social > button,
+  .contact-email > button, .scene-control > button, .close-dialog {
+    min-height: 44px;
+  }
+  .scene-control > button, .close-dialog { min-width: 44px; }
+  .work-filters input, .work-filters select, .lab-config select { font-size: 16px; min-height: 44px; }
+}
+@media (max-width: 540px) {
+  .studio-dock { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)) 44px; }
+  .studio-dock > a { padding: 8px 3px; font-size: 10px; min-width: 0; align-items: center; white-space: nowrap; }
+  .studio-dock > .dock-ai { width: 44px; height: 48px; }
+  .contact-social { flex-wrap: wrap; gap: 8px 20px; }
+  .project-dialog { height: 100dvh; max-height: 100dvh; padding-bottom: calc(30px + env(safe-area-inset-bottom)); }
+}
+.chat-dialog {
+  top: calc(var(--chat-top, 0px) + 20px);
+  height: calc(var(--chat-height, 100dvh) - 40px);
+  bottom: auto;
+  overflow: hidden;
+}
+.chat-header, .chat-description, .chat-form, .chat-disclosure { flex-shrink: 0; }
+.chat-header > button { min-width: 44px; min-height: 44px; padding: 10px; }
+.chat-header { gap: 8px; }
+.chat-header > div:nth-child(2) { min-width: 0; }
+.chat-form textarea { font-size: 16px; min-width: 0; }
+.chat-form > button { width: 44px; height: 44px; margin: 4px; }
+.chat-messages { overscroll-behavior: contain; overflow-wrap: anywhere; }
+.chat-disclosure { padding-bottom: env(safe-area-inset-bottom); }
+@media (max-width: 540px) {
+  .chat-dialog { top: var(--chat-top, 0px); height: var(--chat-height, 100dvh); }
+  .chat-header { padding: max(10px, env(safe-area-inset-top)) 12px 10px; }
+  .chat-avatar { width: 32px; height: 36px; flex-shrink: 0; }
+  .chat-header h2 { font-size: 20px; }
+  .chat-header > div > span { font-size: 8px; }
+}
+.chat-dialog[data-compact="true"] { top: var(--chat-top, 0px); height: var(--chat-height, 100dvh); }
+.chat-dialog[data-compact="true"] .chat-header { padding: 4px 12px; }
+.chat-dialog[data-compact="true"] .chat-header h2 { font-size: 18px; margin: 0; }
+.chat-dialog[data-compact="true"] .chat-header > div > span { display: none; }
+.chat-dialog[data-compact="true"] .chat-description {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0;
+}
+.chat-dialog[data-compact="true"] .chat-messages { padding: 8px 16px; }
+.chat-dialog[data-compact="true"] .chat-form { margin: 0 12px; }
+.chat-dialog[data-compact="true"] .chat-form textarea { min-height: 48px; height: 48px; padding: 10px; }
+.chat-dialog[data-compact="true"] .chat-disclosure { margin: 5px 0; padding: 0 12px env(safe-area-inset-bottom); font-size: 10px; line-height: 1.4; }
+@media (max-width: 1000px) {
+  .lab-output-header > button, .lab-foot > button { min-height: 44px; min-width: 44px; }
+}
