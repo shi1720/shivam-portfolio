@@ -105,7 +105,7 @@ test("AI conversation cites sources, handles errors and retries without duplicat
     });
   });
   await page.goto("/");
-  await page.getByRole("button", { name: "Open AI portfolio guide" }).click();
+  await page.getByRole("button", { name: "Ask AI about Shivam and his projects" }).click();
   await page.getByLabel("Your question").fill("Tell me about RepoGym");
   await page.getByRole("button", { name: "Send question" }).click();
   await expect(page.getByRole("alert")).toContainText(
@@ -134,7 +134,7 @@ test("IME confirmation does not send unfinished text", async ({ page }) => {
     });
   });
   await page.goto("/");
-  await page.getByRole("button", { name: "Open AI portfolio guide" }).click();
+  await page.getByRole("button", { name: "Ask AI about Shivam and his projects" }).click();
   const field = page.getByLabel("Your question");
   await field.fill("プロジェクト");
   await field.dispatchEvent("keydown", {

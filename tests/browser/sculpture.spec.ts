@@ -1,5 +1,10 @@
 import { test, expect } from '@playwright/test';
 
+test.beforeEach(async ({ page }) => {
+  // Pixel comparisons isolate sculpture motion from the one-visit guide card.
+  await page.addInitScript(() => sessionStorage.setItem('shivam-ai-guide-introduced', 'yes'));
+});
+
 test('sculpture rotates through real project links and pause freezes the tour', async ({ page }) => {
   test.setTimeout(45000);
   await page.emulateMedia({ reducedMotion: 'no-preference' });

@@ -4,7 +4,6 @@ import {
   Star,
   Pause,
   Play,
-  Sparkles,
   Search,
   X,
   Copy,
@@ -27,6 +26,7 @@ import { stories } from "./stories";
 import ProjectVisual from "./components/ProjectVisual";
 import ProjectDialog from "./components/ProjectDialog";
 import Chat from "./components/Chat";
+import AIGuideEntry from "./components/AIGuideEntry";
 import Lab from "./components/Lab";
 import BackgroundBook from "./components/BackgroundBook";
 import { usePortfolioTools } from "./usePortfolioTools";
@@ -46,13 +46,18 @@ export default function App() {
   const [selected, setSelected] = useState<Project | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
   const [question, setQuestion] = useState("");
+  const [autoSendQuestion, setAutoSendQuestion] = useState(false);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<District>("all");
   const [copied, setCopied] = useState(false);
   const [activeId, setActiveId] = useState("OfferLoop-Job-CRM");
-  const useQuestion = useCallback(() => setQuestion(""), []);
-  const ask = (q = "") => {
+  const useQuestion = useCallback(() => {
+    setQuestion("");
+    setAutoSendQuestion(false);
+  }, []);
+  const ask = (q = "", autoSend = false) => {
     setQuestion(q);
+    setAutoSendQuestion(autoSend);
     setChatOpen(true);
   };
   const navigate = (target: Room) => {
@@ -600,13 +605,7 @@ export default function App() {
               {r.name}
             </a>
           ))}
-          <button
-            className="dock-ai"
-            aria-label="Open AI portfolio guide"
-            onClick={() => ask()}
-          >
-            <Sparkles size={19} />
-          </button>
+          <AIGuideEntry blocked={chatOpen || !!selected} open={chatOpen} onAsk={ask} />
         </nav>
         <span className="dock-side-label dock-copyright">
           © 2026 / MADE WITH INTENT
@@ -617,6 +616,7 @@ export default function App() {
         open={chatOpen}
         onOpenChange={setChatOpen}
         question={question}
+        autoSendQuestion={autoSendQuestion}
         onQuestionUsed={useQuestion}
       />
     </div>

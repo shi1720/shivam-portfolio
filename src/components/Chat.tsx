@@ -31,11 +31,13 @@ export default function Chat({
   open,
   onOpenChange,
   question,
+  autoSendQuestion = false,
   onQuestionUsed,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
   question: string;
+  autoSendQuestion?: boolean;
   onQuestionUsed: () => void;
 }) {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -47,6 +49,8 @@ export default function Chat({
   const controller = useRef<AbortController | null>(null);
   const log = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
+  const handledQuestion = useRef("");
+  const restoreGuideFocus = useRef(false);
   const [viewportSize, setViewportSize] = useState(() => ({ height: innerHeight, top: 0 }));
   useEffect(() => {
     if (!open) return;
@@ -65,11 +69,15 @@ export default function Chat({
     };
   }, [open]);
   useEffect(() => {
-    if (question && open) {
-      setDraft(question);
+    if (!question) handledQuestion.current = "";
+    if (question && open && handledQuestion.current !== question) {
+      handledQuestion.current = question;
+      restoreGuideFocus.current = autoSendQuestion;
+      if (autoSendQuestion && !busy) void send(question);
+      else setDraft(question);
       onQuestionUsed();
     }
-  }, [question, open, onQuestionUsed]);
+  }, [question, open, autoSendQuestion, onQuestionUsed]);
   useEffect(() => {
     log.current?.scrollTo({
       top: log.current.scrollHeight,
@@ -143,6 +151,12 @@ export default function Chat({
       <Dialog.Portal>
         <Dialog.Overlay className="dialog-overlay chat-overlay" />
         <Dialog.Content className="chat-dialog" data-compact={viewportSize.height < 500}
+          onCloseAutoFocus={(event) => {
+            if (!restoreGuideFocus.current) return;
+            event.preventDefault();
+            document.getElementById("ai-guide-trigger")?.focus();
+            restoreGuideFocus.current = false;
+          }}
           style={{ '--chat-height': `${viewportSize.height}px`, '--chat-top': `${viewportSize.top}px` } as React.CSSProperties}>
           <div className="chat-header">
             <div className="chat-avatar">

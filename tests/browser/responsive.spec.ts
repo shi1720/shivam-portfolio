@@ -16,7 +16,7 @@ for (const [width, height] of [[320, 568], [600, 960], [820, 1180], [640, 360], 
     await page.route('**/api/chat', route => route.fulfill({json: {
       answer: 'Shivam builds applied AI products. Explore his engineering decisions and public project work.', sources: [], mode: 'ai'
     }}));
-    await page.getByRole('button', {name: 'Open AI portfolio guide'}).click();
+    await page.getByRole('button', {name: 'Ask AI about Shivam and his projects'}).click();
     await page.getByLabel('Your question').fill('Show me the projects');
     await page.getByRole('button', {name: 'Send question'}).click();
     await expect(page.getByRole('log')).toContainText('Shivam builds applied AI products.');

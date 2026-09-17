@@ -471,7 +471,7 @@ select:focus-visible {
 .studio-dock > a:hover:not([aria-current]) {
   background: #dce0d0;
 }
-.studio-dock > .dock-ai {
+.studio-dock .dock-ai {
   display: grid;
   place-items: center;
   height: 40px;
@@ -1521,7 +1521,7 @@ select:focus-visible {
 .room-contact .studio-dock > a:hover:not([aria-current]) {
   background: #ded5c8;
 }
-.room-contact .studio-dock > .dock-ai {
+.room-contact .studio-dock .dock-ai {
   color: #f2ede3;
 }
 /* Dialogs. */
@@ -2349,12 +2349,12 @@ select:focus-visible {
   .studio-dock > a > span {
     font-size: 7px;
   }
-  .studio-dock > .dock-ai {
+  .studio-dock .dock-ai {
     width: 34px;
     height: 38px;
     margin-left: 0;
   }
-  .studio-dock > .dock-ai > svg {
+  .studio-dock .dock-ai > svg {
     width: 16px;
   }
   .room-heading {
@@ -3110,7 +3110,7 @@ select:focus-visible {
   .studio-dock > a > span {
     font-size: 9px;
   }
-  .studio-dock > .dock-ai {
+  .studio-dock .dock-ai {
     height: 45px;
     width: 34px;
   }
@@ -3748,7 +3748,7 @@ select:focus-visible {
 @media (max-width: 540px) {
   .studio-dock { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)) 44px; }
   .studio-dock > a { padding: 8px 3px; font-size: 10px; min-width: 0; align-items: center; white-space: nowrap; }
-  .studio-dock > .dock-ai { width: 44px; height: 48px; }
+  .studio-dock .dock-ai { width: 44px; height: 48px; }
   .contact-social { flex-wrap: wrap; gap: 8px 20px; }
   .project-dialog { height: 100dvh; max-height: 100dvh; padding-bottom: calc(30px + env(safe-area-inset-bottom)); }
 }
@@ -4042,7 +4042,7 @@ select:focus-visible {
 .studio-shell .studio-dock > a[aria-current="page"] { background: var(--ink); color: var(--room-panel); }
 .studio-shell .studio-dock > a[aria-current="page"] > span { color: var(--room-panel); }
 .studio-shell .studio-dock > a:hover:not([aria-current]) { background: var(--paper); }
-.studio-shell .studio-dock > .dock-ai { background: var(--orange); color: #fff; }
+.studio-shell .studio-dock .dock-ai { background: var(--orange); color: #fff; }
 .studio-shell .button.primary:hover { background: var(--ink); }
 .studio-shell .availability i { background: var(--orange); }
 .studio-shell .work-list > button { border-color: var(--line); }
@@ -4191,4 +4191,80 @@ select:focus-visible {
   .studio-art { top: -2%; height: 75%; }
   .monument-name { font-size: clamp(145px, 19.1vw, 245px); bottom: 154px; }
   .studio-bottom { bottom: 85px; }
+}
+
+
+/* A quiet, one-visit introduction to the guide, built into the room navigation. */
+.ai-entry { position: relative; flex-shrink: 0; }
+.studio-shell .studio-dock .dock-ai {
+  width: auto;
+  min-width: 88px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+}
+.dock-ai[data-nudge="true"] { animation: ai-soft-halo 2.4s ease-in-out 2; }
+@keyframes ai-soft-halo {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50% { box-shadow: 0 0 0 5px color-mix(in srgb, var(--orange) 12%, transparent), 0 0 22px color-mix(in srgb, var(--orange) 16%, transparent); }
+}
+.ai-invitation {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 16px);
+  width: min(310px, calc(100vw - 36px));
+  max-height: calc(100dvh - 140px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding: 12px 16px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--room-panel);
+  color: var(--ink);
+  box-shadow: 0 12px 38px #20271e15;
+  text-align: left;
+  animation: ai-invitation-in 240ms ease-out;
+}
+@keyframes ai-invitation-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ai-invitation-heading { display: flex; align-items: center; justify-content: space-between; margin: -5px -9px 0 0; gap: 6px; position: sticky; top: 0; z-index: 1; background: var(--room-panel); }
+.ai-invitation-heading > span { display: flex; align-items: center; gap: 7px; color: var(--muted); font: 9px var(--mono); letter-spacing: .025em; }
+.ai-invitation-heading > span svg { color: var(--orange); flex-shrink: 0; }
+.ai-invitation-heading > button { width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; color: var(--muted); border-radius: 4px; flex-shrink: 0; }
+.ai-invitation > strong { display: block; font-size: 18px; font-weight: 550; letter-spacing: -.035em; }
+.ai-invitation > p { margin: 7px 0 14px; font-size: 13px; line-height: 1.55; color: var(--muted); }
+.ai-preview-questions { display: grid; gap: 7px; }
+.ai-preview-questions > button { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); color: var(--ink); font-size: 12px; text-align: left; }
+.ai-preview-questions > button:hover { border-color: var(--orange); }
+.ai-preview-questions svg { color: var(--orange); flex-shrink: 0; }
+@media (max-width: 700px) {
+  .studio-shell .studio-dock .dock-ai { min-width: 52px; padding: 5px 6px; gap: 4px; flex-direction: column; font-size: 10px; height: 48px; margin-left: 0; }
+  .studio-dock { position: relative; }
+  .ai-entry { position: static; }
+  .ai-invitation { bottom: calc(100% + 10px); right: 0; width: min(300px, calc(100vw - 28px)); padding: 9px 14px 12px; }
+  .ai-invitation > strong { font-size: 17px; }
+  .ai-invitation > p { margin: 5px 0 10px; font-size: 12px; }
+}
+@media (max-width: 540px) {
+  .studio-dock { grid-template-columns: repeat(5, minmax(0, 1fr)) 52px; }
+}
+@media (max-width: 360px) {
+  .studio-dock > a { font-size: 9px; }
+}
+@media (max-height: 440px) and (orientation: landscape) {
+  .ai-invitation { width: 300px; padding-top: 4px; padding-bottom: 10px; }
+  .ai-invitation > p { margin: 5px 0 8px; }
+  .ai-preview-questions { gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dock-ai[data-nudge="true"], .ai-invitation { animation: none; }
 }
