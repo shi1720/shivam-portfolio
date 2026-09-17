@@ -4052,23 +4052,25 @@ select:focus-visible {
 .studio-shell .work-filters input { color: var(--ink); }
 .studio-shell .work-filters input::placeholder { color: var(--muted); opacity: 1; }
 
-/* 00: a clear invitation beside the sculpture, never joined-up project labels. */
-.studio-project-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.studio-project-links .studio-featured-project {
-  display: grid;
-  align-content: center;
+/* A quiet editorial marker keeps the featured project inside the work index. */
+.work-featured {
+  display: inline-flex;
+  align-items: center;
   gap: 5px;
-  min-width: 175px;
-  min-height: 62px;
-  padding: 11px 16px;
-  text-align: left;
+  flex-shrink: 0;
+  padding: 5px 7px;
   border: 1px solid var(--line);
-  border-left: 3px solid var(--orange);
-  background: var(--room-panel);
+  border-radius: 3px;
+  color: var(--ink);
+  font: 9px/1 var(--mono);
+  letter-spacing: 0;
 }
-.studio-featured-project > span { font: 8px/1.4 var(--mono); color: var(--muted); }
-.studio-featured-project > strong { display: flex; align-items: center; justify-content: space-between; gap: 18px; font: 500 16px var(--display); }
-.studio-project-links .studio-browse-projects { min-height: 44px; font-size: 11px; padding: 8px 0; }
+.work-featured svg { fill: currentColor; }
+@media (max-width: 540px) {
+  .work-featured { margin-left: auto; padding: 6px; }
+  .work-featured > span { display: none; }
+  .work-list > button:has(.work-featured) > svg { margin-left: 0; }
+}
 .studio-shell .sculpture-project-label { background: #f5f6eef5; border-color: #89947f; }
 .studio-shell .sculpture-project-label > small { color: #536347; }
 .studio-shell .studio-side .artifact-label { background: #eef0e7ef; border-color: var(--line); }
@@ -4182,7 +4184,7 @@ select:focus-visible {
   .monument-name { bottom: 154px; }
 }
 
-/* Short laptop screens keep the project invitation above the fixed dock. */
+/* Short laptop screens keep the name and closing copy above the fixed dock. */
 @media (min-width: 1001px) and (max-height: 800px) {
   .studio-room { min-height: 0; height: calc(100svh - 108px); }
   .studio-intro { top: 20px; }

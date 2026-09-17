@@ -1,7 +1,7 @@
 import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import {
   ArrowUpRight,
-  ArrowRight,
+  Star,
   Pause,
   Play,
   Sparkles,
@@ -127,9 +127,6 @@ export default function App() {
   const active =
     ordered.find((p) => p.id === activeId) || ordered[0] || projects[0];
   const story = stories[active.id];
-  const visibleNodes = projects.filter(
-    (p) => district === "all" || p.district === district,
-  );
   return (
     <div className={`studio-shell room-${room}`}>
       <a
@@ -251,20 +248,6 @@ export default function App() {
                 <br />
                 <span>AND OCCASIONALLY, GOOD TROUBLE.</span>
               </p>
-              <div
-                className="studio-project-links"
-                aria-label="Explore real projects"
-              >
-                {visibleNodes.slice(0, 1).map((p) => (
-                  <button className="studio-featured-project" key={p.id} onClick={() => chooseProject(p)}>
-                    <span>START HERE / FEATURED PROJECT</span>
-                    <strong>{p.name} <ArrowUpRight size={16} /></strong>
-                  </button>
-                ))}
-                <button className="studio-browse-projects" onClick={() => navigate("work")}>
-                  Explore all {projects.length} projects <ArrowRight size={15} />
-                </button>
-              </div>
               <span className="studio-ai-note">
                 The AI guide is one click away. <ArrowDownLeft size={15} />
               </span>
@@ -334,6 +317,11 @@ export default function App() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="work-project-name">{p.name}</span>
+                      {p.id === "OfferLoop-Job-CRM" && (
+                        <span className="work-featured" aria-label="Featured project">
+                          <Star size={12} aria-hidden="true" /> <span>Featured</span>
+                        </span>
+                      )}
                       <ArrowUpRight size={22} />
                     </button>
                   ))}
@@ -358,7 +346,7 @@ export default function App() {
                 hidden={!ordered.length}
               >
                 <div className="preview-caption">
-                  <span>IN FOCUS</span>
+                  <span>{active.id === "OfferLoop-Job-CRM" ? "FEATURED PROJECT" : "IN FOCUS"}</span>
                   <span>{active.language}</span>
                 </div>
                 <div className="work-preview-copy">

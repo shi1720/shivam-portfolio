@@ -70,7 +70,7 @@ export default function Intelligence({
     controls.enableZoom = false;
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
-    controls.autoRotateSpeed = 0.25;
+    controls.autoRotateSpeed = 0.45;
     let env: THREE.WebGLRenderTarget | undefined;
     if (!software) {
       const pmrem = new THREE.PMREMGenerator(renderer);
@@ -248,6 +248,18 @@ export default function Intelligence({
     const raycaster = new THREE.Raycaster();
     const pointer = new THREE.Vector2();
     let down = { x: 0, y: 0 };
+    let dragging = false;
+    let hoveredNode = false;
+    let resumeAt = 0;
+    let tourElapsed = 0;
+    const holdTour = () => {
+      resumeAt = performance.now() + 4000;
+      tourElapsed = 0;
+    };
+    const onDragStart = () => { dragging = true; holdTour(); };
+    const onDragEnd = () => { dragging = false; holdTour(); };
+    controls.addEventListener("start", onDragStart);
+    controls.addEventListener("end", onDragEnd);
     function pick(e: PointerEvent) {
       const r = el.getBoundingClientRect();
       pointer.set(
@@ -255,7 +267,9 @@ export default function Intelligence({
         (-(e.clientY - r.top) / r.height) * 2 + 1,
       );
       raycaster.setFromCamera(pointer, camera);
-      return raycaster.intersectObjects(nodes)[0]?.object;
+      return raycaster.intersectObjects(nodes).find(({ object }) =>
+        state.current.district === "all" || object.userData.project.district === state.current.district,
+      )?.object;
     }
     const onDown = (e: PointerEvent) => {
       down = { x: e.clientX, y: e.clientY };
@@ -267,6 +281,8 @@ export default function Intelligence({
     };
     const onMove = (e: PointerEvent) => {
       const n = pick(e);
+      hoveredNode = !!n;
+      if (n) holdTour();
       el.style.cursor = n ? "pointer" : "grab";
       if (n && focused.current.id !== n.userData.project.id) {
         needsRender = true;
@@ -274,6 +290,8 @@ export default function Intelligence({
         setFocusProject(n.userData.project);
       }
     };
+    const onLeave = () => { hoveredNode = false; };
+    renderer.domElement.addEventListener("pointerleave", onLeave);
     renderer.domElement.addEventListener("pointerdown", onDown);
     renderer.domElement.addEventListener("pointerup", onUp);
     renderer.domElement.addEventListener("pointermove", onMove);
@@ -297,12 +315,35 @@ export default function Intelligence({
       lastDistrict = state.current.district;
     const render = (time: number) => {
       frame = requestAnimationFrame(render);
-      if (!visible || document.hidden || time - last < 28) return;
+      if (!visible || document.hidden) { last = time; return; }
+      if (time - last < 28) return;
+      const delta = Math.min((time - last) / 1000, 0.1);
       last = time;
-      controls.autoRotate = !state.current.paused && !reduced.matches;
-      controls.update();
+      const label = el.querySelector(".sculpture-project-label");
+      const readingLabel = label?.matches(":hover, :focus-within") ?? false;
+      const touring = !state.current.paused && !reduced.matches && !dragging &&
+        !hoveredNode && !readingLabel && time >= resumeAt;
+      controls.autoRotate = touring;
+      controls.enableDamping = !state.current.paused && !reduced.matches;
+      // Time-based orbiting stays equally slow on mobile and software renderers.
+      controls.update(delta);
+      if (touring) tourElapsed += delta;
+      if (tourElapsed >= 6) {
+        const candidates = projects.filter((p) =>
+          state.current.district === "all" || p.district === state.current.district,
+        );
+        const index = candidates.findIndex((p) => p.id === focused.current.id);
+        const next = candidates[(index + 1) % candidates.length];
+        if (next) {
+          focused.current = next;
+          setFocusProject(next);
+          needsRender = true;
+        }
+        tourElapsed = 0;
+      }
       if (lastDistrict !== state.current.district) {
         lastDistrict = state.current.district;
+        tourElapsed = 0;
         transitionUntil = reduced.matches ? 0 : time + 1800;
         needsRender = true;
       }
@@ -341,6 +382,13 @@ export default function Intelligence({
           settle ? 1 : 0.08,
         );
       });
+      nodes.forEach((node) => {
+        const highlighted = node.userData.project.id === focused.current.id;
+        node.scale.setScalar(highlighted ? 2.1 : 1);
+        (node.material as THREE.MeshBasicMaterial).color.set(
+          highlighted ? 0x213c31 : node.userData.project.district === "agents" ? 0xf4eee4 : 0xff4a12,
+        );
+      });
       renderer.render(scene, camera);
     };
     frame = requestAnimationFrame(render);
@@ -349,6 +397,12 @@ export default function Intelligence({
       observer.disconnect();
       resize.disconnect();
       controls.removeEventListener("change", markDirty);
+      controls.removeEventListener("start", onDragStart);
+      controls.removeEventListener("end", onDragEnd);
+      renderer.domElement.removeEventListener("pointerleave", onLeave);
+      renderer.domElement.removeEventListener("pointerdown", onDown);
+      renderer.domElement.removeEventListener("pointerup", onUp);
+      renderer.domElement.removeEventListener("pointermove", onMove);
       controls.dispose();
       resources.forEach((r) => r.dispose());
       env?.dispose();

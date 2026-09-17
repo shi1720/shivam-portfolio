@@ -34,18 +34,15 @@ for (const [width, height] of [[320, 568], [600, 960], [820, 1180], [640, 360], 
   });
 }
 
-test('short desktop keeps the featured project clear of the name and dock', async ({ page }) => {
+test('short desktop keeps the name and closing copy clear of the dock', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 720 });
   await page.goto('/#studio');
   await page.evaluate(() => document.fonts.ready);
-  const featured = page.locator('.studio-featured-project');
-  await expect(featured).toContainText('OfferLoop');
-  const card = await featured.boundingBox();
+  const footer = await page.locator('.studio-bottom').boundingBox();
   const name = await page.locator('.monument-name').boundingBox();
   const dock = await page.locator('.studio-dock').boundingBox();
-  expect(card!.y).toBeGreaterThanOrEqual(name!.y + name!.height);
-  expect(card!.y + card!.height).toBeLessThan(dock!.y);
-  await expect(featured).toBeInViewport({ ratio: 1 });
-  await featured.click();
-  await expect(page.getByRole('dialog')).toContainText('OfferLoop');
+  expect(footer!.y).toBeGreaterThanOrEqual(name!.y + name!.height);
+  expect(footer!.y + footer!.height).toBeLessThan(dock!.y);
+  await expect(page.locator('.studio-bottom')).toBeInViewport({ ratio: 1 });
+  await expect(page.locator('.studio-project-links')).toHaveCount(0);
 });

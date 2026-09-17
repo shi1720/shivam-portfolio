@@ -14,7 +14,7 @@ test("studio navigation, deep links, back and readable layout", async ({
   await expect(
     page.getByRole("heading", { name: "Proof of curiosity." }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "01 OfferLoop", exact: true }).click();
+  await page.getByRole("button", { name: "01 OfferLoop Featured project", exact: true }).click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(
     page.getByRole("link", { name: "Try the project" }),
@@ -309,13 +309,15 @@ test("OfferLoop opens the studio and leads the curated project index", async ({ 
   await page.goto("/#studio");
   const primary = page.locator(".sculpture-project-label");
   await expect(primary).toContainText("OfferLoop");
-  await expect(page.locator(".studio-featured-project")).toContainText("OfferLoop");
-  await expect(page.locator(".studio-featured-project")).not.toContainText("Benchback");
+  await expect(page.locator(".studio-project-links")).toHaveCount(0);
+  await expect(page.getByText("START HERE / FEATURED PROJECT")).toHaveCount(0);
   await primary.click();
   await expect(page.getByRole("dialog")).toContainText("A job-search CRM");
   await expect(page.getByRole("link", { name: "Try the project" })).toHaveAttribute("href", "https://offerloop.web.app");
   await page.goto("/#work");
   await expect(page.locator(".work-list > button").first()).toContainText("OfferLoop");
+  await expect(page.locator(".work-list > button").first().getByLabel("Featured project")).toBeVisible();
+  await expect(page.locator(".preview-caption")).toContainText("FEATURED PROJECT");
   await expect(page.locator(".work-preview")).toContainText("Give your next chapter a system.");
   await expect(page.locator(".work-list > button")).toHaveCount(24);
   for (const id of ["ap-article-review", "ap-frq-review", "math-question-editor", "speechace-proxy", "sat-pdf-to-csv"]) {

@@ -2,7 +2,7 @@
 
 **[Enter the studio →](https://shivamgupta.web.app)**
 
-A spatial portfolio for my work in applied AI, engineering, and product. The studio is a folded 3D map of 29 public projects, with a searchable work index, source-linked case studies, a career room, and ways to work together through Siloed.
+A spatial portfolio for my work in applied AI, engineering, and product. The studio is a folded 3D map of selected public projects, with a searchable work index, source-linked case studies, a career room, and ways to work together through Siloed.
 
 The AI guide answers from curated public project notes and my resume. The reliability lab is different: a deterministic local simulation that lets you break a tool response, compare recovery policies, and export a runnable Python experiment.
 
