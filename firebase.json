@@ -7,12 +7,18 @@
       {
         "source": "**",
         "headers": [
-          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
           {
             "key": "Referrer-Policy",
             "value": "strict-origin-when-cross-origin"
           },
-          { "key": "X-Frame-Options", "value": "DENY" },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
           {
             "key": "Permissions-Policy",
             "value": "camera=(), microphone=(), geolocation=()"
@@ -20,6 +26,10 @@
           {
             "key": "Content-Security-Policy",
             "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' mailto:"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
           }
         ]
       },
@@ -29,6 +39,15 @@
           {
             "key": "Cache-Control",
             "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      },
+      {
+        "source": "/api/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store"
           }
         ]
       }
@@ -42,8 +61,16 @@
           "pinTag": true
         }
       },
-      { "source": "**", "destination": "/index.html" }
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   },
-  "firestore": [{ "database": "shivam-portfolio", "rules": "firestore.rules" }]
+  "firestore": [
+    {
+      "database": "shivam-portfolio",
+      "rules": "firestore.rules"
+    }
+  ]
 }
