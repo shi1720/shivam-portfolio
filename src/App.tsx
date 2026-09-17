@@ -28,6 +28,7 @@ import ProjectVisual from "./components/ProjectVisual";
 import ProjectDialog from "./components/ProjectDialog";
 import Chat from "./components/Chat";
 import Lab from "./components/Lab";
+import BackgroundBook from "./components/BackgroundBook";
 import { usePortfolioTools } from "./usePortfolioTools";
 const Intelligence = lazy(() => import("./components/Intelligence"));
 type Room = "studio" | "work" | "about" | "lab" | "contact";
@@ -100,7 +101,7 @@ export default function App() {
     };
   }, []);
   useEffect(() => {
-    document.title = `${room === "studio" ? "Shivam Gupta — A mind in motion" : `${rooms.find((r) => r.id === room)?.name} — Shivam Gupta`}`;
+    document.title = `${room === "studio" ? "Shivam Gupta | A mind in motion" : `${rooms.find((r) => r.id === room)?.name} | Shivam Gupta`}`;
   }, [room]);
   async function copyEmail() {
     try {
@@ -173,7 +174,7 @@ export default function App() {
         {room === "studio" && (
           <section
             className="studio-room"
-            aria-label="Shivam Gupta — applied AI engineer and product builder"
+            aria-label="Shivam Gupta, applied AI engineer and product builder"
           >
             <div className="studio-intro">
               <p className="eyebrow">APPLIED AI ENGINEER / FOUNDER, SILOED.</p>
@@ -381,98 +382,110 @@ export default function App() {
         )}
         {room === "about" && (
           <section className="human-room" aria-labelledby="human-title">
-            <div className="human-poster">
-              <p className="eyebrow">02 / THE PERSON, NOT THE PROMPT</p>
-              <h1 id="human-title">
-                Part engineer.
-                <br />
-                Part founder.
-                <br />
-                <em>
-                  Entirely
+            <div className="human-intro">
+              <div className="human-poster">
+                <p className="eyebrow">02 / THE PERSON, NOT THE PROMPT</p>
+                <h1 id="human-title">
+                  Part engineer.
                   <br />
-                  curious.
-                </em>
-              </h1>
-              <div className="human-signature">
-                Shivam Gupta <ArrowDownLeft size={28} />
+                  Part founder.
+                  <br />
+                  <em>
+                    Entirely
+                    <br />
+                    curious.
+                  </em>
+                </h1>
+                <div className="human-signature">
+                  Shivam Gupta <ArrowDownLeft size={28} />
+                </div>
+                <p className="human-location">
+                  DUBAI / DELHI
+                  <br />
+                  COMPUTER SCIENCE & DESIGN, IIIT DELHI
+                </p>
               </div>
-              <p className="human-location">
-                DUBAI / DELHI
-                <br />
-                COMPUTER SCIENCE & DESIGN, IIIT DELHI
-              </p>
+              <div className="human-story">
+                <p className="human-lead">Design-trained. Production-tested.</p>
+                <p>
+                  Computer Science & Design at IIIT Delhi taught me to think about
+                  the person and the system together. I’ve taken that into
+                  learning tools for 5,000+ learners, enterprise AI at Khoros and
+                  IgniteTech, and my own consultancy.
+                </p>
+                <p>
+                  I'm an applied AI engineer and product builder. I founded{" "}
+                  <strong>Siloed</strong> to help teams turn difficult workflows
+                  into useful systems. My work spans enterprise software,
+                  education, agents, and the occasional experiment that simply
+                  needed to exist.
+                </p>
+                <div className="human-numbers">
+                  <div>
+                    <strong>5,000+</strong>
+                    <span>learners reached</span>
+                  </div>
+                  <div>
+                    <strong>10+</strong>
+                    <span>consultancy clients</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="human-story">
-              <p className="human-lead">Design-trained. Production-tested.</p>
-              <p>
-                Computer Science & Design at IIIT Delhi taught me to think about
-                the person and the system together. I’ve taken that into
-                learning tools for 5,000+ learners, enterprise AI at Khoros and
-                IgniteTech, and my own consultancy.
-              </p>
-              <p>
-                I'm an applied AI engineer and product builder. I founded{" "}
-                <strong>Siloed</strong> to help teams turn difficult workflows
-                into useful systems. My work spans enterprise software,
-                education, agents, and the occasional experiment that simply
-                needed to exist.
-              </p>
-              <div className="human-numbers">
-                <div>
-                  <strong>5,000+</strong>
-                  <span>learners reached</span>
-                </div>
-                <div>
-                  <strong>10+</strong>
-                  <span>consultancy clients</span>
-                </div>
+            <BackgroundBook />
+            <section className="human-career" aria-labelledby="career-title">
+              <div className="career-intro">
+                <p className="eyebrow">THE WORK, WITH PEOPLE</p>
+                <h2 id="career-title" tabIndex={-1}>A few places<br />I’ve put it<br /><em>into practice.</em></h2>
+                <p>Building products, leading work, and learning from the people around me.</p>
               </div>
-              <div className="experience-heading">
-                <span>IN TEAMS, AT SCALE</span>
-                <span>OPEN A CHAPTER ↓</span>
-              </div>
-              <div className="career-list">
-                {career.map((c) => (
-                  <details key={c.company} className="career-row">
-                    <summary>
-                      <div>
-                        <h3>{c.company}</h3>
-                        <p>{c.role}</p>
+              <div className="human-story career-story">
+                <div className="experience-heading">
+                  <span>IN TEAMS, AT SCALE</span>
+                  <span>OPEN A CHAPTER ↓</span>
+                </div>
+                <div className="career-list">
+                  {career.map((c) => (
+                    <details key={c.company} className="career-row">
+                      <summary>
+                        <div>
+                          <h3>{c.company}</h3>
+                          <p>{c.role}</p>
+                        </div>
+                        <span className="career-period">{c.period}</span>
+                        <Plus size={16} />
+                      </summary>
+                      <div className="career-details">
+                        <p>{c.summary}</p>
+                        <p>{c.detail}</p>
+                        <strong>{c.metric}</strong>
                       </div>
-                      <span className="career-period">{c.period}</span>
-                      <Plus size={16} />
-                    </summary>
-                    <div className="career-details">
-                      <p>{c.summary}</p>
-                      <p>{c.detail}</p>
-                      <strong>{c.metric}</strong>
-                    </div>
-                  </details>
-                ))}
+                    </details>
+                  ))}
+                </div>
+                <p className="learning-impact">
+                  I helped develop learning products and end-to-end AI systems for
+                  a pioneering, successful network of AI-first schools.
+                </p>
+                <p className="earlier-work">
+                  Before this, I worked on founding Giggles, a product company,
+                  alongside research work and engineering and product roles at
+                  various startups.
+                </p>
+                <p className="ai-training-work">
+                  I’ve also contributed to AI training projects through Scale AI
+                  and micro1, spanning software engineering and AI engineering.
+                </p>
+                <a
+                  className="text-link"
+                  href={linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  The longer story on LinkedIn <ArrowUpRight size={17} />
+                </a>
               </div>
-              <p className="learning-impact">
-                I helped develop learning products and end-to-end AI systems for
-                a pioneering, successful network of AI-first schools.
-              </p>
-              <p className="earlier-work">
-                Before this, I worked on founding Giggles, a product company,
-                alongside research work and engineering and product roles at
-                various startups.
-              </p>
-              <p className="ai-training-work">
-                I’ve also contributed to AI training projects through Scale AI
-                and micro1, spanning software engineering and AI engineering.
-              </p>
-              <a
-                className="text-link"
-                href={linkedin}
-                target="_blank"
-                rel="noreferrer"
-              >
-                The longer story on LinkedIn <ArrowUpRight size={17} />
-              </a>
-            </div>
+            </section>
           </section>
         )}
         {room === "lab" && <Lab />}
@@ -523,7 +536,7 @@ export default function App() {
               </a>
               <a
                 className="contact-choice"
-                href={`mailto:${email}?subject=${encodeURIComponent("Let’s build — Siloed")}`}
+                href={`mailto:${email}?subject=${encodeURIComponent("Let’s build with Siloed")}`}
               >
                 <span>02 / BUILD THE THING</span>
                 <h2>Bring it to Siloed.</h2>

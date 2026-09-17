@@ -1,4 +1,4 @@
-# Shivam Gupta — A mind in motion
+# Shivam Gupta | A mind in motion
 
 **[Enter the studio →](https://shivam-web-app.web.app)**
 

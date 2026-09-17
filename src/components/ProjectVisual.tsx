@@ -44,11 +44,11 @@ export default function ProjectVisual({
           <span>
             <Check size={12} /> IDENTIFIED
           </span>
-          <b>—</b>
+          <b aria-hidden="true">→</b>
           <span>
             <Check size={12} /> INSPECTED
           </span>
-          <b>—</b>
+          <b aria-hidden="true">→</b>
           <span>RETURN READY</span>
         </div>
         <div className="credit-card">

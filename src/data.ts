@@ -23,7 +23,7 @@ export const career = [
   {
     company: "Siloed",
     role: "Founder & CEO",
-    period: "2025 — now",
+    period: "2025 to present",
     summary:
       "An AI product consultancy. From a difficult business problem to a working product, with teams across finance, healthcare, SaaS, and beyond.",
     metric: "10+ clients",
@@ -33,7 +33,7 @@ export const career = [
   {
     company: "Khoros",
     role: "Senior AI Product Engineer · Contract",
-    period: "2025 — now",
+    period: "2025 to present",
     summary:
       "Led AI and analytics engineering for IRIS AI, transforming an enterprise social care and marketing suite that had taken years to build into a new product in three months, with a team of five engineers and a designer.",
     metric: "10 AI features",
@@ -43,9 +43,9 @@ export const career = [
   {
     company: "IgniteTech",
     role: "Senior AI Product Engineer · Contract",
-    period: "2025 — now",
+    period: "2025 to present",
     summary:
-      "Product and engineering across multiple products. Built MetricsHub to turn cross-product usage into executive briefings.",
+      "Built various products across the product portfolio, combining full-stack development, AI engineering, and product management.",
     metric: "12+ features",
     detail:
       "Structured LLM outputs, usage analytics, prompt versioning, and graceful fallbacks. Full-stack development, AI engineering, and product management across technical and non-technical teams. Wore many hats, including forward-deployed engineer and technical product manager: meeting customers to understand requirements and helping them deploy the product.",
@@ -53,7 +53,7 @@ export const career = [
   {
     company: "2 Hour Learning / Trilogy",
     role: "AI Product Engineer → Senior",
-    period: "2024 — 2025",
+    period: "2024 to 2025",
     summary:
       "Built AI learning products, adaptive content systems, and generation pipelines. Promoted to Senior in December 2024.",
     metric: "5,000+ learners",

@@ -11,7 +11,12 @@
       "built": "A voice agent with scoped tools, server-owned workflow state, integer-cent transactions, revision checks, and idempotent credit reconciliation. Human approval stays explicit.",
       "evidence": "A fictional $240 deposit runs from inspection through dispatch and two partial credits. Unit, integration, and browser tests cover the lifecycle.",
       "boundary": "Working hackathon product. No paid pilot, ERP integration, carrier purchase, or automatic supplier submission is claimed.",
-      "tags": ["AssemblyAI", "Next.js", "Firebase", "State machines"],
+      "tags": [
+        "AssemblyAI",
+        "Next.js",
+        "Firebase",
+        "State machines"
+      ],
       "demo": "https://benchback-ai.web.app",
       "architecture": "https://github.com/shi1720/AssemblyAI/blob/main/docs/architecture.md",
       "visual": "voice"
@@ -29,7 +34,11 @@
       "built": "A MuJoCo execution service, dual SO101 arms, learned joint-target proposals, numerical correction, OpenVINO safety signals, and event exports.",
       "evidence": "Backend simulation evidence is distinguished from the illustrative browser animation.",
       "boundary": "Simulation MVP, not a physical robot deployment, end-to-end VLA policy, or safety certification.",
-      "tags": ["MuJoCo", "OpenVINO", "FastAPI"],
+      "tags": [
+        "MuJoCo",
+        "OpenVINO",
+        "FastAPI"
+      ],
       "demo": "https://granted-robotics.web.app",
       "visual": "graph"
     }
@@ -41,12 +50,16 @@
     "content": {
       "kicker": "DOCUMENT AI / EVIDENCE GRAPHS",
       "title": "Every decision has a paper trail.",
-      "summary": "RecallRoom follows an ingredient lot through finished products and shipments—with source quotations behind every relationship.",
+      "summary": "RecallRoom follows an ingredient lot through finished products and shipments, with source quotations behind every relationship.",
       "problem": "A recalled ingredient can travel through multiple batches. Missing, uncertain, and corrected evidence must not be collapsed into false certainty.",
       "built": "Nemotron extraction with schema and evidence validation, human-approved records, asynchronous processing, and deterministic graph traversal without double counting.",
       "evidence": "A fictional food-recall scenario, documented provider run, fixture variants, and graph checks against an independent fixed-point oracle.",
       "boundary": "Evaluated MVP, not a certified food-safety product. No independent extraction accuracy, ERP connector, or automated customer messaging is claimed.",
-      "tags": ["NVIDIA Nemotron", "Graph reasoning", "Human review"],
+      "tags": [
+        "NVIDIA Nemotron",
+        "Graph reasoning",
+        "Human review"
+      ],
       "demo": "https://recallroom.web.app",
       "architecture": "https://github.com/shi1720/Nebius-x-NVIDIA/blob/main/docs/architecture.md",
       "visual": "graph"
@@ -64,7 +77,12 @@
       "built": "A local-first web and native experience with durable project storage, restart-safe timers, checkpoint history, portable backups, and purchase/restore integration.",
       "evidence": "Web and native tests, plus documented emulator and test-store evidence. A public web app and Android preview are available.",
       "boundary": "Projects stay on the device; accounts do not sync them. App-store launch, production billing, and remaining physical-device gates are separate.",
-      "tags": ["React Native", "Local-first", "RevenueCat", "Product design"],
+      "tags": [
+        "React Native",
+        "Local-first",
+        "RevenueCat",
+        "Product design"
+      ],
       "demo": "https://unpause-studio.web.app",
       "visual": "checkpoint"
     }
@@ -99,7 +117,11 @@
       "built": "A Streamable HTTP MCP server, scoped tokens, separate helper sessions, dependency gates, and versioned acknowledgements.",
       "evidence": "A reproducible multi-session flow and inspectable MCP trace with fictional households.",
       "boundary": "Alexa+ browser simulation is labeled. Native Alexa+ deployment is a separate step.",
-      "tags": ["MCP", "Firebase", "State machines"],
+      "tags": [
+        "MCP",
+        "Firebase",
+        "State machines"
+      ],
       "demo": "https://kindhandoff.web.app",
       "visual": "graph"
     }
@@ -152,7 +174,11 @@
       "built": "CALL-E integration, persistent request identity, idempotency keys, account budgets, and transcript-grounded extraction.",
       "evidence": "Offline workflow and Firebase emulator checks; public rehearsal uses labeled synthetic transcripts.",
       "boundary": "A real owned-number CALL-E test has not been conducted. No verified supplier pilot or savings claim.",
-      "tags": ["CALL-E", "Evidence extraction", "B2B"],
+      "tags": [
+        "CALL-E",
+        "Evidence extraction",
+        "B2B"
+      ],
       "demo": "https://offhire.web.app",
       "visual": "voice"
     }
@@ -175,7 +201,11 @@
       "built": "Thirty-six scenes, sixteen original characters, transparent TypeScript scoring, a Python reference implementation, and browser-generated sharing cards.",
       "evidence": "Scoring parity and browser tests cover the journey. Answers stay local to the browser.",
       "boundary": "Entertainment, not psychometrics or a personality diagnosis.",
-      "tags": ["TypeScript", "Creative coding", "Private by design"],
+      "tags": [
+        "TypeScript",
+        "Creative coding",
+        "Private by design"
+      ],
       "demo": "https://plottwist.sg127977958.chatgpt.site",
       "visual": "type"
     }
@@ -192,7 +222,11 @@
       "built": "An interactive geographic globe, accessible list, retry-safe submissions, frozen reveals, deletion receipts, and metric suppression.",
       "evidence": "Illustrative fixtures remain separate from real submissions. Database rules enforce reveal boundaries.",
       "boundary": "Season 001 has ended. Preview data is fictional and not a representative research dataset.",
-      "tags": ["Geospatial UI", "Cloudflare D1", "Privacy"],
+      "tags": [
+        "Geospatial UI",
+        "Cloudflare D1",
+        "Privacy"
+      ],
       "demo": "https://mixed-signals-atlas.sg127977958.chatgpt.site",
       "visual": "graph"
     }
@@ -209,7 +243,12 @@
       "built": "A Python control plane, manifest validation, fresh workspaces, overlay allowlists, distinct failure classes, and normalized report hashes.",
       "evidence": "Five language packs and fifteen committed control reports. The browser replays those reports.",
       "boundary": "An evidence viewer, not a browser runtime for arbitrary code. The local runner assumes trusted task authors.",
-      "tags": ["Python", "Polyglot", "CI", "Evaluation"],
+      "tags": [
+        "Python",
+        "Polyglot",
+        "CI",
+        "Evaluation"
+      ],
       "demo": "https://shi1720.github.io/repo-gauntlet/",
       "visual": "terminal"
     }
@@ -226,7 +265,11 @@
       "built": "Declarative repository tasks, a reset/step interface, composable graders, protected test files, sandbox adapters, and golden/no-op validation.",
       "evidence": "Executable examples and a Python test suite verify task lifecycle and grading. The site explains how to build and validate an environment.",
       "boundary": "A framework and example environments; not a claim that a frontier model was trained or improved. Local execution is not hostile-code isolation.",
-      "tags": ["Python", "Agent evaluation", "RL environments"],
+      "tags": [
+        "Python",
+        "Agent evaluation",
+        "RL environments"
+      ],
       "demo": "https://shi1720.github.io/repogym/",
       "architecture": "https://github.com/shi1720/repogym/blob/main/ARCHITECTURE.md",
       "visual": "terminal"
@@ -244,7 +287,11 @@
       "built": "A Python reduction engine with dependency closure, pinned events, failure signatures, oracle budgets, a deletion audit, and a fresh final replay.",
       "evidence": "The bundled cache fixture reduces 36 events to 6. Native/browser engine parity is tested.",
       "boundary": "This fixture is not a universal reduction rate. A minimal trace is not proof of root cause or a global minimum.",
-      "tags": ["Python", "Delta debugging", "Agent traces"],
+      "tags": [
+        "Python",
+        "Delta debugging",
+        "Agent traces"
+      ],
       "demo": "https://casecrop-shi1720.sg127977958.chatgpt.site",
       "visual": "fault"
     }
@@ -267,7 +314,12 @@
       "built": "A zero-dependency Python library for seeded tool failures, explicit side effects, call budgets, virtual clocks, and strict offline replay. The browser lab runs the same Python in Pyodide.",
       "evidence": "Native/browser parity and property tests cover fault and replay behavior. The public lab lets you compare recovery policies.",
       "boundary": "Scripted recovery experiments, not an LLM performance benchmark. Source-install beta; no PyPI release or production adoption claim.",
-      "tags": ["Python", "Fault injection", "Pyodide", "Replay"],
+      "tags": [
+        "Python",
+        "Fault injection",
+        "Pyodide",
+        "Replay"
+      ],
       "demo": "https://toolstorm-shi1720.sg127977958.chatgpt.site",
       "architecture": "https://github.com/shi1720/toolstorm/blob/main/docs/architecture.md",
       "visual": "fault"
@@ -317,13 +369,51 @@
       "source": "Shivam Gupta supplied resume and direct career clarifications, September 2026. Professional outcomes are self-reported, not independently validated.",
       "roles": [
         "Siloed: Founder and CEO since March 2025, Dubai. AI consultancy serving 10+ global clients across finance, healthcare, SaaS and other sectors. Custom AI apps, agents, product strategy, evaluation, and adoption workshops. Reports 25+ hours saved per team per week.",
-        "Khoros: Senior AI Product Engineer, contract, September 2025–present. Led AI and analytics engineering on IRIS AI, transforming an enterprise social care and marketing suite built over years into a new product in three months, with five engineers and one designer. Earlier, worked as lead engineer to deliver IRIS for X in one month. Delivered 10 production AI features.",
-        "IgniteTech: Senior AI Product Engineer, contract, September 2025–present. Product and engineering across multiple products; 12+ features and reported 25% activation improvement. Built MetricsHub, an AI usage analytics and automated executive-briefing platform. Structured LLM outputs, prompt versioning, and graceful fallbacks. Full-stack development, AI engineering, and product management with technical and non-technical teams. Wore many hats including forward-deployed engineer and technical product manager, meeting customers to understand requirements and helping them deploy products.",
-        "Trilogy and portfolio assignment 2 Hour Learning: April 2024–September 2025. Promoted to Senior December 2024. Helped ship AlphaLearn/AlphaVocab to 5,000+ learners; co-built PowerPath and co-developed Incept. Resume reports 18% higher assessment scores, 32% engagement improvement, $1M+ annual Incept savings. Helped develop learning products and end-to-end AI systems for a pioneering, successful AI-first school network. These are overlapping portfolio roles, not additive years.",
-        "Earlier: Spilll product management intern 2024; IIIT Delhi undergraduate researcher on LLM journalism extension 2023; Sensight Labs chatbot intern 2023; Giggles founder 2022–2023 (six-person team and resume-reported 2,000+ downloads); Bharat Electronics Limited summer researcher 2022.",
+        "Khoros: Senior AI Product Engineer, contract, September 2025 to present. Led AI and analytics engineering on IRIS AI, transforming an enterprise social care and marketing suite built over years into a new product in three months, with five engineers and one designer. Earlier, worked as lead engineer to deliver IRIS for X in one month. Delivered 10 production AI features.",
+        "IgniteTech: Senior AI Product Engineer, contract, September 2025 to present. Product and engineering across multiple products; 12+ features and reported 25% activation improvement. Built various products across the product portfolio. Structured LLM outputs, prompt versioning, and graceful fallbacks. Full-stack development, AI engineering, and product management with technical and non-technical teams. Wore many hats including forward-deployed engineer and technical product manager, meeting customers to understand requirements and helping them deploy products.",
+        "Trilogy and portfolio assignment 2 Hour Learning: April 2024 to September 2025. Promoted to Senior December 2024. Helped ship AlphaLearn/AlphaVocab to 5,000+ learners; co-built PowerPath and co-developed Incept. Resume reports 18% higher assessment scores, 32% engagement improvement, $1M+ annual Incept savings. Helped develop learning products and end-to-end AI systems for a pioneering, successful AI-first school network. These are overlapping portfolio roles, not additive years.",
+        "Earlier: Spilll product management intern 2024; IIIT Delhi undergraduate researcher on LLM journalism extension 2023; Sensight Labs chatbot intern 2023; Giggles founder 2022 to 2023 (six-person team and resume-reported 2,000+ downloads); Bharat Electronics Limited summer researcher 2022.",
         "AI training: Contributed to AI training projects through Scale AI and micro1, spanning software engineering and AI engineering. Dates and specific project details were not supplied; do not invent them.",
         "Earlier career overview: Worked on founding Giggles, a product company, alongside research work and engineering and product roles at various startups.",
         "Education: B.Tech Computer Science & Design, IIIT Delhi. Graduation date not supplied."
+      ]
+    }
+  },
+  {
+    "id": "background",
+    "title": "Background and approach to building products",
+    "url": "https://shivam-web-app.web.app/#about",
+    "content": {
+      "source": "First-person background and leadership strengths supplied by Shivam. These are his own account, not independently measured claims.",
+      "chapters": [
+        {
+          "heading": "Two ways of seeing. One way of building.",
+          "paragraphs": [
+            "I studied Computer Science & Design at IIIT Delhi. It taught me to move between how a system works and how someone experiences it.",
+            "I bring both questions to a product: can we build it well, and will it make sense to the person using it? That is where my work starts."
+          ]
+        },
+        {
+          "heading": "The work changes. Direction still matters.",
+          "paragraphs": [
+            "I think of the next phase of work as an allocation economy: deciding where people, models and attention can do the most useful work.",
+            "One of my strengths is turning a product problem into work people can own. I delegate, manage people, and connect technical and non-technical teams. Clear briefs, shared context and thoughtful review help us ship together."
+          ]
+        },
+        {
+          "heading": "Faster building. A more thoughtful brief.",
+          "paragraphs": [
+            "As AI makes implementation faster, I see product management becoming more important: choosing what gets built, why it should exist, and who it helps. Fresh ideas start with noticing a real problem.",
+            "My background gives me three ways to work on that question. Human-centered design helps me understand people. Computer science helps me build the system. Product leadership helps a team choose and deliver the right work."
+          ]
+        },
+        {
+          "heading": "Close to the customer. Through to delivery.",
+          "paragraphs": [
+            "I value forward-deployed engineering because it keeps the customer conversation close to the build. I’ve worn that hat alongside technical product management: meeting customers, understanding requirements, and helping them deploy the product.",
+            "I enjoy the work between an idea and something people can use. For me, engineering, design and leading people belong in the same process: carrying fresh thinking into a product that works for someone."
+          ]
+        }
       ]
     }
   },

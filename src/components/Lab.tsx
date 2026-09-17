@@ -208,11 +208,11 @@ export default function Lab() {
           >
             <div>
               <span>TOOL CALLS</span>
-              <strong>{complete ? result.calls : "—"}</strong>
+              <strong>{complete ? result.calls : "Pending"}</strong>
             </div>
             <div>
               <span>SHIPMENTS</span>
-              <strong>{complete ? result.shipments : "—"}</strong>
+              <strong>{complete ? result.shipments : "Pending"}</strong>
             </div>
             <div>
               <span>OUTCOME</span>

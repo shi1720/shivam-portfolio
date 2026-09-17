@@ -90,7 +90,7 @@ export const stories: Record<string, Story> = {
     kicker: "DOCUMENT AI / EVIDENCE GRAPHS",
     title: "Every decision has a paper trail.",
     summary:
-      "RecallRoom follows an ingredient lot through finished products and shipments—with source quotations behind every relationship.",
+      "RecallRoom follows an ingredient lot through finished products and shipments, with source quotations behind every relationship.",
     problem:
       "A recalled ingredient can travel through multiple batches. Missing, uncertain, and corrected evidence must not be collapsed into false certainty.",
     built:

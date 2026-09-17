@@ -266,7 +266,8 @@ test("career reflects the supplied corrections and broader roles", async ({
       has: page.getByRole("heading", { name: "IgniteTech", exact: true }),
     });
   await ignite.locator("summary").click();
-  await expect(ignite).toContainText("across multiple products");
+  await expect(ignite).toContainText("across the product portfolio");
+  await expect(ignite).not.toContainText("Metrics" + "Hub");
   await expect(ignite).toContainText(
     "forward-deployed engineer and technical product manager",
   );
