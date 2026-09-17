@@ -13,7 +13,7 @@ Initial release verified on 17 September 2026.
 ## Manual and live checks
 
 - Reviewed desktop and mobile screenshots, including the 3D studio, project preview, career, lab and orange contact room. Independent design and security reviews informed subsequent fixes.
-- A real deployed Vertex AI request returned a grounded Khoros career answer with a source link. This is a live integration smoke check, not a broad model-quality evaluation.
+- A real deployed Vertex AI request returned a grounded Khoros career answer with a source link. A second live check through the Firebase-hosted browser UI returned RepoGym and ToolStorm explanations, two project-source links, and the correct hiring email. This is a live integration smoke check, not a broad model-quality evaluation.
 - Native WebMCP registration verified in the Codex in-app browser: `search_public_projects` returned Toolstorm; invalid query type intentionally failed. `open_project_case_study` with exact ID `toolstorm` returned success after the same visible case dialog opened; unknown identifiers failed without replacing that dialog. Both schemas and read-only annotations were inspected.
 - Firestore TTL policies on `usage.expiresAt` and `sessions.expiresAt` reported ACTIVE. Client rules deny access.
 
