@@ -35,20 +35,20 @@ export const career = [
     role: "Senior AI Product Engineer · Contract",
     period: "2025 — now",
     summary:
-      "Led AI and analytics engineering for IRIS AI, modernizing enterprise social software with a team of five engineers and a designer.",
+      "Led AI and analytics engineering for IRIS AI, transforming an enterprise social care and marketing suite that had taken years to build into a new product in three months, with a team of five engineers and a designer.",
     metric: "10 AI features",
     detail:
-      "Earlier, led three engineers to deliver IRIS for X in one month. Work spans generation, sentiment analysis, routing, and enterprise discovery.",
+      "Earlier, worked as lead engineer to deliver IRIS for X in one month. Work spans generation, sentiment analysis, routing, and enterprise discovery.",
   },
   {
     company: "IgniteTech",
     role: "Senior AI Product Engineer · Contract",
     period: "2025 — now",
     summary:
-      "Product and engineering across Personas.ai and Eloquens.ai. Built MetricsHub to turn cross-product usage into executive briefings.",
+      "Product and engineering across multiple products. Built MetricsHub to turn cross-product usage into executive briefings.",
     metric: "12+ features",
     detail:
-      "Structured LLM outputs, usage analytics, prompt versioning, and graceful fallbacks. Working with technical and non-technical teams.",
+      "Structured LLM outputs, usage analytics, prompt versioning, and graceful fallbacks. Full-stack development, AI engineering, and product management across technical and non-technical teams. Wore many hats, including forward-deployed engineer and technical product manager: meeting customers to understand requirements and helping them deploy the product.",
   },
   {
     company: "2 Hour Learning / Trilogy",

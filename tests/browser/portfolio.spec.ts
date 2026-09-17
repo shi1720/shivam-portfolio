@@ -199,7 +199,7 @@ test("contact points to the requested public email and exact profile", async ({
   const bg = await page
     .locator(".studio-shell")
     .evaluate((el) => getComputedStyle(el).backgroundColor);
-  expect(bg).toBe("rgb(250, 77, 32)");
+  expect(bg).toBe("rgb(231, 221, 210)");
 });
 
 test("malformed project URLs recover to the work index", async ({ page }) => {
@@ -211,4 +211,72 @@ test("malformed project URLs recover to the work index", async ({ page }) => {
   ).toBeVisible();
   await expect(page.getByRole("dialog")).not.toBeVisible();
   expect(errors).toEqual([]);
+});
+
+test("sculpture labels stay separate from explanatory copy", async ({
+  page,
+}) => {
+  await page.goto("/#studio");
+  const label = page.locator(".sculpture-project-label");
+  await expect(label).toBeVisible();
+  for (const category of [
+    "01 Agents",
+    "02 Applied AI",
+    "03 Experiences",
+    "04 Learning",
+  ]) {
+    await page.getByRole("button", { name: category, exact: true }).click();
+    await label.hover();
+    const card = await label.boundingBox();
+    const caption = await page.locator(".artifact-label").boundingBox();
+    expect(card).not.toBeNull();
+    expect(caption).not.toBeNull();
+    const overlaps =
+      card!.x < caption!.x + caption!.width &&
+      card!.x + card!.width > caption!.x &&
+      card!.y < caption!.y + caption!.height &&
+      card!.y + card!.height > caption!.y;
+    expect(overlaps, category).toBe(false);
+    const bg = await label.evaluate(
+      (el) => getComputedStyle(el).backgroundColor,
+    );
+    expect(bg).toBe("rgba(241, 240, 234, 0.98)");
+  }
+});
+
+test("career reflects the supplied corrections and broader roles", async ({
+  page,
+}) => {
+  await page.goto("/#about");
+  const khoros = page
+    .locator(".career-row")
+    .filter({
+      has: page.getByRole("heading", { name: "Khoros", exact: true }),
+    });
+  await khoros.locator("summary").click();
+  await expect(khoros).toContainText("social care and marketing suite");
+  await expect(khoros).toContainText("new product in three months");
+  await expect(khoros).toContainText(
+    "lead engineer to deliver IRIS for X in one month",
+  );
+  await expect(khoros).not.toContainText("three engineers");
+  const ignite = page
+    .locator(".career-row")
+    .filter({
+      has: page.getByRole("heading", { name: "IgniteTech", exact: true }),
+    });
+  await ignite.locator("summary").click();
+  await expect(ignite).toContainText("across multiple products");
+  await expect(ignite).toContainText(
+    "forward-deployed engineer and technical product manager",
+  );
+  await expect(ignite).not.toContainText("Personas.ai");
+  await expect(ignite).not.toContainText("Eloquens.ai");
+  await expect(page.locator(".learning-impact")).toContainText(
+    "end-to-end AI systems",
+  );
+  await expect(page.locator(".earlier-work")).toContainText("various startups");
+  await expect(page.locator(".ai-training-work")).toContainText(
+    "Scale AI and micro1",
+  );
 });

@@ -200,16 +200,6 @@ export default function App() {
                 />
               </Suspense>
             </div>
-            <div className="artifact-label">
-              <span className="crosshair" aria-hidden="true">
-                +
-              </span>
-              <div>
-                NOTHING HERE IS ISOLATED.
-                <br />
-                <b>FOUR DISCIPLINES. ONE BUILDER.</b>
-              </div>
-            </div>
             <div className="studio-side">
               <span className="side-note">A MIND IN MOTION / VOL. 01</span>
               <div className="discipline-select">
@@ -239,6 +229,16 @@ export default function App() {
                 >
                   {paused ? <Play size={14} /> : <Pause size={14} />}
                 </button>
+              </div>
+              <div className="artifact-label">
+                <span className="crosshair" aria-hidden="true">
+                  +
+                </span>
+                <div>
+                  NOTHING HERE IS ISOLATED.
+                  <br />
+                  <b>FOUR DISCIPLINES. ONE BUILDER.</b>
+                </div>
               </div>
             </div>
             <h1 className="monument-name" aria-label="Shivam Gupta">
@@ -451,13 +451,18 @@ export default function App() {
                   </details>
                 ))}
               </div>
-              <p className="experience-provenance">
-                Professional outcomes from my resume. Employer and client
-                implementations remain private.
+              <p className="learning-impact">
+                I helped develop learning products and end-to-end AI systems for
+                a pioneering, successful network of AI-first schools.
               </p>
               <p className="earlier-work">
-                Before this: founding Giggles, research at IIIT Delhi, and
-                engineering at Sensight Labs and Bharat Electronics Limited.
+                Before this, I worked on founding Giggles, a product company,
+                alongside research work and engineering and product roles at
+                various startups.
+              </p>
+              <p className="ai-training-work">
+                I’ve also contributed to AI training projects through Scale AI
+                and micro1, spanning software engineering and AI engineering.
               </p>
               <a
                 className="text-link"

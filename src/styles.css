@@ -1369,12 +1369,12 @@ select:focus-visible {
   border: 1px solid #b9c7a7;
   color: #6b7f55;
 }
-/* Contact is deliberately its own orange room. */
+/* A calm, warm contact room with high-contrast ink. */
 .room-contact {
-  background: #fa4d20;
-  --paper: #fa4d20;
-  --line: #b53716;
-  --orange: #23251f;
+  background: #e7ddd2;
+  --paper: #e7ddd2;
+  --line: #b5aca1;
+  --orange: #8e4934;
   color: #23251f;
 }
 .room-contact .studio-brand b,
@@ -1386,7 +1386,7 @@ select:focus-visible {
   background: #23251f;
 }
 .room-contact .studio-header {
-  border-bottom-color: #ce3f1a;
+  border-bottom-color: #b5aca1;
 }
 .contact-room {
   display: grid;
@@ -1439,7 +1439,7 @@ select:focus-visible {
 .contact-choice {
   display: block;
   position: relative;
-  border-bottom: 1px solid #bb3714;
+  border-bottom: 1px solid #b5aca1;
   padding: 35px 0;
 }
 .contact-choice > span {
@@ -1508,18 +1508,18 @@ select:focus-visible {
   color: #8b2a10;
 }
 .room-contact .studio-dock {
-  background: #ee481bef;
-  border-color: #b93515;
+  background: #f6f1e9f5;
+  border-color: #b5aca1;
 }
 .room-contact .studio-dock > a > span {
   color: #a43213;
 }
 .room-contact .studio-dock > a[aria-current="page"] {
   background: #27271f;
-  color: #f46a44;
+  color: #f7f1e8;
 }
 .room-contact .studio-dock > a:hover:not([aria-current]) {
-  background: #e14015;
+  background: #ded5c8;
 }
 .room-contact .studio-dock > .dock-ai {
   color: #f2ede3;
@@ -3658,5 +3658,58 @@ select:focus-visible {
   }
   .contact-poster > .contact-invitation {
     margin-top: 20px;
+  }
+}
+
+/* Keep explanatory copy out of the sculpture's interaction layer. */
+.studio-side .artifact-label {
+  position: relative;
+  top: auto;
+  left: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 24px;
+  padding: 12px 10px;
+  background: #edece5f5;
+  backdrop-filter: blur(18px);
+  border: 1px solid #c6cbbb;
+  color: #46513d;
+}
+.studio-side .artifact-label > div {
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+.studio-side .artifact-label .crosshair {
+  font-size: 22px;
+  line-height: 1.1;
+}
+.sculpture-project-label {
+  left: 50%;
+  top: 22%;
+  transform: translateX(-50%);
+  background: #f1f0eafa;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  isolation: isolate;
+  border-color: #949e89;
+  box-shadow: 0 8px 25px #202a1512;
+}
+.sculpture-project-label:before {
+  display: none;
+}
+.learning-impact,
+.ai-training-work {
+  line-height: 1.8;
+}
+@media (max-width: 540px) {
+  .studio-side .artifact-label {
+    margin-top: 18px;
+    max-width: none;
+    align-items: center;
+  }
+  .studio-side .artifact-label > div {
+    font-size: 12px;
   }
 }

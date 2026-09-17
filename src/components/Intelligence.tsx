@@ -15,7 +15,6 @@ export default function Intelligence({
   paused: boolean;
 }) {
   const host = useRef<HTMLDivElement>(null);
-  const label = useRef<HTMLButtonElement>(null);
   const [focusProject, setFocusProject] = useState(
     projects.find((p) => p.id === "AssemblyAI")!,
   );
@@ -338,18 +337,6 @@ export default function Intelligence({
           settle ? 1 : 0.08,
         );
       });
-      const focusNode = nodes.find(
-        (n) => n.userData.project.id === focused.current.id,
-      );
-      if (focusNode && label.current) {
-        const p = new THREE.Vector3();
-        focusNode.getWorldPosition(p);
-        p.project(camera);
-        const x = (p.x * 0.5 + 0.5) * el.clientWidth,
-          y = (-p.y * 0.5 + 0.5) * el.clientHeight;
-        label.current.style.left = `${Math.max(35, Math.min(el.clientWidth - 170, x + 30))}px`;
-        label.current.style.top = `${Math.max(50, Math.min(el.clientHeight - 65, y - 20))}px`;
-      }
       renderer.render(scene, camera);
     };
     frame = requestAnimationFrame(render);
@@ -375,7 +362,6 @@ export default function Intelligence({
       {!failed && (
         <button
           className="sculpture-project-label"
-          ref={label}
           onClick={() => onSelect(focusProject)}
         >
           <span>{focusProject.name}</span>

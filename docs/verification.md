@@ -18,3 +18,9 @@ Initial release verified on 17 September 2026.
 - Firestore TTL policies on `usage.expiresAt` and `sessions.expiresAt` reported ACTIVE. Client rules deny access.
 
 Browser automated chat tests use a mocked provider to make edge cases repeatable. End-to-end provider behavior, every third-party project demo, and every possible device are not covered by the browser suite. External demos can change independently of this site. Resume outcomes are self-reported professional contributions, clearly separated from public project evidence.
+
+## Readability and career update
+
+The contact room now uses a muted warm background with dark ink. The studio caption sits in its own protected panel; hovered project titles occupy a stable frosted position. Updated Khoros/IgniteTech descriptions, learning-network work, earlier product/startup experience, and AI training through Scale AI and micro1 follow Shivam’s direct clarifications. The same corrections are in the AI guide’s knowledge.
+
+The updated suite has 20 backend/simulator checks and 22 desktop/mobile browser checks, including label separation across all four disciplines and the revised career content. All five rooms retain their contrast and overflow checks.
