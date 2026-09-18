@@ -457,6 +457,17 @@
     }
   },
   {
+    "id": "siloed-contact",
+    "title": "Siloed FZ LLC: services and project inquiries",
+    "url": "https://siloed.web.app",
+    "content": {
+      "company": "Siloed FZ LLC, based in Dubai, UAE, serving clients globally. Shivam Gupta is Founder & CEO / Chief Builder.",
+      "services": "AI systems and agents, full-stack software, product management, business strategy, startup and enterprise consulting, AI strategy and practical workshops.",
+      "contact": "siloed.email@gmail.com or https://siloed.web.app/#contact. The company website has text and voice AI and a reviewed project inquiry form.",
+      "pricing": "Project-based, scoped to outcomes, deliverables and timeline. No fixed prices or guaranteed delivery dates are published."
+    }
+  },
+  {
     "id": "background",
     "title": "Background and approach to building products",
     "url": "https://shivamgupta.web.app/#about",

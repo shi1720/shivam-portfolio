@@ -5,6 +5,7 @@ import { GoogleAuth } from "google-auth-library";
 import { Firestore } from "@google-cloud/firestore";
 import { generationRequest } from "./core.mjs";
 import { createHandler } from "./handler.mjs";
+import { createVoiceHandler } from "./voice.mjs";
 const project =
   process.env.GOOGLE_CLOUD_PROJECT || "gen-lang-client-0444960702";
 const model = process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
@@ -76,7 +77,11 @@ const handler = createHandler({
   generate,
   model,
 });
-const server = http.createServer(handler);
+const voice = createVoiceHandler({ db, allowed, local, brand: "portfolio", instructions: "You are Shivam Gupta’s AI portfolio guide. Explain his projects, career, strengths and role fit using the verified source notes below. Native English, TOEFL 118/120, reported as 6/6. He has customer-facing, forward-deployed engineering and product leadership experience. Explain transferable strengths without inventing sales quotas, revenue ownership or credentials. Verified notes: " + JSON.stringify(knowledge) });
+const server = http.createServer(async (req, res) => {
+  if (await voice(req, res)) return;
+  return handler(req, res);
+});
 server.requestTimeout = 30000;
 server.headersTimeout = 10000;
 server.listen(Number(process.env.PORT || 8088), "0.0.0.0", () =>

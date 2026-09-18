@@ -544,7 +544,9 @@ export default function App() {
               </a>
               <a
                 className="contact-choice"
-                href={`mailto:${email}?subject=${encodeURIComponent("Let’s build with Siloed")}`}
+                href="https://siloed.web.app/#contact"
+                target="_blank"
+                rel="noreferrer"
               >
                 <span>02 / BUILD THE THING</span>
                 <h2>Bring it to Siloed.</h2>

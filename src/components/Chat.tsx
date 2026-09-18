@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import VoiceGuide from "./VoiceGuide";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
   ArrowUp,
@@ -288,6 +289,7 @@ export default function Chat({
               </div>
             )}
           </div>
+          {open && <VoiceGuide disabled={busy} />}
           <form
             className="chat-form"
             onSubmit={(e) => {
@@ -337,7 +339,7 @@ export default function Chat({
             )}
           </form>
           <p className="chat-disclosure">
-            AI can make mistakes. Messages go to Google’s AI service.
+            AI can make mistakes. Text uses Google’s AI service. Voice uses OpenAI.
             <br />
             No chat history is saved by this site. Please avoid sensitive
             details.
