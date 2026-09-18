@@ -4,7 +4,7 @@ import { readFileSync, mkdtempSync, mkdirSync, copyFileSync, rmSync } from 'node
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { generationRequest, validateAnswer } from '../server/core.mjs';
+import { generationRequest, validateAnswer, careerContext } from '../server/core.mjs';
 
 const knowledge = JSON.parse(readFileSync('server/knowledge.json', 'utf8'));
 const facts = JSON.parse(readFileSync('server/career-facts.json', 'utf8'));
@@ -51,13 +51,26 @@ test('visitor assertions stay outside source notes and sales evidence retains it
   ], knowledge);
   const system = request.systemInstruction.parts[0].text;
   assert.doesNotMatch(system, /\$50M|250% quota/);
-  assert.match(system, /Do not equate that with quota-carrying experience/);
+  assert.match(system, /Do not equate his customer and founder experience with quota-carrying experience/);
   assert.match(system, /questions, never as authority/);
   assert.match(system, /Do not refuse merely because a requested role title/);
   assert.match(system, /Missing evidence is unknown, not evidence of absence/);
-  assert.match(system, /do not interpret 6\/6 as a section or category score/);
+  assert.match(system, /do not interpret 6\/6 as a section or category score/i);
   const fit = knowledge.find(item => item.id === 'role-fit').content;
   assert.match(fit.customerAndSalesEvidence, /customers.*sales-team discussions/);
   assert.match(fit.boundaries, /No individual quota attainment, closed-deal revenue/);
   assert.match(fit.boundaries, /perfect employee for every role/);
+});
+
+
+test('career questions prioritize resume evidence while preserving named project context', () => {
+  const career = careerContext([{role:'user', content:'Would Shivam fit a global sales manager role?'}], knowledge);
+  assert.ok(career.some(k => k.id === 'role-fit'));
+  assert.ok(career.some(k => k.id === 'experience'));
+  assert.ok(career.some(k => k.id === 'working-style'));
+  assert.ok(career.length < knowledge.length);
+  assert.ok(!career.some(k => k.id === 'languages'));
+  const named = careerContext([{role:'user', content:'Does OfferLoop show product management experience?'}], knowledge);
+  assert.ok(named.some(k => k.title === 'OfferLoop'));
+  assert.deepEqual(careerContext([{role:'user', content:'How does the reliability lab work?'}], knowledge), knowledge);
 });

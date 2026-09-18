@@ -21,7 +21,7 @@ type Message = {
 const suggestions = [
   "Where should I start?",
   "What did Shivam build at Khoros?",
-  "Show me the strongest agent engineering.",
+  "Why would Shivam be a strong fit for sales leadership?",
   "What could Siloed build for my team?",
 ];
 function newSession() {
@@ -197,8 +197,8 @@ export default function Chat({
                   Real answers.
                 </h3>
                 <p>
-                  Ask about an engineering decision, find a project to try, or
-                  explore working together.
+                  Explore a project, ask about my experience, or see how my
+                  strengths could fit a role on your team.
                 </p>
                 <div className="chat-suggestions">
                   {suggestions.map((q) => (
