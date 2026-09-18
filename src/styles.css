@@ -3737,7 +3737,13 @@ select:focus-visible {
 }
 .studio-dock-wrap { padding-bottom: calc(18px + env(safe-area-inset-bottom)); }
 @media (max-width: 1000px) {
-  .room-main { padding-bottom: calc(155px + env(safe-area-inset-bottom)); }
+  /* Each room reserves the dock once, including the device's safe area. */
+  .room-main > section { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+  .contact-social > a, .contact-social > button {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.5;
+  }
   .availability, .text-link, .contact-social > a, .contact-social > button,
   .contact-email > button, .scene-control > button, .close-dialog {
     min-height: 44px;
@@ -3745,11 +3751,15 @@ select:focus-visible {
   .scene-control > button, .close-dialog { min-width: 44px; }
   .work-filters input, .work-filters select, .lab-config select { font-size: 16px; min-height: 44px; }
 }
+@media (max-width: 800px) {
+  /* A percentage row gap overflows an auto-height grid's reserved dock space. */
+  .contact-room { row-gap: 36px; }
+}
 @media (max-width: 540px) {
   .studio-dock { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)) 44px; }
   .studio-dock > a { padding: 8px 3px; font-size: 10px; min-width: 0; align-items: center; white-space: nowrap; }
   .studio-dock .dock-ai { width: 44px; height: 48px; }
-  .contact-social { flex-wrap: wrap; gap: 8px 20px; }
+  .contact-social { flex-wrap: wrap; gap: 8px 12px; }
   .project-dialog { height: 100dvh; max-height: 100dvh; padding-bottom: calc(30px + env(safe-area-inset-bottom)); }
 }
 .chat-dialog {

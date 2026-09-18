@@ -1,5 +1,40 @@
 import { test, expect } from '@playwright/test';
 
+for (const [width, height] of [[320, 568], [390, 844], [600, 960], [820, 1180], [640, 360], [844, 390]]) {
+  test(`every touch room ends just above the dock at ${width}×${height}`, async ({ page }) => {
+    await page.setViewportSize({ width, height });
+    await page.addInitScript(() => sessionStorage.setItem('shivam-ai-guide-introduced', 'yes'));
+    for (const room of ['studio', 'work', 'about', 'lab', 'contact']) {
+      await page.goto(`/#${room}`);
+      await page.evaluate(() => document.fonts.ready);
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+      const geometry = await page.locator('main > section').evaluate(section => {
+        const children = [...section.children].filter(child => child.getClientRects().length);
+        const contentBottom = Math.max(...children.map(child => child.getBoundingClientRect().bottom));
+        const dockTop = document.querySelector('.studio-dock')!.getBoundingClientRect().top;
+        return { gap: dockTop - contentBottom, pageWidth: document.documentElement.scrollWidth };
+      });
+      // The final content must clear navigation without a second, empty screen tail.
+      expect(geometry.gap, `${room}: final content hidden under navigation`).toBeGreaterThanOrEqual(12);
+      expect(geometry.gap, `${room}: excessive empty space before navigation`).toBeLessThanOrEqual(40);
+      expect(geometry.pageWidth, `${room}: horizontal overflow`).toBeLessThanOrEqual(width);
+    }
+    const socialGeometry = await page.locator('.contact-social').evaluate(row => [...row.children].map(control => {
+      const range = document.createRange();
+      range.selectNodeContents(control);
+      const text = range.getBoundingClientRect();
+      const box = control.getBoundingClientRect();
+      return { textTop: text.top, textBottom: text.bottom, top: box.top, height: box.height };
+    }));
+    for (const control of socialGeometry) {
+      expect(control.height).toBeGreaterThanOrEqual(44);
+      expect(Math.abs(control.top - socialGeometry[0].top)).toBeLessThanOrEqual(1);
+      expect(Math.abs(control.textTop - socialGeometry[0].textTop)).toBeLessThanOrEqual(1);
+      expect(Math.abs(control.textBottom - socialGeometry[0].textBottom)).toBeLessThanOrEqual(1);
+    }
+  });
+}
+
 for (const [width, height] of [[320, 568], [600, 960], [820, 1180], [640, 360], [844, 390]]) {
   test(`touch layout and chat at ${width}×${height}`, async ({ page }) => {
     await page.setViewportSize({ width, height });

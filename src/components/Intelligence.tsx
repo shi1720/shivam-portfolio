@@ -70,7 +70,7 @@ export default function Intelligence({
     controls.enableZoom = false;
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
-    controls.autoRotateSpeed = 0.45;
+    controls.autoRotateSpeed = 0.6;
     let env: THREE.WebGLRenderTarget | undefined;
     if (!software) {
       const pmrem = new THREE.PMREMGenerator(renderer);
@@ -325,7 +325,7 @@ export default function Intelligence({
         !hoveredNode && !readingLabel && time >= resumeAt;
       controls.autoRotate = touring;
       controls.enableDamping = !state.current.paused && !reduced.matches;
-      // Time-based orbiting stays equally slow on mobile and software renderers.
+      // Time-based orbiting keeps the same pace on mobile and software renderers.
       controls.update(delta);
       if (touring) tourElapsed += delta;
       if (tourElapsed >= 6) {

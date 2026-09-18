@@ -373,13 +373,73 @@
       "roles": [
         "Siloed: Founder and CEO since March 2025, Dubai. Software development and AI product studio serving 10+ global clients across finance, healthcare, SaaS and other sectors. Custom AI apps, agents, product strategy, evaluation, and adoption workshops. Reports 25+ hours saved per team per week.",
         "Khoros: Senior AI Product Engineer, contract, September 2025 to present. Led AI and analytics engineering on IRIS AI, transforming an enterprise social care and marketing suite built over years into a new product in three months, with five engineers and one designer. Earlier, worked as lead engineer to deliver IRIS for X in one month. Delivered 10 production AI features.",
-        "IgniteTech: Senior AI Product Engineer, contract, September 2025 to present. Product and engineering across multiple products; 12+ features and reported 25% activation improvement. Built various products across the product portfolio. Structured LLM outputs, prompt versioning, and graceful fallbacks. Full-stack development, AI engineering, and product management with technical and non-technical teams. Wore many hats including forward-deployed engineer and technical product manager, meeting customers to understand requirements and helping them deploy products.",
+        "IgniteTech: Senior AI Product Engineer, contract, September 2025 to present. Product and engineering across multiple products; 12+ features and reported 25% activation improvement. Built various products across the product portfolio. Structured LLM outputs, prompt versioning, and graceful fallbacks. Full-stack development, AI engineering, and product management with technical and non-technical teams. Wore many hats including forward-deployed engineer and technical product manager, meeting customers to understand requirements, participating in sales-team discussions, and helping them deploy products. This is direct customer-facing and sales-adjacent experience; no individual sales quota or closed-deal revenue is supplied.",
         "Trilogy and portfolio assignment 2 Hour Learning: April 2024 to September 2025. Promoted to Senior December 2024. Helped ship Alpha learning apps to 5,000+ learners; co-built PowerPath and co-developed Incept. Resume reports 18% higher assessment scores, 32% engagement improvement, $1M+ annual Incept savings. Helped develop learning products and end-to-end AI systems for a pioneering, successful AI-first school network. These are overlapping portfolio roles, not additive years.",
-        "Earlier: Spilll product management intern 2024; IIIT Delhi undergraduate researcher on LLM journalism extension 2023; Sensight Labs chatbot intern 2023; Giggles founder 2022 to 2023 (six-person team and resume-reported 2,000+ downloads); Bharat Electronics Limited summer researcher 2022.",
+        "Earlier: Spilll product management intern 2024; IIIT Delhi undergraduate researcher in 2023 on multiple projects across blockchain, applied AI, LLMs, human-centered design and entrepreneurship; Sensight Labs chatbot intern 2023; Giggles founder 2022 to 2023 (six-person team and resume-reported 2,000+ downloads); Bharat Electronics Limited summer researcher 2022.",
         "AI training: Contributed to AI training projects through Scale AI and micro1, spanning software engineering and AI engineering. Dates and specific project details were not supplied; do not invent them.",
         "Earlier career overview: Worked on founding Giggles, a product company, alongside research work and engineering and product roles at various startups.",
         "Education: B.Tech Computer Science & Design, IIIT Delhi. Graduation date not supplied."
       ]
+    }
+  },
+  {
+    "id": "languages",
+    "title": "English proficiency and languages",
+    "url": "https://shivamgupta.web.app/#about",
+    "content": {
+      "source": "Shivam's direct language clarification and supplied resume, September 2026.",
+      "english": {
+        "proficiency": "Native",
+        "qualification": "TOEFL iBT",
+        "score": "118/120 (6/6)",
+        "context": "Native English is Shivam's stated proficiency. State the supplied TOEFL result exactly as '118/120 (6/6)' without inventing what the parenthetical means. It is reported by Shivam, not independently verified here. No test date, section scores, category label or certificate identifier is supplied."
+      },
+      "hindi": "Native",
+      "communicationEvidence": "His work includes customer meetings, sales-team discussions at IgniteTech, enterprise requirements and roadmap conversations, executive workshops at Siloed, and collaboration with technical and non-technical teams."
+    }
+  },
+  {
+    "id": "education",
+    "title": "IIIT Delhi: education and research",
+    "url": "https://shivamgupta.web.app/#about",
+    "content": {
+      "degree": "B.Tech in Computer Science and Design, Indraprastha Institute of Information Technology Delhi (IIIT Delhi).",
+      "research": "Undergraduate researcher in 2023, working on multiple projects across blockchain, applied AI, LLMs, human-centered design and entrepreneurship.",
+      "academicInterests": [
+        "Human-centered design",
+        "Entrepreneurship"
+      ],
+      "scope": "These areas describe research and academic interests, not separate degrees, publications or certifications. Graduation date and paper titles were not supplied."
+    }
+  },
+  {
+    "id": "working-style",
+    "title": "AI-native work, learning and follow-through",
+    "url": "https://shivamgupta.web.app/#about",
+    "content": {
+      "source": "Shivam's account of his strengths and tools, supported by his supplied resume and public project work.",
+      "selfDescribedStrengths": "Shivam describes himself as AI-native, a fast learner and persistent in working through difficult problems. Present these as his working approach, supported by examples, rather than an independently measured ranking.",
+      "aiNative": "Uses Cursor, Codex, Claude Code, Cowork, Claude Artifacts, Antigravity, Replit and Lovable for agent-assisted development, research synthesis, prototyping and workflow automation, with hands-on review. He emphasizes choosing what to build, clear delegation, and reviewing what people and AI produce.",
+      "learningEvidence": "Work spans full-stack products, AI agents, voice workflows, coding-agent evaluation, education and customer deployment. This breadth supports a reasonable inference that he can learn across domains; it does not establish expertise in every industry or role.",
+      "followThroughEvidence": "Led IRIS AI delivery in three months and delivered IRIS for X in one month as lead engineer. Public projects such as RepoGym and ToolStorm use reference controls, tests and reproducible evidence to inspect failures and improve reliability. Siloed's work covers discovery through rollout and adoption.",
+      "fitFraming": "Connect the visitor's actual requirements to one or two relevant examples. Fast learning and persistence are useful strengths, not guarantees of instant domain expertise or success in every job."
+    }
+  },
+  {
+    "id": "role-fit",
+    "title": "Transferable strengths and customer-facing fit",
+    "url": "https://shivamgupta.web.app/#about",
+    "content": {
+      "customerAndSalesEvidence": "At IgniteTech, Shivam works directly with customers as a forward-deployed engineer, meets them to understand requirements, participates in sales-team discussions, and helps them deploy products. At Khoros he works with enterprise customers and leadership on requirements, architecture, roadmaps and migration.",
+      "founderEvidence": "Founded Siloed, an end-to-end software and AI product studio serving 10+ global clients. Work includes discovery, product and business judgment, architecture, delivery, adoption and executive workshops. These are founder/customer responsibilities, not a supplied record of individual sales quotas or deal values.",
+      "roleConnections": {
+        "salesEngineeringAndPresales": "Customer discovery, technical explanation, hands-on demos, feasibility discussions and deployment experience can transfer to sales engineering, solutions consulting, presales or technical business development. Frame this as relevant potential fit and explain the connection to the specific job.",
+        "sales": "For a broader sales role, explain the customer-facing and founder strengths without claiming a formal quota-carrying sales history. Understanding needs, communicating product value, learning a domain and following through are relevant, but a particular sales motion or industry may require additional experience.",
+        "productManagement": "Combines customer discovery, design, prioritization, roadmaps, revenue/feasibility tradeoffs, team leadership and hands-on technical delivery.",
+        "forwardDeployedEngineering": "Connects customer conversations to requirements, implementation, deployment and adoption while working across technical and non-technical teams.",
+        "aiAndFullStackEngineering": "Has shipped professional AI features and built public products with real interfaces, APIs, storage, evaluation and reliability controls."
+      },
+      "boundaries": "No individual quota attainment, closed-deal revenue, sales ranking, cold-outreach results, account-executive title or guaranteed hiring outcome was supplied. Do not invent these. Do not promise that he is the perfect employee for every role. A relevant question about a new role is an invitation to reason from transferable evidence, not an unrelated request. Missing evidence is unknown, not proof that he lacks experience: never assert that he has not held a sales role, has no sales background, or cannot handle a sales motion. Say the supplied record does not establish quota-carrying experience or deal results, then explain the relevant strengths."
     }
   },
   {

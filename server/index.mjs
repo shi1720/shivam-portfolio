@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { GoogleAuth } from "google-auth-library";
 import { Firestore } from "@google-cloud/firestore";
-import { systemPrompt, sourceContext } from "./core.mjs";
+import { generationRequest } from "./core.mjs";
 import { createHandler } from "./handler.mjs";
 const project =
   process.env.GOOGLE_CLOUD_PROJECT || "gen-lang-client-0444960702";
@@ -53,33 +53,7 @@ async function generate({ messages, token, signal }) {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: systemPrompt + sourceContext(knowledge) }],
-        },
-        contents: messages.map((m) => ({
-          role: m.role === "assistant" ? "model" : "user",
-          parts: [{ text: m.content }],
-        })),
-        generationConfig: {
-          temperature: 1,
-          maxOutputTokens: 1100,
-          thinkingConfig: { thinkingLevel: "MINIMAL" },
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: "OBJECT",
-            properties: {
-              answer: { type: "STRING" },
-              sourceIds: {
-                type: "ARRAY",
-                items: { type: "STRING" },
-                maxItems: 6,
-              },
-            },
-            required: ["answer", "sourceIds"],
-          },
-        },
-      }),
+      body: JSON.stringify(generationRequest(messages, knowledge)),
     },
   );
   if (!response.ok)
