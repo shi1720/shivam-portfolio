@@ -275,11 +275,11 @@ export default function App() {
               <p>
                 Tools. Experiments. Products.
                 <br />
-                Real source. Honest boundaries.
+                Working products. Honest boundaries.
               </p>
             </div>
             <div className="archive-ruler" aria-hidden="true">
-              <span>FIELD NOTES / SELECTED WORK</span><i /><span>{projects.length} PUBLIC PROJECTS</span>
+              <span>FIELD NOTES / SELECTED WORK</span><i /><span>SELECTED PROJECTS</span>
             </div>
             <div className="work-layout">
               <div className="work-index">
@@ -322,7 +322,7 @@ export default function App() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="work-project-name">{p.name}</span>
-                      {p.id === "OfferLoop-Job-CRM" && (
+                      {["OfferLoop-Job-CRM", "paperbridge"].includes(p.id) && (
                         <span className="work-featured" aria-label="Featured project">
                           <Star size={12} aria-hidden="true" /> <span>Featured</span>
                         </span>
@@ -351,7 +351,7 @@ export default function App() {
                 hidden={!ordered.length}
               >
                 <div className="preview-caption">
-                  <span>{active.id === "OfferLoop-Job-CRM" ? "FEATURED PROJECT" : "IN FOCUS"}</span>
+                  <span>{["OfferLoop-Job-CRM", "paperbridge"].includes(active.id) ? "FEATURED PROJECT" : "IN FOCUS"}</span>
                   <span>{active.language}</span>
                 </div>
                 <div className="work-preview-copy">

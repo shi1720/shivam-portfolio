@@ -10,6 +10,7 @@ export const categories: { id: District; label: string; short: string }[] = [
 ];
 export const featured = [
   "OfferLoop-Job-CRM",
+  "paperbridge",
   "AssemblyAI",
   "repogym",
   "RevenueCat-Shipaton",

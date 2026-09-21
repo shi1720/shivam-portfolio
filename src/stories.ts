@@ -9,17 +9,71 @@ export type Story = {
   tags: string[];
   demo?: string;
   architecture?: string;
+  video?: string;
+  privateSource?: boolean;
+  gallery?: { src: string; alt: string; caption: string }[];
   visual: string;
 };
 export const stories: Record<string, Story> = {
+  paperbridge: {
+    kicker: "RESEARCH INFRASTRUCTURE / APPLIED AI",
+    title: "Independent minds. Shared progress.",
+    summary:
+      "A complete research workspace for the work between a promising manuscript and a stronger paper. Connect with researchers, collaborate on private drafts and turn specialist AI feedback into a revision plan.",
+    problem:
+      "Independent researchers often have the work but lack the network and infrastructure around it. Finding an arXiv endorser, sharing the right manuscript version and making sense of feedback can become separate, disconnected jobs.",
+    built:
+      "Designed and built the product end to end: researcher and endorser discovery across 155 arXiv categories; private requests with dedicated workspaces; versioned PDFs, highlights and threaded annotations; community posts, saved researchers, messaging and activity. Five AI specialists examine claims, attribution, methods, structure and submission readiness, then a synthesis step produces a prioritized revision plan. Researchers bring their own OpenAI, Anthropic or Gemini key.",
+    evidence:
+      "The live application and narrated product tour demonstrate discovery, a shared manuscript workspace and an AI review tied to the draft. Engineering includes scoped access, revocable collaboration, encrypted provider keys and durable email delivery. Release checks cover frontend, backend, integration and browser workflows. The gallery shows sample manuscripts and demo accounts.",
+    boundary:
+      "The code is private; the live product and video are public. PaperBridge is independent of arXiv, and endorsement takes place on arXiv itself. AI feedback supports revision and needs human judgment. It is not peer review, a plagiarism certificate or a guarantee of endorsement or acceptance.",
+    tags: [
+      "Product strategy",
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Multi-model AI",
+      "Collaboration",
+    ],
+    demo: "https://paperbridge.web.app/",
+    video: "https://www.youtube.com/watch?v=ayknhfM37LQ",
+    privateSource: true,
+    visual: "research",
+    gallery: [
+      {
+        src: "/projects/paperbridge/workspace.webp",
+        alt: "PaperBridge demo manuscript with a PDF, anchored discussion and revision controls.",
+        caption:
+          "01 / One manuscript, shared context. Versioned PDFs and threaded feedback keep the conversation attached to the work.",
+      },
+      {
+        src: "/projects/paperbridge/ai-review.webp",
+        alt: "PaperBridge AI research review showing specialist feedback for a sample manuscript.",
+        caption:
+          "02 / Review from multiple angles. Five specialists and a synthesis step turn findings into a practical revision plan.",
+      },
+      {
+        src: "/projects/paperbridge/community.webp",
+        alt: "PaperBridge research community with posts, researcher discovery and discussion.",
+        caption:
+          "03 / A network around the work. Researchers can discover one another, share ideas and continue the conversation.",
+      },
+    ],
+  },
   "OfferLoop-Job-CRM": {
     kicker: "APPLIED AI / PERSONAL WORKFLOWS",
     title: "Give your next chapter a system.",
-    summary: "A job-search CRM that turns scattered applications into a working pipeline, with grounded AI drafts, follow-up reminders, and a clear next action.",
-    problem: "A job search gets fragmented across tabs, drafts, and forgotten follow-ups. The candidate needs a system that keeps the next step visible.",
-    built: "A React workspace and Python API with application tracking, job-posting capture, grounded outreach drafts, interview preparation, CSV import and export, and scheduled follow-up nudges. Firebase authentication and per-user storage support the live workspace.",
-    evidence: "Sample postings and drafts run through the same import pipeline as user data. Tests cover import idempotency, draft provenance, and workflow behavior.",
-    boundary: "A personal job-search product. AI drafts need review, outreach stays user-directed, and no hiring outcome or employer adoption is claimed.",
+    summary:
+      "A job-search CRM that turns scattered applications into a working pipeline, with grounded AI drafts, follow-up reminders, and a clear next action.",
+    problem:
+      "A job search gets fragmented across tabs, drafts, and forgotten follow-ups. The candidate needs a system that keeps the next step visible.",
+    built:
+      "A React workspace and Python API with application tracking, job-posting capture, grounded outreach drafts, interview preparation, CSV import and export, and scheduled follow-up nudges. Firebase authentication and per-user storage support the live workspace.",
+    evidence:
+      "Sample postings and drafts run through the same import pipeline as user data. Tests cover import idempotency, draft provenance, and workflow behavior.",
+    boundary:
+      "A personal job-search product. AI drafts need review, outreach stays user-directed, and no hiring outcome or employer adoption is claimed.",
     tags: ["Python", "React", "Gemini", "Google Cloud"],
     demo: "https://offerloop.web.app",
     architecture: "https://github.com/shi1720/OfferLoop-Job-CRM#architecture",

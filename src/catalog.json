@@ -8,6 +8,14 @@
     "url": "https://github.com/shi1720/OfferLoop-Job-CRM"
   },
   {
+    "id": "paperbridge",
+    "name": "PaperBridge",
+    "district": "systems",
+    "description": "A research workspace connecting private manuscript collaboration, arXiv endorser discovery, community and specialist AI review.",
+    "language": "TypeScript",
+    "url": "https://paperbridge.web.app/"
+  },
+  {
     "id": "AssemblyAI",
     "name": "Benchback",
     "district": "systems",

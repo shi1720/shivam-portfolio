@@ -23,6 +23,49 @@
     }
   },
   {
+    "id": "paperbridge",
+    "title": "PaperBridge",
+    "url": "https://paperbridge.web.app/",
+    "content": {
+      "kicker": "RESEARCH INFRASTRUCTURE / APPLIED AI",
+      "title": "Independent minds. Shared progress.",
+      "summary": "A complete research workspace for the work between a promising manuscript and a stronger paper. Connect with researchers, collaborate on private drafts and turn specialist AI feedback into a revision plan.",
+      "problem": "Independent researchers often have the work but lack the network and infrastructure around it. Finding an arXiv endorser, sharing the right manuscript version and making sense of feedback can become separate, disconnected jobs.",
+      "built": "Designed and built the product end to end: researcher and endorser discovery across 155 arXiv categories; private requests with dedicated workspaces; versioned PDFs, highlights and threaded annotations; community posts, saved researchers, messaging and activity. Five AI specialists examine claims, attribution, methods, structure and submission readiness, then a synthesis step produces a prioritized revision plan. Researchers bring their own OpenAI, Anthropic or Gemini key.",
+      "evidence": "The live application and narrated product tour demonstrate discovery, a shared manuscript workspace and an AI review tied to the draft. Engineering includes scoped access, revocable collaboration, encrypted provider keys and durable email delivery. Release checks cover frontend, backend, integration and browser workflows. The gallery shows sample manuscripts and demo accounts.",
+      "boundary": "The code is private; the live product and video are public. PaperBridge is independent of arXiv, and endorsement takes place on arXiv itself. AI feedback supports revision and needs human judgment. It is not peer review, a plagiarism certificate or a guarantee of endorsement or acceptance.",
+      "tags": [
+        "Product strategy",
+        "React",
+        "TypeScript",
+        "Firebase",
+        "Multi-model AI",
+        "Collaboration"
+      ],
+      "demo": "https://paperbridge.web.app/",
+      "video": "https://www.youtube.com/watch?v=ayknhfM37LQ",
+      "privateSource": true,
+      "visual": "research",
+      "gallery": [
+        {
+          "src": "/projects/paperbridge/workspace.webp",
+          "alt": "PaperBridge demo manuscript with a PDF, anchored discussion and revision controls.",
+          "caption": "01 / One manuscript, shared context. Versioned PDFs and threaded feedback keep the conversation attached to the work."
+        },
+        {
+          "src": "/projects/paperbridge/ai-review.webp",
+          "alt": "PaperBridge AI research review showing specialist feedback for a sample manuscript.",
+          "caption": "02 / Review from multiple angles. Five specialists and a synthesis step turn findings into a practical revision plan."
+        },
+        {
+          "src": "/projects/paperbridge/community.webp",
+          "alt": "PaperBridge research community with posts, researcher discovery and discussion.",
+          "caption": "03 / A network around the work. Researchers can discover one another, share ideas and continue the conversation."
+        }
+      ]
+    }
+  },
+  {
     "id": "AssemblyAI",
     "title": "Benchback",
     "url": "https://github.com/shi1720/AssemblyAI",

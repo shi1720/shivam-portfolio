@@ -1,5 +1,12 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { ArrowUpRight, X, Code2, Layers } from "lucide-react";
+import {
+  ArrowUpRight,
+  X,
+  Code2,
+  Layers,
+  Play,
+  LockKeyhole,
+} from "lucide-react";
 import type { Project } from "../data";
 import { stories } from "../stories";
 import ProjectVisual from "./ProjectVisual";
@@ -13,6 +20,54 @@ export default function ProjectDialog({
   onAsk: (question: string) => void;
 }) {
   const story = project ? stories[project.id] : null;
+  const actions = project && (
+    <div className="project-dialog-actions">
+      {story?.demo && (
+        <a
+          className="button primary"
+          href={story.demo}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Try the project <ArrowUpRight size={16} />
+        </a>
+      )}
+      {story?.video && (
+        <a
+          className="button ghost"
+          href={story.video}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Play size={16} /> Watch the demo
+        </a>
+      )}
+      {story?.privateSource ? (
+        <span className="private-source">
+          <LockKeyhole size={16} /> Private source
+        </span>
+      ) : (
+        <a
+          className="button ghost"
+          href={project.url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Code2 size={16} /> Source code
+        </a>
+      )}
+      {story?.architecture && (
+        <a
+          className="button ghost"
+          href={story.architecture}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Layers size={16} /> Architecture
+        </a>
+      )}
+    </div>
+  );
   return (
     <Dialog.Root
       open={!!project}
@@ -40,6 +95,7 @@ export default function ProjectDialog({
                   {story?.summary || project.description}
                 </Dialog.Description>
               </div>
+              {story?.gallery && actions}
               {story && (
                 <>
                   <ProjectVisual
@@ -65,6 +121,32 @@ export default function ProjectDialog({
                       <p>{story.boundary}</p>
                     </section>
                   </div>
+                  {story.gallery && (
+                    <div
+                      className="case-gallery"
+                      aria-label="PaperBridge product gallery"
+                    >
+                      {story.gallery.map((shot) => (
+                        <figure key={shot.src}>
+                          <a
+                            href={shot.src}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`Open image: ${shot.alt}`}
+                          >
+                            <img
+                              src={shot.src}
+                              alt={shot.alt}
+                              width="1270"
+                              height="760"
+                              loading="lazy"
+                            />
+                          </a>
+                          <figcaption>{shot.caption}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
                   <div className="tags">
                     {story.tags.map((t) => (
                       <span key={t}>{t}</span>
@@ -72,36 +154,7 @@ export default function ProjectDialog({
                   </div>
                 </>
               )}
-              <div className="project-dialog-actions">
-                {story?.demo && (
-                  <a
-                    className="button primary"
-                    href={story.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Try the project <ArrowUpRight size={16} />
-                  </a>
-                )}
-                <a
-                  className="button ghost"
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Code2 size={16} /> Source code
-                </a>
-                {story?.architecture && (
-                  <a
-                    className="button ghost"
-                    href={story.architecture}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Layers size={16} /> Architecture
-                  </a>
-                )}
-              </div>
+              {!story?.gallery && actions}
               <button
                 className="ask-project"
                 onClick={() => {

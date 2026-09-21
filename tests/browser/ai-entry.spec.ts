@@ -6,6 +6,7 @@ const invitation = (page: import("@playwright/test").Page) => page.getByRole("co
 
 test("invitation waits, leaves focus alone, expires and only appears once per visit", async ({ page }) => {
   await page.clock.install();
+  await page.clock.pauseAt(new Date());
   await page.goto("/#contact");
   await expect(page.getByRole("button", { name: triggerName })).toContainText("Ask AI");
   await page.getByRole("link", { name: "02 The human", exact: true }).focus();

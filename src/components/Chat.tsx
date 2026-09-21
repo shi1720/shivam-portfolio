@@ -151,7 +151,7 @@ export default function Chat({
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="dialog-overlay chat-overlay" />
-        <Dialog.Content className="chat-dialog" data-compact={viewportSize.height < 500}
+        <Dialog.Content className="chat-dialog" data-compact={viewportSize.height < 600}
           onCloseAutoFocus={(event) => {
             if (!restoreGuideFocus.current) return;
             event.preventDefault();

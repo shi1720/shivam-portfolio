@@ -17,6 +17,8 @@ export default function ProjectVisual({
   name: string;
   projectId: string;
 }) {
+  if (type === "research")
+    return <div className="project-visual research-visual" aria-hidden="true"><img src="/projects/paperbridge/cover.webp" alt="" width="1200" height="800" /></div>;
   if (type === "pipeline")
     return (
       <div className="project-visual pipeline-visual" aria-hidden="true">
