@@ -346,7 +346,7 @@ test("each room has its own quiet palette and an integrated visual detail", asyn
 });
 
 
-test("PaperBridge has public demos and evidence without a private repository link", async ({ page }) => {
+test("PaperBridge has public demos, evidence and the canonical source repository", async ({ page }) => {
   await page.goto("/#work");
   await expect(page.locator(".work-list > button").first()).toContainText("OfferLoop");
   await page.getByRole("button", { name: "02 PaperBridge Featured project", exact: true }).click();
@@ -354,8 +354,8 @@ test("PaperBridge has public demos and evidence without a private repository lin
   await expect(dialog.getByRole("heading", { name: "PaperBridge", exact: true })).toBeVisible();
   await expect(dialog.getByRole("link", { name: "Try the project" })).toHaveAttribute("href", "https://paperbridge.web.app/");
   await expect(dialog.getByRole("link", { name: "Watch the demo" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=ayknhfM37LQ");
-  await expect(dialog.getByRole("link", { name: "Source code" })).toHaveCount(0);
-  await expect(dialog.getByText("Private source", { exact: true })).toBeVisible();
+  await expect(dialog.getByRole("link", { name: "Source code" })).toHaveAttribute("href", "https://github.com/shi1720/PaperBridge");
+  await expect(dialog.getByText("Private source", { exact: true })).toHaveCount(0);
   await expect(dialog.locator(".case-gallery img")).toHaveCount(3);
   expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBeTruthy();
   await page.goto("/#project=paperbridge");

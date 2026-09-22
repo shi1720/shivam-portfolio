@@ -27,7 +27,7 @@ export const stories: Record<string, Story> = {
     evidence:
       "The live application and narrated product tour demonstrate discovery, a shared manuscript workspace and an AI review tied to the draft. Engineering includes scoped access, revocable collaboration, encrypted provider keys and durable email delivery. Release checks cover frontend, backend, integration and browser workflows. The gallery shows sample manuscripts and demo accounts.",
     boundary:
-      "The code is private; the live product and video are public. PaperBridge is independent of arXiv, and endorsement takes place on arXiv itself. AI feedback supports revision and needs human judgment. It is not peer review, a plagiarism certificate or a guarantee of endorsement or acceptance.",
+      "The source code, live product and video are public. PaperBridge is independent of arXiv, and endorsement takes place on arXiv itself. AI feedback supports revision and needs human judgment. It is not peer review, a plagiarism certificate or a guarantee of endorsement or acceptance.",
     tags: [
       "Product strategy",
       "React",
@@ -38,7 +38,6 @@ export const stories: Record<string, Story> = {
     ],
     demo: "https://paperbridge.web.app/",
     video: "https://www.youtube.com/watch?v=ayknhfM37LQ",
-    privateSource: true,
     visual: "research",
     gallery: [
       {
