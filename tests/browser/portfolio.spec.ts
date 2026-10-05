@@ -353,7 +353,7 @@ test("PaperBridge has public demos, evidence and the canonical source repository
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByRole("heading", { name: "PaperBridge", exact: true })).toBeVisible();
   await expect(dialog.getByRole("link", { name: "Try the project" })).toHaveAttribute("href", "https://paperbridge.web.app/");
-  await expect(dialog.getByRole("link", { name: "Watch the demo" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=ayknhfM37LQ");
+  await expect(dialog.getByRole("link", { name: "Open on YouTube" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=ayknhfM37LQ");
   await expect(dialog.getByRole("link", { name: "Source code" })).toHaveAttribute("href", "https://github.com/shi1720/PaperBridge");
   await expect(dialog.getByText("Private source", { exact: true })).toHaveCount(0);
   await expect(dialog.locator(".case-gallery img")).toHaveCount(3);
