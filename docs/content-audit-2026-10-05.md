@@ -40,3 +40,10 @@ Reviewed 114 GitHub repositories, the existing portfolio catalog, LinkedIn Proje
 - 28 server/unit tests passed.
 - 94 desktop and mobile browser tests passed, including new research navigation, source links, one Signsprout entry, demo links, responsive fit and media loading.
 - Six focused content tests passed again after the visual contrast correction.
+
+## Published verification
+
+- Firebase Hosting deployed the canonical and legacy sites. The canonical API rewrite points to Cloud Run revision `shivam-portfolio-ai-00016-wnx`.
+- Live mobile smoke: 42 project entries, six research papers, the exact supplied Signsprout video and canonical XR repository, no horizontal overflow or browser exceptions.
+- Verified 17 new LinkedIn Projects after saving, each appearing once with the correct live/source URLs and, where available, demo URL. LinkedIn's media-preview loader rejected live, GitHub and YouTube URLs; links are preserved in the project descriptions rather than claiming attached preview cards.
+- The deployed AI knowledge includes the new projects and papers. Two live requests received provider HTTP 429, surfaced as a temporary service error. A direct authenticated request with the same research prompt and generation payload returned a grounded answer with the correct preprint source ID. Live service answer availability is not confirmed; no permissions or billing settings were changed.
