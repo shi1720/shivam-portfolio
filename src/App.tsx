@@ -23,6 +23,7 @@ import {
   type Project,
 } from "./data";
 import { stories } from "./stories";
+import Research from "./components/Research";
 import ProjectVisual from "./components/ProjectVisual";
 import ProjectDialog from "./components/ProjectDialog";
 import Chat from "./components/Chat";
@@ -40,6 +41,7 @@ const rooms: { id: Room; name: string; num: string }[] = [
   { id: "contact", name: "Let’s talk", num: "04" },
 ];
 export default function App() {
+  const [workView, setWorkView] = useState<"projects" | "research">("projects");
   const [room, setRoom] = useState<Room>("studio");
   const [district, setDistrict] = useState<District>("all");
   const [paused, setPaused] = useState(false);
@@ -62,6 +64,7 @@ export default function App() {
   };
   const navigate = (target: Room) => {
     setRoom(target);
+    if (target === "work") setWorkView("projects");
     history.pushState(null, "", target === "studio" ? "#studio" : `#${target}`);
     window.scrollTo(0, 0);
   };
@@ -86,10 +89,16 @@ export default function App() {
         }
         const p = projects.find((p) => p.id === id);
         setRoom("work");
+        setWorkView("projects");
         setSelected(p || null);
+      } else if (hash === "research") {
+        setRoom("work");
+        setWorkView("research");
+        setSelected(null);
       } else if (rooms.some((r) => r.id === hash)) {
         setSelected(null);
         setRoom(hash as Room);
+        if (hash === "work") setWorkView("projects");
       } else if (hash === "catalog") {
         setRoom("work");
       } else {
@@ -278,6 +287,11 @@ export default function App() {
                 Working products. Honest boundaries.
               </p>
             </div>
+            <div className="work-switcher" aria-label="Explore the work">
+              <a href="#work" aria-current={workView === "projects" ? "page" : undefined} onClick={() => setWorkView("projects")}>Products & experiments</a>
+              <a href="#research" aria-current={workView === "research" ? "page" : undefined} onClick={() => setWorkView("research")}>Research <span>06 papers</span></a>
+            </div>
+            {workView === "research" ? <Research /> : <>
             <div className="archive-ruler" aria-hidden="true">
               <span>FIELD NOTES / SELECTED WORK</span><i /><span>SELECTED PROJECTS</span>
             </div>
@@ -322,7 +336,7 @@ export default function App() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="work-project-name">{p.name}</span>
-                      {["OfferLoop-Job-CRM", "paperbridge"].includes(p.id) && (
+                      {["OfferLoop-Job-CRM", "paperbridge", "kept", "signsprout-xr", "zusage"].includes(p.id) && (
                         <span className="work-featured" aria-label="Featured project">
                           <Star size={12} aria-hidden="true" /> <span>Featured</span>
                         </span>
@@ -351,7 +365,7 @@ export default function App() {
                 hidden={!ordered.length}
               >
                 <div className="preview-caption">
-                  <span>{["OfferLoop-Job-CRM", "paperbridge"].includes(active.id) ? "FEATURED PROJECT" : "IN FOCUS"}</span>
+                  <span>{["OfferLoop-Job-CRM", "paperbridge", "kept", "signsprout-xr", "zusage"].includes(active.id) ? "FEATURED PROJECT" : "IN FOCUS"}</span>
                   <span>{active.language}</span>
                 </div>
                 <div className="work-preview-copy">
@@ -379,6 +393,7 @@ export default function App() {
                 </div>
               </aside>
             </div>
+            </>}
           </section>
         )}
         {room === "about" && (
@@ -471,6 +486,7 @@ export default function App() {
                   I helped develop learning products and end-to-end AI systems for
                   a pioneering, successful network of AI-first schools.
                 </p>
+                <a className="text-link research-about-link" href="#research">Explore my research <ArrowUpRight size={18} /></a>
                 <p className="earlier-work">
                   Before this, I worked on founding Giggles, a product company,
                   alongside research work and engineering and product roles at

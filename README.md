@@ -2,9 +2,9 @@
 
 **[Enter the studio →](https://shivamgupta.web.app)**
 
-A spatial portfolio for my work in applied AI, engineering, and product. The studio is a folded 3D map of selected public projects, with a searchable work index, source-linked case studies, a career room, and ways to work together through Siloed.
+A spatial portfolio for my work in applied AI, engineering, and product. The studio is a folded 3D map of selected public projects, with a searchable work index, source-linked case studies, a research reading room, a career room, and ways to work together through Siloed.
 
-The AI guide answers from curated public project notes and my resume. The reliability lab is different: a deterministic local simulation that lets you break a tool response, compare recovery policies, and export a runnable Python experiment.
+The AI guide answers from curated public project notes, publication summaries and my resume. The reliability lab is different: a deterministic local simulation that lets you break a tool response, compare recovery policies, and export a runnable Python experiment.
 
 ## Run locally
 
@@ -50,7 +50,9 @@ The runtime service account can access only this named Firestore database and Ve
 
 ## Content and scope
 
-`src/catalog.json` lists public projects only. `src/stories.ts` holds curated case studies. `src/data.ts` holds professional experience. Run `node scripts/prepare-knowledge.mjs` after editing stories or knowledge material, inspect the resulting `server/knowledge.json`, and redeploy the server as needed.
+`src/catalog.json` lists public projects only. `src/stories.ts` and `src/recent-stories.json` hold curated case studies. `src/videos.json` maps additional verified project demos. `src/research.json` holds sourced arXiv preprints, including their scope and reproducibility links. `src/data.ts` holds professional experience. Run `node scripts/prepare-knowledge.mjs` after editing stories or knowledge material, inspect the resulting `server/knowledge.json`, and redeploy the server as needed.
+
+The [October content audit](docs/content-audit-2026-10-05.md) records project selection, deduplication and source checks. Research is accessible at [#research](https://shivamgupta.web.app/#research) within The work.
 
 Professional figures are resume-reported contributions, not independent measurements. Employer work remains separate from personal demos. Case studies explicitly distinguish prototypes, simulations, reference tools, and production experience.
 

@@ -69,7 +69,8 @@ export function careerContext(messages, knowledge) {
   if (/\b(english|toefl|proficiency|language|fluen\w*)\b/i.test(question)) careerIds.add("languages");
   // Career answers should draw primarily from the career record, rather than
   // competing with the entire project catalog. Explicitly named projects remain available.
-  return knowledge.filter(k => careerIds.has(k.id) || question.toLowerCase().includes(k.title.toLowerCase()));
+  const researchQuestion = /\b(research|papers?|publications?|preprints?|arxiv|memory|prefix|consensus|verification|caches?|routing|delegation)\b/i.test(question);
+  return knowledge.filter(k => careerIds.has(k.id) || question.toLowerCase().includes(k.title.toLowerCase()) || (researchQuestion && k.content?.status === "arXiv preprint; not peer reviewed"));
 }
 export function generationRequest(messages, knowledge) {
   return {

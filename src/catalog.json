@@ -198,5 +198,141 @@
     "description": "An accessibility-repair workflow that combines coding agents with independent scans, content-integrity checks and human review.",
     "language": "HTML",
     "url": "https://github.com/shi1720/stepfree"
+  },
+  {
+    "id": "kept",
+    "name": "Kept",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/kept",
+    "description": "From a freelance conversation to a clear agreement, delivery evidence and an agreed payment outcome."
+  },
+  {
+    "id": "signsprout-xr",
+    "name": "Signsprout",
+    "district": "human",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/signsprout-xr",
+    "description": "A WebXR learning garden where families practise their first ASL signs, with guided hands, encouraging feedback and a phone companion."
+  },
+  {
+    "id": "zusage",
+    "name": "Zusage",
+    "district": "human",
+    "language": "Python",
+    "url": "https://github.com/shi1720/zusage",
+    "description": "An Apertus-powered interview coach that helps Swiss apprenticeship seekers turn real experiences into stronger answers."
+  },
+  {
+    "id": "coinmarketcap",
+    "name": "Runway Guard",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/coinmarketcap",
+    "description": "A crypto treasury planning desk that connects market prices, locked holdings and dated commitments to operating runway."
+  },
+  {
+    "id": "WeAreDevelopers",
+    "name": "Proofline / Tablekeeper",
+    "district": "agents",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/WeAreDevelopers",
+    "description": "A four-seat coding-agent workflow that built and independently checked a restaurant reservation system across four evolving releases."
+  },
+  {
+    "id": "ibm-bob",
+    "name": "UndoProof",
+    "district": "agents",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/ibm-bob",
+    "description": "Executable PostgreSQL rehearsals that check whether rolling back a release preserves the customer data written after deployment."
+  },
+  {
+    "id": "AWS-Communication-Developer",
+    "name": "SecondCrate",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/AWS-Communication-Developer",
+    "description": "A recovery desk for cancelled wholesale food orders, connecting buyer conversations to inventory-safe commitments."
+  },
+  {
+    "id": "HTCJ",
+    "name": "GroundProof",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/HTCJ",
+    "description": "An evidence desk that binds each drone-inspection signoff to the exact source material a coordinator reviewed."
+  },
+  {
+    "id": "OneAquaHealth",
+    "name": "Rill",
+    "district": "human",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/OneAquaHealth",
+    "description": "An urban-stream workspace that connects citizen observations to budgeted field visits, accountable tasks and documented rechecks."
+  },
+  {
+    "id": "evorozen",
+    "name": "Remainder",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/evorozen",
+    "description": "A supplier-credit desk that connects invoices, receiving records and credit notes, keeping partial recoveries visibly open."
+  },
+  {
+    "id": "DAISI",
+    "name": "HawkerBridge",
+    "district": "systems",
+    "language": "Python",
+    "url": "https://github.com/shi1720/DAISI",
+    "description": "A Singapore hawker-closure planning desk that connects public schedules, neighbourhood context and constrained meal-support scenarios."
+  },
+  {
+    "id": "Computer-Use-Automation-System",
+    "name": "Swivel",
+    "district": "agents",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/Computer-Use-Automation-System",
+    "description": "A system that turns model-discovered legacy workflows into typed, versioned browser capabilities with deterministic replay."
+  },
+  {
+    "id": "Hack-Away-Hunger",
+    "name": "Pantry Relay",
+    "district": "human",
+    "language": "Python",
+    "url": "https://github.com/shi1720/Hack-Away-Hunger",
+    "description": "A coordination workspace that helps pantry networks protect local reserves while moving available food to nearby unmet needs."
+  },
+  {
+    "id": "Hack-The-Weather",
+    "name": "Kavu",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/Hack-The-Weather",
+    "description": "A maize-drying operations desk that connects station observations to capacity-aware jobs, measured moisture and an auditable ledger."
+  },
+  {
+    "id": "Galuxium-Nexus-V2",
+    "name": "Pactshift",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/Galuxium-Nexus-V2",
+    "description": "A scope-change workspace where clients can add budget, exchange deliverables or defer, with the agreement updated atomically."
+  },
+  {
+    "id": "HACK47",
+    "name": "Batchlight",
+    "district": "systems",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/HACK47",
+    "description": "A recall-rehearsal workspace that traces ingredient lots, carries uncertainty forward and preserves what was known before evidence was repaired."
+  },
+  {
+    "id": "shadeshift",
+    "name": "ShadeShift",
+    "district": "human",
+    "language": "TypeScript",
+    "url": "https://github.com/shi1720/shadeshift",
+    "description": "A planning studio that turns heat and transit context into a constrained investment plan for outdoor arrivals and queues."
   }
 ]

@@ -1,3 +1,4 @@
+import recentStories from "./recent-stories.json";
 export type Story = {
   kicker: string;
   title: string;
@@ -13,8 +14,11 @@ export type Story = {
   privateSource?: boolean;
   gallery?: { src: string; alt: string; caption: string }[];
   visual: string;
+  cover?: string;
+  flow?: string[];
 };
 export const stories: Record<string, Story> = {
+  ...recentStories,
   paperbridge: {
     kicker: "RESEARCH INFRASTRUCTURE / APPLIED AI",
     title: "Independent minds. Shared progress.",

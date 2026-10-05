@@ -1,0 +1,424 @@
+{
+  "kept": {
+    "kicker": "AGREEMENTS / AI / PAYMENTS",
+    "title": "A promise you can inspect.",
+    "summary": "From a freelance conversation to a clear agreement, delivery evidence and an agreed payment outcome.",
+    "problem": "Freelance work breaks down when scope, acceptance criteria and payment expectations live in different conversations.",
+    "built": "I built chat-to-contract drafting, editable milestones, evidence review, an AI referee and two-party mediation. PayPal Orders, Payouts, refunds and verified webhooks connect to a balanced ledger. REST and MCP interfaces let agents participate within the same controls.",
+    "evidence": "The public sandbox walks through agreement, delivery and review. The repository includes checks for idempotency, concurrent updates, accounting and malicious instructions embedded in submitted evidence.",
+    "boundary": "PayPal sandbox only; no real money moves. Kept is not a licensed escrow service. Uncertain or offline AI reviews do not authorize automatic release, and human review remains part of disputed outcomes.",
+    "tags": [
+      "TypeScript",
+      "Node.js",
+      "PayPal APIs",
+      "MCP",
+      "AI engineering",
+      "Product design"
+    ],
+    "demo": "https://kept-pacts.web.app",
+    "flow": [
+      "Agree",
+      "Review evidence",
+      "Settle"
+    ],
+    "visual": "project-cover",
+    "cover": "/projects/kept/cover.webp"
+  },
+  "signsprout-xr": {
+    "kicker": "SPATIAL LEARNING / WEBXR",
+    "title": "Learn with your own two hands.",
+    "summary": "A WebXR learning garden where families practise their first ASL signs, with guided hands, encouraging feedback and a phone companion.",
+    "problem": "A flat video can show a sign without helping a beginner understand where their hands should move in space.",
+    "built": "I built watch, guided practice, independent attempts and a growing practice garden. A shared sign model drives the avatar, mirrored guides and checks for handshape, location, orientation and movement. The companion adds pairing, progress and an AI coach constrained to the supported vocabulary.",
+    "evidence": "The linked video demonstrates Signsprout. The XR repository includes an 87-sign vocabulary, hand-tracking logic, accessibility modes and synthetic consistency checks. One project brings together the original product and the XR iteration.",
+    "boundary": "A first-vocabulary learning experience, not a complete ASL curriculum or interpreter. Synthetic checks do not establish accuracy with real signers. On-device validation and linguistic review remain important next steps.",
+    "tags": [
+      "TypeScript",
+      "WebXR",
+      "Three.js",
+      "React",
+      "Supabase",
+      "Human-centered design"
+    ],
+    "demo": "https://shi1720.github.io/signsprout-xr/",
+    "flow": [
+      "Watch",
+      "Practise",
+      "Grow"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=SIwjK_3FvE8",
+    "cover": "/projects/signsprout-xr/cover.webp"
+  },
+  "zusage": {
+    "kicker": "APPLIED AI / LEARNING / CAREERS",
+    "title": "Find your words before the interview.",
+    "summary": "An Apertus-powered interview coach that helps Swiss apprenticeship seekers turn real experiences into stronger answers.",
+    "problem": "First-time applicants need practice and usable feedback, not a script that replaces their own experience.",
+    "built": "I built multilingual interviews, six-criterion feedback grounded in the learner’s words, self-assessment, retries and spaced practice. A story bank, application tracker and writing tools carry the work into the job search. Teachers see progress; access to answer text requires revocable student consent.",
+    "evidence": "The repository records working interviews in German, French, Italian, English and Swiss German. A complete local interview ran on an M4 Pro using quantized Apertus 1.5 8B, with hosted student and teacher demos available.",
+    "boundary": "Functional checks are not an official judge benchmark or evidence of hiring outcomes. The offline demo is labelled, and Swiss German speech uses approximate dialect pronunciation.",
+    "tags": [
+      "Python",
+      "React",
+      "Apertus",
+      "PostgreSQL",
+      "Cloud Run",
+      "Product design"
+    ],
+    "demo": "https://zusage.web.app",
+    "flow": [
+      "Practise",
+      "Reflect",
+      "Try again"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=jgWSAaASskg",
+    "cover": "/projects/zusage/cover.webp"
+  },
+  "coinmarketcap": {
+    "kicker": "FINANCIAL OPERATIONS / DECISION SYSTEMS",
+    "title": "Can the treasury still pay the team?",
+    "summary": "A crypto treasury planning desk that connects market prices, locked holdings and dated commitments to operating runway.",
+    "problem": "A treasury can look healthy on paper while lacking the cash needed for the next payroll.",
+    "built": "I built current, stressed and fiat-only coverage, dated obligations, asset-access freezes and a read-only reserve conversion scenario. CoinMarketCap quotes include timestamps and source evidence; private workspaces preserve fixed decision reports.",
+    "evidence": "The demonstration uses real market quotes with fictional balances. Its reproducible scenarios show how locked holdings, drawdowns and payment dates change the reserve gap.",
+    "boundary": "Planning scenarios are assumptions, not forecasts or financial advice. The app does not trade, move money or establish executable liquidity. Stored calculations are client-provided evidence.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Firebase",
+      "CoinMarketCap API",
+      "Financial modeling"
+    ],
+    "demo": "https://runway-guard-cmc.web.app",
+    "flow": [
+      "Price",
+      "Stress",
+      "Plan"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=0XljJqixhMU",
+    "cover": "/projects/coinmarketcap/cover.webp"
+  },
+  "WeAreDevelopers": {
+    "kicker": "AGENT ORCHESTRATION / SOFTWARE DELIVERY",
+    "title": "Keep the promise when the floor changes.",
+    "summary": "A four-seat coding-agent workflow that built and independently checked a restaurant reservation system across four evolving releases.",
+    "problem": "A restaurant closure can invalidate several bookings at once. Repairing one reservation must not quietly break another.",
+    "built": "I directed Proofline’s product brief and agent configuration. Its implementation and verification seats delivered booking flows, effective-dated policies, recurring reservations and atomic closure repair. A separate hosted companion adds durable storage and operational browser flows.",
+    "evidence": "The repository preserves the BAND room record, release ledger and independent checks. All four stages passed their published isolated contract suites, with 575 check executions in a complete run.",
+    "boundary": "The original stage implementation is a bounded local benchmark with in-memory state. The hosted companion is separately verified. Neither proves restaurant adoption or production certification; recovery planning has explicit size limits.",
+    "tags": [
+      "TypeScript",
+      "Agent orchestration",
+      "API design",
+      "Verification",
+      "Product direction"
+    ],
+    "demo": "https://tablekeeper-proofline.web.app",
+    "flow": [
+      "Specify",
+      "Build + verify",
+      "Repair"
+    ],
+    "visual": "project-cover",
+    "cover": "/projects/wearedevelopers/cover.webp"
+  },
+  "ibm-bob": {
+    "kicker": "DEVELOPER TOOLS / DATABASE RELIABILITY",
+    "title": "Your release passed. Will your rollback?",
+    "summary": "Executable PostgreSQL rehearsals that check whether rolling back a release preserves the customer data written after deployment.",
+    "problem": "A rollback command can succeed while silently deleting a new order or breaking the previous application version.",
+    "built": "I built a shared browser and CLI rehearsal engine using disposable PGlite databases. It executes migration and rollback SQL, exercises old and new application queries and compares exact business-data invariants. Failed evidence can be exported to an IBM Bob repair workflow.",
+    "evidence": "The disappearing-order fixture fails before repair and passes with a backward-compatible additive schema. The same engine supports CI gates, saved history and portable evidence reports.",
+    "boundary": "Checks cover only the supplied SQL contracts and invariants. Example repairs are authored, not live model generations, and saved browser reports are not independent attestations of execution.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "PGlite",
+      "CI/CD"
+    ],
+    "demo": "https://undoproof.web.app",
+    "flow": [
+      "Migrate",
+      "Write",
+      "Roll back"
+    ],
+    "visual": "project-cover",
+    "cover": "/projects/ibm-bob/cover.webp"
+  },
+  "AWS-Communication-Developer": {
+    "kicker": "AGENTIC OPERATIONS / FOOD SUPPLY",
+    "title": "Every good lot deserves a buyer.",
+    "summary": "A recovery desk for cancelled wholesale food orders, connecting buyer conversations to inventory-safe commitments.",
+    "problem": "When a food order is cancelled, a hurried phone tree can produce competing promises for the same remaining stock.",
+    "built": "I built stock release, buyer matching, structured intent interpretation, price and delivery checks, atomic commitments and audit records. Adapters target WhatsApp, SMS and email through AWS services; the hosted rehearsal isolates each visitor’s workspace.",
+    "evidence": "Two buyers can request the last eight crates concurrently, but only one transaction receives them. The video shows the full recovery workflow and inspectable inventory records.",
+    "boundary": "The public demo uses fictional buyers and simulated messages. Hosted Firebase/Cloud Run verification does not establish live AWS messaging or Bedrock delivery. Demo order value is not revenue or measured waste avoided.",
+    "tags": [
+      "TypeScript",
+      "Node.js",
+      "Agent workflows",
+      "Firestore",
+      "AWS adapters"
+    ],
+    "demo": "https://secondcrate.web.app",
+    "flow": [
+      "Release stock",
+      "Negotiate",
+      "Commit once"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=Ox6BG9KwP7w"
+  },
+  "HTCJ": {
+    "kicker": "AVIATION OPERATIONS / EVIDENCE",
+    "title": "Yesterday’s approval. Today’s evidence.",
+    "summary": "An evidence desk that binds each drone-inspection signoff to the exact source material a coordinator reviewed.",
+    "problem": "An approval should stop being valid when the site notice or supporting evidence changes.",
+    "built": "I built versioned source capture, explicit expiry checks, dependency-based signoff revocation and separate source-review and mission-approval steps. Isolated workspaces include failure drills, audit history and independently verifiable decision packets.",
+    "evidence": "In the fictional mission demo, changing one site notice revokes three dependent signoffs. Restoring an old source does not silently restore approval; new evidence needs a fresh human decision.",
+    "boundary": "Operational review only. GroundProof does not issue flight permissions, provide airspace clearance, interpret aviation law or control aircraft. Seeded jobs and commercial values are fictional.",
+    "tags": [
+      "TypeScript",
+      "Node.js",
+      "SQLite",
+      "Cloud Run",
+      "Evidence engineering"
+    ],
+    "demo": "https://groundproof-flight.web.app",
+    "flow": [
+      "Capture",
+      "Review",
+      "Sign off"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=0zYnjZi1MFg",
+    "cover": "/projects/htcj/cover.webp"
+  },
+  "OneAquaHealth": {
+    "kicker": "CITIZEN SCIENCE / FIELD OPERATIONS",
+    "title": "Every observation a next step.",
+    "summary": "An urban-stream workspace that connects citizen observations to budgeted field visits, accountable tasks and documented rechecks.",
+    "problem": "Several reports of foam are a reason to investigate, but a coordinator still has limited time and needs a defensible plan.",
+    "built": "I built mobile observation capture, transparent priority factors, an exact time-budget allocator, role-aware assignments and evidence-preserving follow-up. Exports include source context and the rule version used for each decision.",
+    "evidence": "The isolated demo follows fictional Coimbra-area observations through review, allocation, assignment and a recorded recheck. Hosted persistence and the API lifecycle have documented verification.",
+    "boundary": "Appearance is not a diagnosis of pollution or proof that water is safe. Demonstration observations are synthetic, and hazardous work requires qualified people and appropriate authority.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "Decision systems",
+      "Accessible design"
+    ],
+    "demo": "https://rill-streams.web.app",
+    "flow": [
+      "Observe",
+      "Allocate",
+      "Recheck"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=Ezww6CqwqWA",
+    "cover": "/projects/oneaquahealth/cover.webp"
+  },
+  "evorozen": {
+    "kicker": "APPLIED AI / SUPPLIER OPERATIONS",
+    "title": "A promised credit is not a recovered credit.",
+    "summary": "A supplier-credit desk that connects invoices, receiving records and credit notes, keeping partial recoveries visibly open.",
+    "problem": "A shortage claim can disappear from view after the supplier issues a credit that covers only part of it.",
+    "built": "I built document extraction with editable text review, source-quoted AI interpretation, deterministic shortage arithmetic and human claim approval. Credit matching checks issuer, invoice, currency and amount, prevents duplicate use and produces evidence packs and unsent correspondence.",
+    "evidence": "The fictional demo starts with a $216 shortage, matches a $144 credit and keeps $72 outstanding. The next draft asks only for the remainder.",
+    "boundary": "The supported workflow is quantity shortages, not automatic resolution of damage or price disputes. Demo recovery amounts are not customer results. Real analysis records its provider and fails visibly when unavailable.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "LLM APIs",
+      "Document workflows"
+    ],
+    "demo": "https://remainder-desk.web.app",
+    "flow": [
+      "Find shortage",
+      "Match credit",
+      "Track remainder"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=gRbLdG4Wa4U",
+    "cover": "/projects/evorozen/cover.webp"
+  },
+  "DAISI": {
+    "kicker": "PUBLIC DATA / COMMUNITY PLANNING",
+    "title": "Keep the neighbourhood at the table.",
+    "summary": "A Singapore hawker-closure planning desk that connects public schedules, neighbourhood context and constrained meal-support scenarios.",
+    "problem": "A closure calendar says when a centre shuts, but not where a community team should check or what a support plan can afford.",
+    "built": "I built a Databricks-backed public-data pipeline, geographic screening, counterfactual closure planning and an allocator with explicit budget and site-capacity limits. Saved proposals preserve their sources, model fingerprint and local review notes.",
+    "evidence": "The repository records a completed Databricks pipeline and MLflow scenarios. The demo shows why increasing budget stops increasing allocated meals when site capacity becomes the binding constraint.",
+    "boundary": "Meal counts are assumed allocations, not meals delivered. Flagged populations are not measured food insecurity, and counterfactual schedules do not alter official closures.",
+    "tags": [
+      "Python",
+      "React",
+      "Databricks",
+      "MLflow",
+      "Constrained optimization"
+    ],
+    "demo": "https://hawkerbridge-sg.web.app",
+    "flow": [
+      "Join evidence",
+      "Test tradeoffs",
+      "Review plan"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=vioVop-MEVA",
+    "cover": "/projects/daisi/cover.webp"
+  },
+  "Computer-Use-Automation-System": {
+    "kicker": "COMPUTER USE / AUTOMATION",
+    "title": "AI learns the workflow. Code replays it.",
+    "summary": "A system that turns model-discovered legacy workflows into typed, versioned browser capabilities with deterministic replay.",
+    "problem": "Calling a model at every step makes repetitive legacy work difficult to predict, inspect and safely recover.",
+    "built": "I built capability discovery, parameterized replay, policy checks, bounded recovery and a live human takeover path. Evidence records show inputs, outcomes and targeting decisions; small overlays adapt a capability to a second institution.",
+    "evidence": "The demo uses a real Chromium browser against synthetic banks. It shows balance retrieval, a missing member, session-expiry recovery and handing the same browser session to a person before automation resumes.",
+    "boundary": "Bank records are simulated. The hosted sandbox replays defined scenarios and does not hold a discovery-model key; model discovery is available through the local CLI.",
+    "tags": [
+      "TypeScript",
+      "Playwright",
+      "Computer use",
+      "Agent infrastructure",
+      "Human-in-the-loop"
+    ],
+    "demo": "https://swivel-demo.web.app",
+    "flow": [
+      "Discover",
+      "Review",
+      "Replay"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=eqc0c8pRSlw",
+    "cover": "/projects/computer-use-automation-system/cover.webp"
+  },
+  "Hack-Away-Hunger": {
+    "kicker": "FOOD NETWORKS / OPERATIONS",
+    "title": "From surplus to a confirmed receipt.",
+    "summary": "A coordination workspace that helps pantry networks protect local reserves while moving available food to nearby unmet needs.",
+    "problem": "A promised transfer is not food received, and sharing surplus must not leave the sending pantry short.",
+    "built": "I built explainable matching across stock, demand, capacity, refrigeration and distance, followed by atomic reservation, receiver acceptance, pickup and receipt. Role-aware driver flows, partial receipts and audit exports keep the handoff accountable.",
+    "evidence": "The fictional demo receives fewer pounds than dispatched, records the shortfall and reopens the remaining need. Only accepted pounds appear in the impact record.",
+    "boundary": "Prepared for a supervised pilot, not field-validated. Distances are schematic, and people must follow food-safety procedures. The app does not infer meals, people fed or carbon savings from a transfer.",
+    "tags": [
+      "Python",
+      "FastAPI",
+      "React",
+      "PostgreSQL",
+      "Workflow design"
+    ],
+    "demo": "https://pantryrelay.web.app",
+    "flow": [
+      "Match",
+      "Transfer",
+      "Confirm receipt"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=dSc6ToJ2z6Y",
+    "cover": "/projects/hack-away-hunger/cover.webp"
+  },
+  "Hack-The-Weather": {
+    "kicker": "WEATHER DATA / AGRICULTURAL OPERATIONS",
+    "title": "Every dry hour counts.",
+    "summary": "A maize-drying operations desk that connects station observations to capacity-aware jobs, measured moisture and an auditable ledger.",
+    "problem": "A weather chart does not tell a cooperative which batch fits in the yard, who moves it or whether its moisture has actually changed.",
+    "built": "I built transparent weather rules, coverage gates, batch allocation, assigned drying jobs and moisture-meter records. The ledger distinguishes measured progress from an illustrative tariff equivalent, with private workspaces and portable operator briefs.",
+    "evidence": "The demo combines real JKUAT Conduit observations with fictional batches. Missing weather data withholds an outdoor allocation, and a completed task does not invent a moisture reduction.",
+    "boundary": "No claim of forecast accuracy, food-safety certification or measured savings. Operational rules require a supervised field pilot and real meter readings.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Firestore",
+      "Weather data",
+      "Decision systems"
+    ],
+    "demo": "https://kavu-drying.web.app",
+    "flow": [
+      "Observe weather",
+      "Assign work",
+      "Measure moisture"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=iyu0CjoYOgM",
+    "cover": "/projects/hack-the-weather/cover.webp"
+  },
+  "Galuxium-Nexus-V2": {
+    "kicker": "PRODUCT OPERATIONS / APPLIED AI",
+    "title": "Turn one more thing into an agreed choice.",
+    "summary": "A scope-change workspace where clients can add budget, exchange deliverables or defer, with the agreement updated atomically.",
+    "problem": "A small request can quietly change an agency’s budget and deadline before anyone agrees to the tradeoff.",
+    "built": "I built source-cited request analysis, protected deliverables, reviewed estimates and expiring client decision links. Acceptance checks the current baseline, prevents repeat commits and preserves historical scope, budget, dates and receipts.",
+    "evidence": "The live fictional example exchanges a planned resource library for translated pages while preserving budget and due date. Hosted desktop and mobile release records cover the complete decision loop.",
+    "boundary": "Sample amounts are not revenue or measured savings. Payments are disabled pending merchant configuration. AI suggestions need human review before a client receives a choice.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Vertex AI",
+      "Firestore",
+      "Transactional SaaS"
+    ],
+    "demo": "https://pactshift.web.app",
+    "flow": [
+      "Review request",
+      "Offer choices",
+      "Update agreement"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=BF9QX1_Pppg",
+    "cover": "/projects/galuxium-nexus-v2/cover.webp"
+  },
+  "HACK47": {
+    "kicker": "TRACEABILITY / OFFLINE WORKFLOWS",
+    "title": "A fire drill for the next food recall.",
+    "summary": "A recall-rehearsal workspace that traces ingredient lots, carries uncertainty forward and preserves what was known before evidence was repaired.",
+    "problem": "A missing ingredient record should create an investigation, not an unjustified all-clear.",
+    "built": "I built lot-to-batch-to-delivery tracing, explicit unknown connections, reviewed evidence repair and immutable rehearsal snapshots. The shared domain engine supports offline capture, conflict-aware synchronization and PDF, CSV and JSON evidence packs.",
+    "evidence": "The fictional fixture traces through an intermediate batch. Repairing a missing reference changes the live classification while the saved report retains the original uncertainty.",
+    "boundary": "The browser demo is local to the device; the full application adds accounts and sync. No recorded connection is not proof of food safety. Batchlight does not certify compliance or model contamination.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "SQLite",
+      "Offline-first",
+      "Graph algorithms"
+    ],
+    "demo": "https://shi1720.github.io/HACK47/",
+    "flow": [
+      "Trace",
+      "Investigate",
+      "Repair evidence"
+    ],
+    "visual": "project-cover",
+    "cover": "/projects/hack47/cover.webp"
+  },
+  "shadeshift": {
+    "kicker": "URBAN SYSTEMS / OPTIMIZATION",
+    "title": "The ticket gets you a seat. Not shade.",
+    "summary": "A planning studio that turns heat and transit context into a constrained investment plan for outdoor arrivals and queues.",
+    "problem": "An event operator needs to decide where limited shade funding can reduce time in direct sun while considering community reuse.",
+    "built": "I built an eleven-venue historical heat atlas, a six-link Houston scenario model, exact constrained portfolio search and editable assumptions. Private saved plans, comparison pins and exportable evidence make the tradeoffs inspectable.",
+    "evidence": "The demonstration compares feasible investments and shows a tradeoff: the exposure objective can improve while refill capacity falls. Data sources, equations and scenario assumptions stay visible.",
+    "boundary": "Results are modeled exposure changes, not observed health benefits. Historical heat is context, not a forecast or optimizer input. Field plans require local verification of access, safety, demand and costs.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Leaflet",
+      "Firebase",
+      "Optimization"
+    ],
+    "demo": "https://shadeshift-city.web.app",
+    "flow": [
+      "Map context",
+      "Allocate budget",
+      "Compare tradeoffs"
+    ],
+    "visual": "project-cover",
+    "video": "https://www.youtube.com/watch?v=LQK32lzqW64"
+  }
+}

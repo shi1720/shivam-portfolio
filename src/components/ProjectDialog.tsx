@@ -1,3 +1,4 @@
+import videos from "../videos.json";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
   ArrowUpRight,
@@ -20,6 +21,7 @@ export default function ProjectDialog({
   onAsk: (question: string) => void;
 }) {
   const story = project ? stories[project.id] : null;
+  const video = story?.video || (project && (videos as Record<string, string>)[project.id]);
   const actions = project && (
     <div className="project-dialog-actions">
       {story?.demo && (
@@ -32,10 +34,10 @@ export default function ProjectDialog({
           Try the project <ArrowUpRight size={16} />
         </a>
       )}
-      {story?.video && (
+      {video && (
         <a
           className="button ghost"
-          href={story.video}
+          href={video}
           target="_blank"
           rel="noreferrer"
         >
@@ -95,7 +97,7 @@ export default function ProjectDialog({
                   {story?.summary || project.description}
                 </Dialog.Description>
               </div>
-              {story?.gallery && actions}
+              {actions}
               {story && (
                 <>
                   <ProjectVisual
@@ -124,7 +126,7 @@ export default function ProjectDialog({
                   {story.gallery && (
                     <div
                       className="case-gallery"
-                      aria-label="PaperBridge product gallery"
+                      aria-label={`${project.name} product gallery`}
                     >
                       {story.gallery.map((shot) => (
                         <figure key={shot.src}>
@@ -154,7 +156,7 @@ export default function ProjectDialog({
                   </div>
                 </>
               )}
-              {!story?.gallery && actions}
+
               <button
                 className="ask-project"
                 onClick={() => {

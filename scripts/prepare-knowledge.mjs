@@ -1,19 +1,22 @@
 import ts from "typescript";
 import fs from "node:fs";
 const source = fs.readFileSync("src/stories.ts", "utf8");
-const js = ts.transpileModule(source, {
+const recentStories = JSON.parse(fs.readFileSync("src/recent-stories.json", "utf8"));
+const js = ts.transpileModule(source.replace('import recentStories from "./recent-stories.json";', `const recentStories = ${JSON.stringify(recentStories)};`), {
   compilerOptions: { module: ts.ModuleKind.ESNext },
 }).outputText;
 const { stories } = await import(
   `data:text/javascript;base64,${Buffer.from(js).toString("base64")}`
 );
+const videos = JSON.parse(fs.readFileSync("src/videos.json", "utf8"));
 const projects = JSON.parse(fs.readFileSync("src/catalog.json", "utf8"));
 const knowledge = projects.map((p) => ({
   id: p.id,
   title: p.name,
   url: p.url,
-  content: stories[p.id] || p.description,
+  content: { ...(stories[p.id] || { description: p.description }), ...(videos[p.id] ? { video: videos[p.id] } : {}) },
 }));
+knowledge.push(...JSON.parse(fs.readFileSync("src/research.json", "utf8")).map((p) => ({ id: p.id, title: p.title, url: p.paper, content: { ...p, status: "arXiv preprint; not peer reviewed" } })));
 knowledge.push({
   id: "experience",
   title: "Professional experience",

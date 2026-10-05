@@ -1,3 +1,4 @@
+import { stories } from "../stories";
 import {
   AudioLines,
   Check,
@@ -17,6 +18,13 @@ export default function ProjectVisual({
   name: string;
   projectId: string;
 }) {
+  if (type === "project-cover") {
+    const story = stories[projectId];
+    return <div className="project-visual recent-project-visual" aria-hidden="true">
+      {story.cover ? <img src={story.cover} alt="" width="1200" height="750" loading="lazy" /> : <div className="project-concept"><span className="eyebrow">{story.kicker}</span><strong>{name}</strong><p>{story.title}</p></div>}
+      <div className="project-flow">{story.flow?.map((step, i) => <span key={step}><small>0{i + 1}</small>{step}</span>)}</div>
+    </div>;
+  }
   if (type === "research")
     return <div className="project-visual research-visual" aria-hidden="true"><img src="/projects/paperbridge/cover.webp" alt="" width="1200" height="800" /></div>;
   if (type === "pipeline")

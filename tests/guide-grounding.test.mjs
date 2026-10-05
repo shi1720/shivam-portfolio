@@ -13,7 +13,7 @@ test('regeneration preserves career facts and removes superseded research copy',
   const dir = mkdtempSync(path.join(tmpdir(), 'portfolio-grounding-'));
   try {
     for (const folder of ['src', 'server']) mkdirSync(path.join(dir, folder));
-    for (const file of ['src/catalog.json', 'src/stories.ts', 'src/background.ts', 'server/career-facts.json']) {
+    for (const file of ['src/catalog.json', 'src/recent-stories.json', 'src/research.json', 'src/videos.json', 'src/stories.ts', 'src/background.ts', 'server/career-facts.json']) {
       copyFileSync(file, path.join(dir, file));
     }
     execFileSync(process.execPath, [path.resolve('scripts/prepare-knowledge.mjs')], { cwd: dir });
@@ -73,4 +73,11 @@ test('career questions prioritize resume evidence while preserving named project
   const named = careerContext([{role:'user', content:'Does OfferLoop show product management experience?'}], knowledge);
   assert.ok(named.some(k => k.title === 'OfferLoop'));
   assert.deepEqual(careerContext([{role:'user', content:'How does the reliability lab work?'}], knowledge), knowledge);
+});
+
+test('research questions retain publications through career-context filtering', () => {
+ const context = careerContext([{role:'user', content:'Tell me about Shivam’s research and publications.'}], knowledge);
+ const papers = context.filter(k => k.content?.status === 'arXiv preprint; not peer reviewed');
+ assert.equal(papers.length, 6);
+ assert.ok(papers.every(p => p.url.startsWith('https://arxiv.org/abs/')));
 });
