@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import media from "../project-media.json";
 import videos from "../videos.json";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -22,11 +21,9 @@ export default function ProjectDialog({
   onClose: () => void;
   onAsk: (question: string) => void;
 }) {
-  const player = useRef<HTMLIFrameElement>(null);
   const story = project ? stories[project.id] : null;
   const demo = story?.demo || (project && (media as Record<string, { demo?: string }>)[project.id]?.demo);
   const video = story?.video || (project && (videos as Record<string, string>)[project.id]);
-  const videoId = video?.match(/(?:[?&]v=|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[&#?]|$)/)?.[1];
   const actions = project && (
     <div className="project-dialog-actions">
       {demo && (
@@ -39,13 +36,15 @@ export default function ProjectDialog({
           Try the project <ArrowUpRight size={16} />
         </a>
       )}
-      {videoId && (
-        <button className="button ghost" onClick={() => {
-          player.current?.scrollIntoView({ block: "center" });
-          player.current?.focus({ preventScroll: true });
-        }}>
+      {video && (
+        <a
+          className="button ghost"
+          href={video}
+          target="_blank"
+          rel="noreferrer"
+        >
           <Play size={16} /> Watch the demo
-        </button>
+        </a>
       )}
       {story?.privateSource ? (
         <span className="private-source">
@@ -101,19 +100,6 @@ export default function ProjectDialog({
                 </Dialog.Description>
               </div>
               {actions}
-              {videoId && <section className="project-video" aria-label={`${project.name} demo video`}>
-                <div className="project-video-heading"><span className="eyebrow">THE PRODUCT IN ACTION</span><a href={video!} target="_blank" rel="noreferrer">Open on YouTube <ArrowUpRight size={14} /></a></div>
-                <iframe
-                  key={videoId}
-                  ref={player}
-                  src={`https://www.youtube-nocookie.com/embed/${videoId}?playsinline=1&rel=0`}
-                  title={`${project.name} demo video`}
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </section>}
               <ProjectVisual type={story?.visual || "project-cover"} name={project.name} projectId={project.id} />
               {story && (
                 <>

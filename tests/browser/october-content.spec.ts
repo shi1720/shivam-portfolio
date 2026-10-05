@@ -26,12 +26,12 @@ test('new project links and media load without duplicate Signsprout', async ({pa
   const dialog=page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole('link',{name:'Try the project'})).toHaveAttribute('href',s.demo);
-  if('video' in s) await expect(dialog.getByRole('link',{name:'Open on YouTube'})).toHaveAttribute('href',s.video);
+  if('video' in s) await expect(dialog.getByRole('link',{name:'Watch the demo'})).toHaveAttribute('href',s.video);
   for(const img of await dialog.locator('img').all()) await expect.poll(()=>img.evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBeTruthy();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
  }
 });
 test('video actions are available for legacy entries without a full story',async({page})=>{
  await page.goto('/#project=LexHack');
- await expect(page.getByRole('dialog').getByRole('link',{name:'Open on YouTube'})).toHaveAttribute('href','https://www.youtube.com/watch?v=BaLlSJhui1I');
+ await expect(page.getByRole('dialog').getByRole('link',{name:'Watch the demo'})).toHaveAttribute('href','https://www.youtube.com/watch?v=BaLlSJhui1I');
 });

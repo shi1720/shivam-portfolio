@@ -4349,10 +4349,3 @@ select:focus-visible {
 .work-preview .pipeline-visual { aspect-ratio:16/10; }
 .research-paper details[open] summary { margin-bottom:10px; }
 .research-paper details .paper-summary { font-size:14px; margin:0 0 12px; }
-
-.project-video { margin:0 0 28px; min-width:0; }
-.project-video-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px; }
-.project-video-heading .eyebrow { margin:0; font-size:10px; }
-.project-video-heading a { display:inline-flex; align-items:center; gap:6px; font-size:12px; text-decoration:underline; text-underline-offset:3px; }
-.project-video iframe { display:block; border:0; width:100%; aspect-ratio:16/9; min-height:200px; background:#151b1a; border-radius:4px; }
-.project-video iframe:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
