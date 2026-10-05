@@ -289,7 +289,7 @@ export default function App() {
             </div>
             <div className="work-switcher" aria-label="Explore the work">
               <a href="#work" aria-current={workView === "projects" ? "page" : undefined} onClick={() => setWorkView("projects")}>Products & experiments</a>
-              <a href="#research" aria-current={workView === "research" ? "page" : undefined} onClick={() => setWorkView("research")}>Research <span>06 papers</span></a>
+              <a href="#research" aria-current={workView === "research" ? "page" : undefined} onClick={() => setWorkView("research")}>Research</a>
             </div>
             {workView === "research" ? <Research /> : <>
             <div className="archive-ruler" aria-hidden="true">
@@ -383,7 +383,7 @@ export default function App() {
                   </button>
                 </div>
                 <ProjectVisual
-                  type={story?.visual || "graph"}
+                  type={story?.visual || "project-cover"}
                   name={active.name}
                   projectId={active.id}
                 />

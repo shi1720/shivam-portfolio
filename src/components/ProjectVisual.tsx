@@ -1,3 +1,5 @@
+import media from "../project-media.json";
+import catalog from "../catalog.json";
 import { stories } from "../stories";
 import {
   AudioLines,
@@ -18,6 +20,16 @@ export default function ProjectVisual({
   name: string;
   projectId: string;
 }) {
+  const asset = (media as Record<string, { cover?: string; flow?: string[] }>)[projectId];
+  if (asset) {
+    const project = catalog.find(p => p.id === projectId);
+    return <div className="project-visual recent-project-visual legacy-project-visual">
+      {asset.cover ? <img src={asset.cover} alt={`${name} project screenshot`} width="1400" height="875" loading="lazy" /> : <>
+        <div className="project-concept"><span className="eyebrow">TYPESCRIPT / COMMITMENT STATE MACHINE</span><strong>{name}</strong><p>{project?.description}</p></div>
+        <div className="project-flow">{asset.flow?.map((step, i) => <span key={step}><small>0{i + 1}</small>{step}</span>)}</div>
+      </>}
+    </div>;
+  }
   if (type === "project-cover") {
     const story = stories[projectId];
     return <div className="project-visual recent-project-visual" aria-hidden="true">

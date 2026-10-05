@@ -1,0 +1,43 @@
+{
+  "DSH-Hacks-V2": {
+    "cover": "/projects/dsh-hacks-v2/cover.webp",
+    "demo": "https://lotlight-care.web.app"
+  },
+  "LexHack": {
+    "cover": "/projects/lexhack/cover.webp",
+    "demo": "https://annex-evidence.web.app"
+  },
+  "YC-Fall-2026-x-Moss": {
+    "cover": "/projects/yc-fall-2026-x-moss/cover.webp",
+    "demo": "https://raksha-app.web.app"
+  },
+  "UnivaBio": {
+    "cover": "/projects/univabio/cover.webp",
+    "demo": "https://looplight-care.web.app"
+  },
+  "granted": {
+    "cover": "/projects/granted/cover.webp",
+    "demo": "https://grantedai.web.app"
+  },
+  "lotline-hack2heal": {
+    "cover": "/projects/lotline-hack2heal/cover.webp",
+    "demo": "https://lotline.web.app"
+  },
+  "epilogue": {
+    "cover": "/projects/epilogue/cover.webp",
+    "demo": "https://epilogue-agent.web.app"
+  },
+  "catchment-oneaquahealth": {
+    "cover": "/projects/catchment-oneaquahealth/cover.webp"
+  },
+  "stepfree": {
+    "cover": "/projects/stepfree/cover.webp"
+  },
+  "kindhandoff-guard": {
+    "flow": [
+      "Propose a commitment",
+      "Record acceptance",
+      "Audit completion"
+    ]
+  }
+}

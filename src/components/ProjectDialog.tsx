@@ -1,3 +1,4 @@
+import media from "../project-media.json";
 import videos from "../videos.json";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
@@ -21,13 +22,14 @@ export default function ProjectDialog({
   onAsk: (question: string) => void;
 }) {
   const story = project ? stories[project.id] : null;
+  const demo = story?.demo || (project && (media as Record<string, { demo?: string }>)[project.id]?.demo);
   const video = story?.video || (project && (videos as Record<string, string>)[project.id]);
   const actions = project && (
     <div className="project-dialog-actions">
-      {story?.demo && (
+      {demo && (
         <a
           className="button primary"
-          href={story.demo}
+          href={demo}
           target="_blank"
           rel="noreferrer"
         >
@@ -98,13 +100,10 @@ export default function ProjectDialog({
                 </Dialog.Description>
               </div>
               {actions}
+              <ProjectVisual type={story?.visual || "project-cover"} name={project.name} projectId={project.id} />
               {story && (
                 <>
-                  <ProjectVisual
-                    type={story.visual}
-                    name={project.name}
-                    projectId={project.id}
-                  />
+
                   <div className="case-sections">
                     <section>
                       <h3>The problem</h3>
