@@ -42,7 +42,7 @@ test("project search and category filter have honest empty states", async ({
     .selectOption("human");
   await expect(page.getByText("No projects found.")).toBeVisible();
   await page.getByRole("button", { name: "Clear filters" }).click();
-  await expect(page.locator(".work-list>button")).toHaveCount(42);
+  await expect(page.locator(".work-list>button")).toHaveCount(43);
 });
 test("deep-linked case study preserves scope and keyboard escape", async ({
   page,
@@ -319,11 +319,11 @@ test("OfferLoop opens the studio and leads the curated project index", async ({ 
   await expect(page.locator(".work-list > button").first().getByLabel("Featured project")).toBeVisible();
   await expect(page.locator(".preview-caption")).toContainText("FEATURED PROJECT");
   await expect(page.locator(".work-preview")).toContainText("Give your next chapter a system.");
-  await expect(page.locator(".work-list > button")).toHaveCount(42);
+  await expect(page.locator(".work-list > button")).toHaveCount(43);
   for (const id of ["ap-article-review", "ap-frq-review", "math-question-editor", "speechace-proxy", "sat-pdf-to-csv"]) {
     await page.goto(`/#project=${id}`);
     await expect(page.getByRole("dialog")).not.toBeVisible();
-    await expect(page.locator(".work-list > button")).toHaveCount(42);
+    await expect(page.locator(".work-list > button")).toHaveCount(43);
   }
 });
 

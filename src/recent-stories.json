@@ -421,5 +421,39 @@
     ],
     "visual": "project-cover",
     "video": "https://www.youtube.com/watch?v=LQK32lzqW64"
+  },
+  "pharma-ai": {
+    "kicker": "HEALTHCARE OPERATIONS / APPLIED AI",
+    "title": "From recall notice to accountable action.",
+    "summary": "A bilingual recall-response workspace connecting public medication notices to affected stock, pharmacist review and a documented response across departments.",
+    "problem": "A recall notice does not tell a hospital which units are affected, who has checked them or whether every department has accounted for its stock. Missing lot numbers and scattered records make those gaps harder to see.",
+    "built": "I built English and Korean workflows for CSV inventory intake, exact identifier and lot matching, explicit uncertainty review, source-cited AI response drafts, pharmacist approval and department acknowledgements. Versioned case snapshots, role-based access and hash-linked audit events preserve the evidence behind each decision.",
+    "evidence": "The interactive demo follows synthetic cefazolin and metformin cases from review through stock reconciliation. The repository documents hosted checks for Firebase sessions, tenant isolation, Firestore persistence, bilingual Vertex AI drafting and closure gates. Visitors can explore the workflow without creating an account.",
+    "boundary": "A technical prototype using synthetic hospital and inventory records, not a clinically certified system. AI prepares drafts for human review. Internal closure requires recorded acknowledgements and reconciled quantities. Institutional approval and supervised validation are required before operational use.",
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "Firebase",
+      "Vertex AI",
+      "Bilingual UX",
+      "Workflow engineering"
+    ],
+    "demo": "https://pillora-care.web.app",
+    "video": "https://www.youtube.com/watch?v=XFwZP-9-dwU",
+    "privateSource": true,
+    "flow": [
+      "Match affected stock",
+      "Approve the response",
+      "Reconcile every unit"
+    ],
+    "visual": "project-cover",
+    "cover": "/projects/pharma-ai/cover.webp",
+    "gallery": [
+      {
+        "src": "/projects/pharma-ai/workspace.webp",
+        "alt": "Pillora English-language demo dashboard showing synthetic recall cases, inventory totals and department actions",
+        "caption": "The synthetic demo workspace. Recall scope, uncertainty and the next action stay visible."
+      }
+    ]
   }
 }

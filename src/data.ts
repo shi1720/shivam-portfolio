@@ -14,6 +14,7 @@ export const featured = [
   "kept",
   "signsprout-xr",
   "zusage",
+  "pharma-ai",
   "coinmarketcap",
   "WeAreDevelopers",
   "ibm-bob",

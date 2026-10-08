@@ -27,7 +27,7 @@ test('new project links and media load without duplicate Signsprout', async ({pa
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole('link',{name:'Try the project'})).toHaveAttribute('href',s.demo);
   if('video' in s) await expect(dialog.getByRole('link',{name:'Watch the demo'})).toHaveAttribute('href',s.video);
-  for(const img of await dialog.locator('img').all()) await expect.poll(()=>img.evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBeTruthy();
+  for(const img of await dialog.locator('img').all()) { await img.scrollIntoViewIfNeeded(); await expect.poll(()=>img.evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBeTruthy(); }
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
  }
 });

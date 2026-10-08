@@ -334,5 +334,13 @@
     "language": "TypeScript",
     "url": "https://github.com/shi1720/shadeshift",
     "description": "A planning studio that turns heat and transit context into a constrained investment plan for outdoor arrivals and queues."
+  },
+  {
+    "id": "pharma-ai",
+    "name": "Pillora",
+    "district": "systems",
+    "description": "A bilingual medication recall workspace connecting affected inventory, source-cited AI drafts, pharmacist approval and department reconciliation.",
+    "language": "TypeScript",
+    "url": "https://pillora-care.web.app"
   }
 ]

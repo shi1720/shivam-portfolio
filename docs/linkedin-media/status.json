@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-08",
+  "pillora": {
+    "project_saved": true,
+    "edit_url": "https://www.linkedin.com/in/shivamgupta-ai/details/projects/edit/forms/474836578/",
+    "media_attached": false,
+    "image": "https://shivamgupta.web.app/showcase/pillora.png",
+    "caption": "Pillora: from recall notice to accountable action. Bilingual workflows with synthetic demo data."
+  },
+  "kavu": {
+    "edit_url": "https://www.linkedin.com/in/shivamgupta-ai/details/projects/edit/forms/200782901/",
+    "media_attached": false,
+    "image": "https://shivamgupta.web.app/showcase/kavu.png",
+    "caption": "Kavu: weather observations, drying jobs and measured moisture. Real observations with fictional batches."
+  },
+  "kept": {
+    "edit_url": "https://www.linkedin.com/in/shivamgupta-ai/details/projects/edit/forms/200385229/",
+    "demo_link_added": true,
+    "media_attached": false,
+    "image": "https://shivamgupta.web.app/showcase/kept.png",
+    "caption": "Kept: clear agreements, shared evidence and PayPal sandbox settlement."
+  },
+  "blocker": "LinkedIn link previews rejected both Firebase showcase and YouTube URLs. BrowserAct upload to image menu item navigated to the local image instead of attaching it; no file input is exposed before native picker."
+}
