@@ -57,7 +57,7 @@ export default function ProjectDialog({
           target="_blank"
           rel="noreferrer"
         >
-          <Code2 size={16} /> Source code
+          <Code2 size={16} /> {story?.sourceLabel || "Source code"}
         </a>
       )}
       {story?.architecture && (

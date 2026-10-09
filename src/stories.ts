@@ -12,6 +12,7 @@ export type Story = {
   architecture?: string;
   video?: string;
   privateSource?: boolean;
+  sourceLabel?: string;
   gallery?: { src: string; alt: string; caption: string }[];
   visual: string;
   cover?: string;

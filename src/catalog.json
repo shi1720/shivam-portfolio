@@ -342,5 +342,21 @@
     "description": "A bilingual medication recall workspace connecting affected inventory, source-cited AI drafts, pharmacist approval and department reconciliation.",
     "language": "TypeScript",
     "url": "https://pillora-care.web.app"
+  },
+  {
+    "id": "afterhours-tenth-prescription",
+    "name": "AFTERHOURS",
+    "district": "human",
+    "description": "A pixel-art horror game about recovering forgotten names across ten haunted pharmacy wards, with light, stealth and narrative choices.",
+    "language": "GDScript",
+    "url": "https://github.com/shi1720/afterhours-tenth-prescription"
+  },
+  {
+    "id": "tidelume",
+    "name": "TIDELUME",
+    "district": "human",
+    "description": "An atmospheric puzzle voyage across twelve islands, using mirrors, changing tides and remembered light to reach the final lighthouse.",
+    "language": "GDScript",
+    "url": "https://github.com/shi1720/tidelume-play"
   }
 ]

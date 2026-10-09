@@ -56,7 +56,7 @@
     "title": "Find your words before the interview.",
     "summary": "An Apertus-powered interview coach that helps Swiss apprenticeship seekers turn real experiences into stronger answers.",
     "problem": "First-time applicants need practice and usable feedback, not a script that replaces their own experience.",
-    "built": "I built multilingual interviews, six-criterion feedback grounded in the learner’s words, self-assessment, retries and spaced practice. A story bank, application tracker and writing tools carry the work into the job search. Teachers see progress; access to answer text requires revocable student consent.",
+    "built": "I built multilingual interviews, six-criterion feedback grounded in the learner\u2019s words, self-assessment, retries and spaced practice. A story bank, application tracker and writing tools carry the work into the job search. Teachers see progress; access to answer text requires revocable student consent.",
     "evidence": "The repository records working interviews in German, French, Italian, English and Swiss German. A complete local interview ran on an M4 Pro using quantized Apertus 1.5 8B, with hosted student and teacher demos available.",
     "boundary": "Functional checks are not an official judge benchmark or evidence of hiring outcomes. The offline demo is labelled, and Swiss German speech uses approximate dialect pronunciation.",
     "tags": [
@@ -107,7 +107,7 @@
     "title": "Keep the promise when the floor changes.",
     "summary": "A four-seat coding-agent workflow that built and independently checked a restaurant reservation system across four evolving releases.",
     "problem": "A restaurant closure can invalidate several bookings at once. Repairing one reservation must not quietly break another.",
-    "built": "I directed Proofline’s product brief and agent configuration. Its implementation and verification seats delivered booking flows, effective-dated policies, recurring reservations and atomic closure repair. A separate hosted companion adds durable storage and operational browser flows.",
+    "built": "I directed Proofline\u2019s product brief and agent configuration. Its implementation and verification seats delivered booking flows, effective-dated policies, recurring reservations and atomic closure repair. A separate hosted companion adds durable storage and operational browser flows.",
     "evidence": "The repository preserves the BAND room record, release ledger and independent checks. All four stages passed their published isolated contract suites, with 575 check executions in a complete run.",
     "boundary": "The original stage implementation is a bounded local benchmark with in-memory state. The hosted companion is separately verified. Neither proves restaurant adoption or production certification; recovery planning has explicit size limits.",
     "tags": [
@@ -155,7 +155,7 @@
     "title": "Every good lot deserves a buyer.",
     "summary": "A recovery desk for cancelled wholesale food orders, connecting buyer conversations to inventory-safe commitments.",
     "problem": "When a food order is cancelled, a hurried phone tree can produce competing promises for the same remaining stock.",
-    "built": "I built stock release, buyer matching, structured intent interpretation, price and delivery checks, atomic commitments and audit records. Adapters target WhatsApp, SMS and email through AWS services; the hosted rehearsal isolates each visitor’s workspace.",
+    "built": "I built stock release, buyer matching, structured intent interpretation, price and delivery checks, atomic commitments and audit records. Adapters target WhatsApp, SMS and email through AWS services; the hosted rehearsal isolates each visitor\u2019s workspace.",
     "evidence": "Two buyers can request the last eight crates concurrently, but only one transaction receives them. The video shows the full recovery workflow and inspectable inventory records.",
     "boundary": "The public demo uses fictional buyers and simulated messages. Hosted Firebase/Cloud Run verification does not establish live AWS messaging or Bedrock delivery. Demo order value is not revenue or measured waste avoided.",
     "tags": [
@@ -176,7 +176,7 @@
   },
   "HTCJ": {
     "kicker": "AVIATION OPERATIONS / EVIDENCE",
-    "title": "Yesterday’s approval. Today’s evidence.",
+    "title": "Yesterday\u2019s approval. Today\u2019s evidence.",
     "summary": "An evidence desk that binds each drone-inspection signoff to the exact source material a coordinator reviewed.",
     "problem": "An approval should stop being valid when the site notice or supporting evidence changes.",
     "built": "I built versioned source capture, explicit expiry checks, dependency-based signoff revocation and separate source-review and mission-approval steps. Isolated workspaces include failure drills, audit history and independently verifiable decision packets.",
@@ -353,7 +353,7 @@
     "kicker": "PRODUCT OPERATIONS / APPLIED AI",
     "title": "Turn one more thing into an agreed choice.",
     "summary": "A scope-change workspace where clients can add budget, exchange deliverables or defer, with the agreement updated atomically.",
-    "problem": "A small request can quietly change an agency’s budget and deadline before anyone agrees to the tradeoff.",
+    "problem": "A small request can quietly change an agency\u2019s budget and deadline before anyone agrees to the tradeoff.",
     "built": "I built source-cited request analysis, protected deliverables, reviewed estimates and expiring client decision links. Acceptance checks the current baseline, prevents repeat commits and preserves historical scope, budget, dates and receipts.",
     "evidence": "The live fictional example exchanges a planned resource library for translated pages while preserving budget and due date. Hosted desktop and mobile release records cover the complete decision loop.",
     "boundary": "Sample amounts are not revenue or measured savings. Payments are disabled pending merchant configuration. AI suggestions need human review before a client receives a choice.",
@@ -453,6 +453,73 @@
         "src": "/projects/pharma-ai/workspace.webp",
         "alt": "Pillora English-language demo dashboard showing synthetic recall cases, inventory totals and department actions",
         "caption": "The synthetic demo workspace. Recall scope, uncertainty and the next action stay visible."
+      }
+    ]
+  },
+  "afterhours-tenth-prescription": {
+    "kicker": "GAMES / PIXEL-ART HORROR",
+    "title": "Ten wards. Thirty names. One light left on.",
+    "summary": "AFTERHOURS: The Tenth Prescription is a complete horror story inside a haunted pharmacy. Recover sealed records, manage your light and decide what the building remembers.",
+    "problem": "How do you make a small, browser-playable horror game feel tense and personal? Each route needs a meaningful risk, and each recovered record needs a reason to matter.",
+    "built": "I created ten authored wards, stealth and pursuit behavior, a charge-limited light pulse, environmental setpieces and two final story choices. Local profiles preserve completed wards, while gentle difficulty, high visibility and reduced atmospheric effects give players control over the experience. AI tools assisted implementation, writing, procedural pixel art and synthesized audio under my creative direction.",
+    "evidence": "The public game and gameplay video show the release. The repository contains the Godot project, authored room systems, original asset generators and a native integration suite covering gameplay and saves. Keyboard and landscape touch controls are documented.",
+    "boundary": "Fictional horror with darkness, pursuit and jump scares. Progress is local to the browser or device, with no cloud synchronization. The pharmacy setting contains no medication advice or real patient information.",
+    "tags": [
+      "Godot",
+      "GDScript",
+      "Game design",
+      "Interactive storytelling",
+      "Pixel art",
+      "Audio design"
+    ],
+    "demo": "https://afterhours-prescription.web.app/",
+    "video": "https://www.youtube.com/watch?v=L6kt6Z9vEp4",
+    "visual": "project-cover",
+    "cover": "/projects/afterhours/cover.webp",
+    "flow": [
+      "Reveal the records",
+      "Outwit the shadows",
+      "Choose what remains"
+    ],
+    "gallery": [
+      {
+        "src": "/projects/afterhours/gameplay.webp",
+        "alt": "AFTERHOURS gameplay in the first ward, showing the pharmacy maze, record count, charge and resolve",
+        "caption": "The first ward: shelves, shadows and a limited light pulse turn movement into a decision."
+      }
+    ]
+  },
+  "tidelume": {
+    "kicker": "GAMES / ATMOSPHERIC PUZZLES",
+    "title": "Carry the light home.",
+    "summary": "An atmospheric puzzle voyage across twelve authored islands. Rotate mirrors, change the tide and recover the memories that lead to the final lighthouse.",
+    "problem": "A reflection puzzle can be mechanically clear yet emotionally empty. Tidelume connects each solved route to a recovered memory, then changes the rules so earlier light becomes part of the next decision.",
+    "built": "I shaped the game design, narrative, visual direction and release, with AI-assisted development, art, testing and audio. The Godot implementation combines deterministic optics, tide gates, persistent memory states, undo and shortest-path hints from the current board. A field guide, journal, local keeper profiles and portable saves support a complete three-chapter voyage.",
+    "evidence": "The free browser release contains twelve islands, an optional three-island demo and a complete ending. The source project includes an independent level verifier and gameplay checks; the public release repository provides the playable build and downloads. The linked video demonstrates the game.",
+    "boundary": "An English-language game with desktop and portrait layouts. Progress stays in the current browser or device; save export/import provides a portable backup. There are no online accounts or cloud saves. The public repository distributes the release, while the source project is maintained separately.",
+    "tags": [
+      "Godot",
+      "GDScript",
+      "Puzzle design",
+      "State-space search",
+      "Interactive storytelling",
+      "Audio design"
+    ],
+    "demo": "https://tidelume.web.app/",
+    "video": "https://www.youtube.com/watch?v=WGfP8QVITXw",
+    "sourceLabel": "Playable release",
+    "visual": "project-cover",
+    "cover": "/projects/tidelume/cover.webp",
+    "flow": [
+      "Bend the beam",
+      "Change the tide",
+      "Carry memories home"
+    ],
+    "gallery": [
+      {
+        "src": "/projects/tidelume/gameplay.webp",
+        "alt": "Tidelume puzzle board with light source, mirrors, memories, lighthouse and tide controls",
+        "caption": "A live browser puzzle. Mirrors and tide gates shape the route to the lighthouse."
       }
     ]
   }

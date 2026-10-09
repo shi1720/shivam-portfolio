@@ -988,6 +988,83 @@
     }
   },
   {
+    "id": "afterhours-tenth-prescription",
+    "title": "AFTERHOURS",
+    "url": "https://github.com/shi1720/afterhours-tenth-prescription",
+    "content": {
+      "kicker": "GAMES / PIXEL-ART HORROR",
+      "title": "Ten wards. Thirty names. One light left on.",
+      "summary": "AFTERHOURS: The Tenth Prescription is a complete horror story inside a haunted pharmacy. Recover sealed records, manage your light and decide what the building remembers.",
+      "problem": "How do you make a small, browser-playable horror game feel tense and personal? Each route needs a meaningful risk, and each recovered record needs a reason to matter.",
+      "built": "I created ten authored wards, stealth and pursuit behavior, a charge-limited light pulse, environmental setpieces and two final story choices. Local profiles preserve completed wards, while gentle difficulty, high visibility and reduced atmospheric effects give players control over the experience. AI tools assisted implementation, writing, procedural pixel art and synthesized audio under my creative direction.",
+      "evidence": "The public game and gameplay video show the release. The repository contains the Godot project, authored room systems, original asset generators and a native integration suite covering gameplay and saves. Keyboard and landscape touch controls are documented.",
+      "boundary": "Fictional horror with darkness, pursuit and jump scares. Progress is local to the browser or device, with no cloud synchronization. The pharmacy setting contains no medication advice or real patient information.",
+      "tags": [
+        "Godot",
+        "GDScript",
+        "Game design",
+        "Interactive storytelling",
+        "Pixel art",
+        "Audio design"
+      ],
+      "demo": "https://afterhours-prescription.web.app/",
+      "video": "https://www.youtube.com/watch?v=L6kt6Z9vEp4",
+      "visual": "project-cover",
+      "cover": "/projects/afterhours/cover.webp",
+      "flow": [
+        "Reveal the records",
+        "Outwit the shadows",
+        "Choose what remains"
+      ],
+      "gallery": [
+        {
+          "src": "/projects/afterhours/gameplay.webp",
+          "alt": "AFTERHOURS gameplay in the first ward, showing the pharmacy maze, record count, charge and resolve",
+          "caption": "The first ward: shelves, shadows and a limited light pulse turn movement into a decision."
+        }
+      ]
+    }
+  },
+  {
+    "id": "tidelume",
+    "title": "TIDELUME",
+    "url": "https://github.com/shi1720/tidelume-play",
+    "content": {
+      "kicker": "GAMES / ATMOSPHERIC PUZZLES",
+      "title": "Carry the light home.",
+      "summary": "An atmospheric puzzle voyage across twelve authored islands. Rotate mirrors, change the tide and recover the memories that lead to the final lighthouse.",
+      "problem": "A reflection puzzle can be mechanically clear yet emotionally empty. Tidelume connects each solved route to a recovered memory, then changes the rules so earlier light becomes part of the next decision.",
+      "built": "I shaped the game design, narrative, visual direction and release, with AI-assisted development, art, testing and audio. The Godot implementation combines deterministic optics, tide gates, persistent memory states, undo and shortest-path hints from the current board. A field guide, journal, local keeper profiles and portable saves support a complete three-chapter voyage.",
+      "evidence": "The free browser release contains twelve islands, an optional three-island demo and a complete ending. The source project includes an independent level verifier and gameplay checks; the public release repository provides the playable build and downloads. The linked video demonstrates the game.",
+      "boundary": "An English-language game with desktop and portrait layouts. Progress stays in the current browser or device; save export/import provides a portable backup. There are no online accounts or cloud saves. The public repository distributes the release, while the source project is maintained separately.",
+      "tags": [
+        "Godot",
+        "GDScript",
+        "Puzzle design",
+        "State-space search",
+        "Interactive storytelling",
+        "Audio design"
+      ],
+      "demo": "https://tidelume.web.app/",
+      "video": "https://www.youtube.com/watch?v=WGfP8QVITXw",
+      "sourceLabel": "Playable release",
+      "visual": "project-cover",
+      "cover": "/projects/tidelume/cover.webp",
+      "flow": [
+        "Bend the beam",
+        "Change the tide",
+        "Carry memories home"
+      ],
+      "gallery": [
+        {
+          "src": "/projects/tidelume/gameplay.webp",
+          "alt": "Tidelume puzzle board with light source, mirrors, memories, lighthouse and tide controls",
+          "caption": "A live browser puzzle. Mirrors and tide gates shape the route to the lighthouse."
+        }
+      ]
+    }
+  },
+  {
     "id": "personal-ai-memory",
     "title": "A Controlled Audit of Personal AI Memory for Rating Prediction",
     "url": "https://arxiv.org/abs/2610.02764",
