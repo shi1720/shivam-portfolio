@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import VoiceGuide from "./VoiceGuide";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
   ArrowUp,
@@ -289,7 +288,6 @@ export default function Chat({
               </div>
             )}
           </div>
-          {open && <VoiceGuide disabled={busy} />}
           <form
             className="chat-form"
             onSubmit={(e) => {

@@ -27,7 +27,7 @@ export function createHandler({
   getToken,
   generate,
   timeoutMs = 28000,
-  model = "gemini-3.1-flash-lite",
+  model = "gemini-3.8-flash",
   logger = console,
 }) {
   const limits = new Map();

@@ -1,14 +1,12 @@
 import http from "node:http";
 import { readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { GoogleAuth } from "google-auth-library";
 import { Firestore } from "@google-cloud/firestore";
-import { generationRequest } from "./core.mjs";
+import { createGeminiGenerator, DEFAULT_MODEL } from "./gemini.mjs";
 import { createHandler } from "./handler.mjs";
-import { createVoiceHandler } from "./voice.mjs";
 const project =
   process.env.GOOGLE_CLOUD_PROJECT || "gen-lang-client-0444960702";
-const model = process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+const model = process.env.GEMINI_MODEL || DEFAULT_MODEL;
 const knowledge = JSON.parse(
   await readFile(new URL("./knowledge.json", import.meta.url), "utf8"),
 );
@@ -16,9 +14,6 @@ const allowed = new Set(
   (process.env.APP_ORIGINS || "http://127.0.0.1:5180").split(","),
 );
 const local = process.env.LOCAL_DEV === "true";
-const auth = new GoogleAuth({
-  scopes: ["https://www.googleapis.com/auth/cloud-platform"],
-});
 const db = local
   ? null
   : new Firestore({ projectId: project, databaseId: "shivam-portfolio" });
@@ -44,44 +39,17 @@ async function reserveBudget(sessionId, signal) {
     { maxAttempts: 3 },
   );
 }
-async function generate({ messages, token, signal }) {
-  const response = await fetch(
-    `https://aiplatform.googleapis.com/v1/projects/${project}/locations/global/publishers/google/models/${model}:generateContent`,
-    {
-      method: "POST",
-      signal,
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(generationRequest(messages, knowledge)),
-    },
-  );
-  if (!response.ok)
-    throw Object.assign(new Error("Provider unavailable"), {
-      code: response.status,
-    });
-  const data = await response.json();
-  const text = data.candidates?.[0]?.content?.parts
-    ?.filter((p) => !p.thought)
-    .map((p) => p.text || "")
-    .join("");
-  if (!text) throw new Error("Provider returned no answer");
-  return JSON.parse(text);
-}
+const generate = createGeminiGenerator({ knowledge, model, apiKey: process.env.GEMINI_API_KEY });
 const handler = createHandler({
   knowledge,
   allowed,
   reserveBudget,
-  getToken: () => auth.getAccessToken(),
+  getToken: async () => undefined,
   generate,
   model,
 });
-const voice = createVoiceHandler({ db, allowed, local, brand: "portfolio", instructions: "You are Shivam Gupta’s AI portfolio guide. Explain his projects, career, strengths and role fit using the verified source notes below. Native English, TOEFL 118/120, reported as 6/6. He has customer-facing, forward-deployed engineering and product leadership experience. Explain transferable strengths without inventing sales quotas, revenue ownership or credentials. Verified notes: " + JSON.stringify(knowledge) });
-const server = http.createServer(async (req, res) => {
-  if (await voice(req, res)) return;
-  return handler(req, res);
-});
+// Voice is temporarily disabled; /api/voice/* follows the normal 404 path.
+const server = http.createServer(handler);
 server.requestTimeout = 30000;
 server.headersTimeout = 10000;
 server.listen(Number(process.env.PORT || 8088), "0.0.0.0", () =>
