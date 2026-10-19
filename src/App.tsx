@@ -336,7 +336,7 @@ export default function App() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="work-project-name">{p.name}</span>
-                      {["OfferLoop-Job-CRM", "paperbridge", "kept", "signsprout-xr", "zusage"].includes(p.id) && (
+                      {["OfferLoop-Job-CRM", "paperbridge", "margin-studio", "kept", "signsprout-xr", "zusage"].includes(p.id) && (
                         <span className="work-featured" aria-label="Featured project">
                           <Star size={12} aria-hidden="true" /> <span>Featured</span>
                         </span>
@@ -365,7 +365,7 @@ export default function App() {
                 hidden={!ordered.length}
               >
                 <div className="preview-caption">
-                  <span>{["OfferLoop-Job-CRM", "paperbridge", "kept", "signsprout-xr", "zusage"].includes(active.id) ? "FEATURED PROJECT" : "IN FOCUS"}</span>
+                  <span>{["OfferLoop-Job-CRM", "paperbridge", "margin-studio", "kept", "signsprout-xr", "zusage"].includes(active.id) ? "FEATURED PROJECT" : "IN FOCUS"}</span>
                   <span>{active.language}</span>
                 </div>
                 <div className="work-preview-copy">

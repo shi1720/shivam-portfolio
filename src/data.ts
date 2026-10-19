@@ -11,6 +11,7 @@ export const categories: { id: District; label: string; short: string }[] = [
 export const featured = [
   "OfferLoop-Job-CRM",
   "paperbridge",
+  "margin-studio",
   "kept",
   "signsprout-xr",
   "zusage",

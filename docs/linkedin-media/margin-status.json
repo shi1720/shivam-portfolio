@@ -1,0 +1,11 @@
+{
+  "project": "Margin",
+  "date": "2026-10-19",
+  "linkedinProjectId": "1397201830",
+  "mediaVerified": ["Margin | Your experience is the advantage", "Margin | Inside the editorial workspace", "Margin | Turn your experience into better social posts | Full product demo"],
+  "live": "https://margin-studio.web.app/",
+  "video": "https://www.youtube.com/watch?v=ZdY6OLLtko0",
+  "portfolio": "https://shivamgupta.web.app/#project=margin-studio",
+  "deployment": "Hosting and knowledge deployed. Backend image margin-20261019 retains the production Vertex provider via server/index.mjs from e8f4a71; pending API-key migration was not activated. Cloud Run revision shivam-portfolio-ai-00019-74m.",
+  "validation": "30 unit tests, 9 browser checks passed across desktop and mobile; one existing desktop-only layout test skipped on mobile. Live page and three saved LinkedIn media attachments verified."
+}

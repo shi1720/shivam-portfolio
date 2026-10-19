@@ -522,5 +522,39 @@
         "caption": "A live browser puzzle. Mirrors and tide gates shape the route to the lighthouse."
       }
     ]
+  },
+  "margin-studio": {
+    "kicker": "APPLIED AI / EDITORIAL WORKFLOWS",
+    "title": "Your experience is the advantage.",
+    "summary": "A private editorial workspace for experts and their ghostwriters. Turn first-hand experience into original writing, keep evidence beside each draft and learn from the conversations it starts.",
+    "problem": "AI makes content plentiful. The harder problem is deciding what is worth saying, grounding it in real experience and keeping an author and their collaborators aligned.",
+    "built": "I designed and built the complete workflow: a story bank with document imports, contextual interviews, public-feed discovery, source-linked drafting, channel playbooks, client review and outcome-informed next questions. Multi-provider AI supports OpenAI, Anthropic and Gemini. Optional designed cards and carousel exports complement text-first writing. Role-aware workspaces, approval invalidation after edits and conflict-aware saves keep collaboration dependable.",
+    "evidence": "Explore the hosted sample and watch the product walkthrough. The implementation includes authenticated Firebase workspaces, a Cloud Run API and regression checks for permissions, concurrent saves, provider adapters and evidence handling.",
+    "boundary": "Sample stories and results are fictional. Publishing is manual, and outcomes are entered by users. Evidence supports human review rather than automatic fact verification. Live AI uses the user’s own provider key; source code is private.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Cloud Run",
+      "Multi-provider AI",
+      "Product design"
+    ],
+    "demo": "https://margin-studio.web.app/",
+    "video": "https://www.youtube.com/watch?v=ZdY6OLLtko0",
+    "privateSource": true,
+    "visual": "project-cover",
+    "cover": "/projects/margin-studio/cover.webp",
+    "flow": [
+      "Capture real experience",
+      "Draft with evidence",
+      "Review and learn"
+    ],
+    "gallery": [
+      {
+        "src": "/projects/margin-studio/dashboard.webp",
+        "alt": "Margin editorial dashboard with story bank, weekly writing workflow and a next-draft prompt",
+        "caption": "The live sample workspace. Stories and metrics are fictional; the editorial workflow is interactive."
+      }
+    ]
   }
 }

@@ -16,6 +16,14 @@
     "url": "https://github.com/shi1720/PaperBridge"
   },
   {
+    "id": "margin-studio",
+    "name": "Margin",
+    "district": "human",
+    "description": "An evidence-first editorial workspace for experts and ghostwriters, connecting original stories, AI drafting, client review and audience learning.",
+    "language": "TypeScript",
+    "url": "https://margin-studio.web.app/"
+  },
+  {
     "id": "AssemblyAI",
     "name": "Benchback",
     "district": "systems",

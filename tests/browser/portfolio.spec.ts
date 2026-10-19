@@ -42,7 +42,7 @@ test("project search and category filter have honest empty states", async ({
     .selectOption("human");
   await expect(page.getByText("No projects found.")).toBeVisible();
   await page.getByRole("button", { name: "Clear filters" }).click();
-  await expect(page.locator(".work-list>button")).toHaveCount(45);
+  await expect(page.locator(".work-list>button")).toHaveCount(46);
 });
 test("deep-linked case study preserves scope and keyboard escape", async ({
   page,
@@ -319,11 +319,11 @@ test("OfferLoop opens the studio and leads the curated project index", async ({ 
   await expect(page.locator(".work-list > button").first().getByLabel("Featured project")).toBeVisible();
   await expect(page.locator(".preview-caption")).toContainText("FEATURED PROJECT");
   await expect(page.locator(".work-preview")).toContainText("Give your next chapter a system.");
-  await expect(page.locator(".work-list > button")).toHaveCount(45);
+  await expect(page.locator(".work-list > button")).toHaveCount(46);
   for (const id of ["ap-article-review", "ap-frq-review", "math-question-editor", "speechace-proxy", "sat-pdf-to-csv"]) {
     await page.goto(`/#project=${id}`);
     await expect(page.getByRole("dialog")).not.toBeVisible();
-    await expect(page.locator(".work-list > button")).toHaveCount(45);
+    await expect(page.locator(".work-list > button")).toHaveCount(46);
   }
 });
 
@@ -360,4 +360,19 @@ test("PaperBridge has public demos, evidence and the canonical source repository
   expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBeTruthy();
   await page.goto("/#project=paperbridge");
   await expect(page.getByRole("dialog").getByRole("heading", { name: "PaperBridge", exact: true })).toBeVisible();
+});
+
+test("Margin is featured with working media and a private-source boundary", async ({ page }) => {
+  await page.goto("/#work");
+  await page.getByRole("button", { name: "03 Margin Featured project", exact: true }).click();
+  const dialog = page.getByRole("dialog");
+  await expect(dialog.getByRole("heading", { name: "Margin", exact: true })).toBeVisible();
+  await expect(dialog.getByRole("link", { name: "Try the project" })).toHaveAttribute("href", "https://margin-studio.web.app/");
+  await expect(dialog.getByRole("link", { name: "Watch the demo" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=ZdY6OLLtko0");
+  await expect(dialog.getByRole("link", { name: "Source code" })).toHaveCount(0);
+  await expect(dialog.getByText("Private source", { exact: true })).toBeVisible();
+  await expect(dialog.locator(".case-gallery img")).toHaveCount(1);
+  await dialog.locator(".case-gallery img").scrollIntoViewIfNeeded();
+  await expect.poll(() => dialog.locator(".case-gallery img").evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0))).toBe(true);
+  expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBeTruthy();
 });
