@@ -4349,3 +4349,22 @@ select:focus-visible {
 .work-preview .pipeline-visual { aspect-ratio:16/10; }
 .research-paper details[open] summary { margin-bottom:10px; }
 .research-paper details .paper-summary { font-size:14px; margin:0 0 12px; }
+
+/* Project purpose is readable directly in the index. */
+.work-project-copy { display: flex; flex: 1; flex-direction: column; min-width: 0; gap: 9px; }
+.work-project-subtitle { display: block; max-width: 54ch; font: 400 15px/1.5 "DM Sans Variable", sans-serif; letter-spacing: 0; color: var(--muted); }
+.work-list > button { align-items: flex-start; }
+.work-list > button > svg { margin-top: 8px; }
+.work-list .work-featured { margin-top: 7px; }
+.writing-invitation { margin: 28px 0; padding: 24px; border: 1px solid var(--line); border-left: 3px solid var(--orange); background: var(--room-panel, var(--paper)); }
+.writing-invitation h3 { margin: 12px 0; font: 500 clamp(23px, 2.5vw, 32px)/1.15 var(--display); letter-spacing: -.7px; }
+.writing-invitation > p:not(.eyebrow) { font-size: 16px; line-height: 1.65; color: var(--muted); margin: 12px 0 20px; }
+.writing-invitation .text-link { font-size: 15px; }
+@media (max-width: 700px) {
+  .studio-dock { grid-template-columns: repeat(6, minmax(0, 1fr)) 52px; }
+  .studio-dock > a { white-space: normal; text-align: center; }
+  .work-project-subtitle { font-size: 13px; line-height: 1.5; }
+  .work-project-copy { gap: 7px; }
+  .work-list > button { gap: 10px; }
+  .writing-invitation { padding: 20px; }
+}

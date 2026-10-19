@@ -5,7 +5,8 @@
     "district": "human",
     "description": "A job-search CRM with grounded drafts, application tracking, follow-ups and analytics.",
     "language": "Python",
-    "url": "https://github.com/shi1720/OfferLoop-Job-CRM"
+    "url": "https://github.com/shi1720/OfferLoop-Job-CRM",
+    "subtitle": "An AI job-search CRM for tracking applications, drafting follow-ups and planning your next move."
   },
   {
     "id": "paperbridge",
@@ -13,7 +14,8 @@
     "district": "systems",
     "description": "A research workspace connecting private manuscript collaboration, arXiv endorser discovery, community and specialist AI review.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/PaperBridge"
+    "url": "https://github.com/shi1720/PaperBridge",
+    "subtitle": "A research workspace for finding collaborators, reviewing manuscripts and improving papers with AI."
   },
   {
     "id": "margin-studio",
@@ -21,7 +23,8 @@
     "district": "human",
     "description": "An evidence-first editorial workspace for experts and ghostwriters, connecting original stories, AI drafting, client review and audience learning.",
     "language": "TypeScript",
-    "url": "https://margin-studio.web.app/"
+    "url": "https://margin-studio.web.app/",
+    "subtitle": "An AI editorial workspace that turns your experience into evidence-backed posts and articles."
   },
   {
     "id": "AssemblyAI",
@@ -29,7 +32,8 @@
     "district": "systems",
     "description": "Benchback: voice-operated parts-core returns and supplier-credit reconciliation. Built with AssemblyAI, Firebase and Next.js.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/AssemblyAI"
+    "url": "https://github.com/shi1720/AssemblyAI",
+    "subtitle": "A voice-guided desk for returning parts and recovering supplier credits."
   },
   {
     "id": "AI-Infra-Summit-Hackathon",
@@ -37,7 +41,8 @@
     "district": "systems",
     "description": "Granted Robotics: auditable dual-SO101 simulation, learned OpenVINO policy proposals, and fault recovery evidence.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/AI-Infra-Summit-Hackathon"
+    "url": "https://github.com/shi1720/AI-Infra-Summit-Hackathon",
+    "subtitle": "A robotics simulation for testing AI actions, approvals and recovery from failures."
   },
   {
     "id": "Nebius-x-NVIDIA",
@@ -45,7 +50,8 @@
     "district": "systems",
     "description": "RecallRoom: evidence-backed food recall investigations using NVIDIA Nemotron on Nebius Token Factory",
     "language": "JavaScript",
-    "url": "https://github.com/shi1720/Nebius-x-NVIDIA"
+    "url": "https://github.com/shi1720/Nebius-x-NVIDIA",
+    "subtitle": "An AI investigation workspace for tracing food recalls back to source evidence."
   },
   {
     "id": "RevenueCat-Shipaton",
@@ -53,7 +59,8 @@
     "district": "human",
     "description": "Unpause: a cross-platform home for unfinished creative projects. Built by Shivam Gupta for RevenueCat Shipaton 2026.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/RevenueCat-Shipaton"
+    "url": "https://github.com/shi1720/RevenueCat-Shipaton",
+    "subtitle": "A creative-project workspace that helps you return to unfinished ideas."
   },
   {
     "id": "DSH-Hacks-V2",
@@ -61,7 +68,8 @@
     "district": "systems",
     "description": "Evidence-backed medical recall review for small clinics. Browser AI, exact identifier checks, human source review and documented response.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/DSH-Hacks-V2"
+    "url": "https://github.com/shi1720/DSH-Hacks-V2",
+    "subtitle": "A medical-recall review tool for matching clinic inventory to official notices."
   },
   {
     "id": "LexHack",
@@ -69,7 +77,8 @@
     "district": "systems",
     "description": "Compile AI regulation into executable controls with source evidence and reproducible benchmarks.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/LexHack"
+    "url": "https://github.com/shi1720/LexHack",
+    "subtitle": "A repository scanner that maps code evidence to AI-governance controls."
   },
   {
     "id": "YC-Fall-2026-x-Moss",
@@ -77,7 +86,8 @@
     "district": "systems",
     "description": "A real-time scam-call shield: a second listener using Moss retrieval and explicit evidence.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/YC-Fall-2026-x-Moss"
+    "url": "https://github.com/shi1720/YC-Fall-2026-x-Moss",
+    "subtitle": "A live call companion that flags possible scams and shows supporting evidence."
   },
   {
     "id": "Amazon-Developer-Hackathon",
@@ -85,7 +95,8 @@
     "district": "systems",
     "description": "KindHandoff: repair disrupted family support plans with real MCP, helper acceptance and versioned handoffs. Alexa+ hackathon entry by Shivam Gupta.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/Amazon-Developer-Hackathon"
+    "url": "https://github.com/shi1720/Amazon-Developer-Hackathon",
+    "subtitle": "A family-support planner that finds replacement helpers when arrangements change."
   },
   {
     "id": "UnivaBio",
@@ -93,7 +104,8 @@
     "district": "systems",
     "description": "Review care evidence and follow-up with a local model and a shared workspace.",
     "language": "JavaScript",
-    "url": "https://github.com/shi1720/UnivaBio"
+    "url": "https://github.com/shi1720/UnivaBio",
+    "subtitle": "A shared workspace for reviewing care evidence and coordinating follow-up."
   },
   {
     "id": "kindhandoff-guard",
@@ -101,7 +113,8 @@
     "district": "agents",
     "description": "MIT-licensed TypeScript guard for explicit handoff acceptance, auditable state transitions, and explainable candidate ranking. Zero runtime dependencies.",
     "language": "JavaScript",
-    "url": "https://github.com/shi1720/kindhandoff-guard"
+    "url": "https://github.com/shi1720/kindhandoff-guard",
+    "subtitle": "A developer library for tracking who accepted a handoff and what happens next."
   },
   {
     "id": "granted",
@@ -109,7 +122,8 @@
     "district": "systems",
     "description": "The AI grants team for small nonprofits. Live funding discovery, eligibility checks, reviewed proposals, and a practical workspace.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/granted"
+    "url": "https://github.com/shi1720/granted",
+    "subtitle": "An AI grant workspace for nonprofits to find funding and review proposals."
   },
   {
     "id": "lotline-hack2heal",
@@ -117,7 +131,8 @@
     "district": "systems",
     "description": "Lotline helps clinic operations teams review recalls, reconcile affected inventory, and preserve response evidence.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/lotline-hack2heal"
+    "url": "https://github.com/shi1720/lotline-hack2heal",
+    "subtitle": "A clinic recall desk for reconciling affected inventory and documenting the response."
   },
   {
     "id": "epilogue",
@@ -125,7 +140,8 @@
     "district": "systems",
     "description": "An agent for after-loss administration, with explicit decision gates and a durable task ledger.",
     "language": "Python",
-    "url": "https://github.com/shi1720/epilogue"
+    "url": "https://github.com/shi1720/epilogue",
+    "subtitle": "An AI assistant for organizing administrative tasks after a bereavement."
   },
   {
     "id": "catchment-oneaquahealth",
@@ -133,7 +149,8 @@
     "district": "systems",
     "description": "Make the next sample count: transparent citizen stream evidence, constrained field sampling, and One Health follow-up. By Shivam Gupta.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/catchment-oneaquahealth"
+    "url": "https://github.com/shi1720/catchment-oneaquahealth",
+    "subtitle": "A planning tool that turns citizen stream observations into targeted field visits."
   },
   {
     "id": "OffHire",
@@ -141,7 +158,8 @@
     "district": "systems",
     "description": "OffHire: CALL-E equipment rental closeout desk with transcript-grounded billing and collection evidence.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/OffHire"
+    "url": "https://github.com/shi1720/OffHire",
+    "subtitle": "An equipment-rental desk that connects return calls, collection records and billing evidence."
   },
   {
     "id": "plottwist",
@@ -149,7 +167,8 @@
     "district": "human",
     "description": "A playful personality sitcom with explainable scoring, original characters, private local answers and shareable result cards.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/plottwist"
+    "url": "https://github.com/shi1720/plottwist",
+    "subtitle": "A personality quiz that turns your answers into a fictional sitcom character."
   },
   {
     "id": "mixed-signals",
@@ -157,7 +176,8 @@
     "district": "human",
     "description": "An anonymous dating-experience experiment with a living globe, privacy-aware aggregation and reproducible engineering evaluations.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/mixed-signals"
+    "url": "https://github.com/shi1720/mixed-signals",
+    "subtitle": "An anonymous survey exploring dating experiences through a privacy-aware globe."
   },
   {
     "id": "repo-gauntlet",
@@ -165,7 +185,8 @@
     "district": "agents",
     "description": "Validate coding-agent benchmark tasks with broken, incomplete and golden controls across Python, Java, Rust, C++ and TypeScript.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/repo-gauntlet"
+    "url": "https://github.com/shi1720/repo-gauntlet",
+    "subtitle": "A test harness for checking whether coding-agent benchmark tasks are trustworthy."
   },
   {
     "id": "repogym",
@@ -173,7 +194,8 @@
     "district": "agents",
     "description": "Turn any git repository into a verifiable RL environment for coding agents. Declarative tasks, gym-style env, composable graders, task validation and mining.",
     "language": "Python",
-    "url": "https://github.com/shi1720/repogym"
+    "url": "https://github.com/shi1720/repogym",
+    "subtitle": "A toolkit for turning Git repositories into testable training environments for coding agents."
   },
   {
     "id": "casecrop",
@@ -181,7 +203,8 @@
     "district": "agents",
     "description": "A Python library for reducing failing event traces into smaller regression cases, with dependency checks and replay evidence.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/casecrop"
+    "url": "https://github.com/shi1720/casecrop",
+    "subtitle": "A debugging tool that shrinks failing event logs into reproducible test cases."
   },
   {
     "id": "agent-rehearsal",
@@ -189,7 +212,8 @@
     "district": "agents",
     "description": "Reproducible fault testing for agent tools: retry policy simulator, local trace inspector, and Python SDK.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/agent-rehearsal"
+    "url": "https://github.com/shi1720/agent-rehearsal",
+    "subtitle": "A simulator for testing how AI agents recover when their tools fail."
   },
   {
     "id": "toolstorm",
@@ -197,7 +221,8 @@
     "district": "agents",
     "description": "Deterministic tool failures, side-effect contracts, and strict offline replay for Python agents. Zero runtime dependencies. Interactive Python-powered lab.",
     "language": "TypeScript",
-    "url": "https://github.com/shi1720/toolstorm"
+    "url": "https://github.com/shi1720/toolstorm",
+    "subtitle": "A fault-testing toolkit that exposes unsafe retries and duplicate actions in AI agents."
   },
   {
     "id": "stepfree",
@@ -205,7 +230,8 @@
     "district": "agents",
     "description": "An accessibility-repair workflow that combines coding agents with independent scans, content-integrity checks and human review.",
     "language": "HTML",
-    "url": "https://github.com/shi1720/stepfree"
+    "url": "https://github.com/shi1720/stepfree",
+    "subtitle": "An accessibility-repair workflow with coding agents, independent scans and human review."
   },
   {
     "id": "kept",
@@ -213,7 +239,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/kept",
-    "description": "From a freelance conversation to a clear agreement, delivery evidence and an agreed payment outcome."
+    "description": "From a freelance conversation to a clear agreement, delivery evidence and an agreed payment outcome.",
+    "subtitle": "An AI freelance-agreement workspace with milestones, delivery review and PayPal sandbox payments."
   },
   {
     "id": "signsprout-xr",
@@ -221,7 +248,8 @@
     "district": "human",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/signsprout-xr",
-    "description": "A WebXR learning garden where families practise their first ASL signs, with guided hands, encouraging feedback and a phone companion."
+    "description": "A WebXR learning garden where families practise their first ASL signs, with guided hands, encouraging feedback and a phone companion.",
+    "subtitle": "An interactive XR garden where families practise their first American Sign Language signs."
   },
   {
     "id": "zusage",
@@ -229,7 +257,8 @@
     "district": "human",
     "language": "Python",
     "url": "https://github.com/shi1720/zusage",
-    "description": "An Apertus-powered interview coach that helps Swiss apprenticeship seekers turn real experiences into stronger answers."
+    "description": "An Apertus-powered interview coach that helps Swiss apprenticeship seekers turn real experiences into stronger answers.",
+    "subtitle": "An AI interview coach for Swiss apprenticeship applicants, with feedback and practice."
   },
   {
     "id": "coinmarketcap",
@@ -237,7 +266,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/coinmarketcap",
-    "description": "A crypto treasury planning desk that connects market prices, locked holdings and dated commitments to operating runway."
+    "description": "A crypto treasury planning desk that connects market prices, locked holdings and dated commitments to operating runway.",
+    "subtitle": "A crypto treasury planner that connects holdings and upcoming bills to operating runway."
   },
   {
     "id": "WeAreDevelopers",
@@ -245,7 +275,8 @@
     "district": "agents",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/WeAreDevelopers",
-    "description": "A four-seat coding-agent workflow that built and independently checked a restaurant reservation system across four evolving releases."
+    "description": "A four-seat coding-agent workflow that built and independently checked a restaurant reservation system across four evolving releases.",
+    "subtitle": "A multi-agent development workflow demonstrated through a restaurant reservation system."
   },
   {
     "id": "ibm-bob",
@@ -253,7 +284,8 @@
     "district": "agents",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/ibm-bob",
-    "description": "Executable PostgreSQL rehearsals that check whether rolling back a release preserves the customer data written after deployment."
+    "description": "Executable PostgreSQL rehearsals that check whether rolling back a release preserves the customer data written after deployment.",
+    "subtitle": "A PostgreSQL testing tool that checks whether software rollbacks preserve new customer data."
   },
   {
     "id": "AWS-Communication-Developer",
@@ -261,7 +293,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/AWS-Communication-Developer",
-    "description": "A recovery desk for cancelled wholesale food orders, connecting buyer conversations to inventory-safe commitments."
+    "description": "A recovery desk for cancelled wholesale food orders, connecting buyer conversations to inventory-safe commitments.",
+    "subtitle": "A recovery desk for finding buyers for cancelled wholesale food orders."
   },
   {
     "id": "HTCJ",
@@ -269,7 +302,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/HTCJ",
-    "description": "An evidence desk that binds each drone-inspection signoff to the exact source material a coordinator reviewed."
+    "description": "An evidence desk that binds each drone-inspection signoff to the exact source material a coordinator reviewed.",
+    "subtitle": "A drone-inspection review desk that ties each signoff to the evidence actually reviewed."
   },
   {
     "id": "OneAquaHealth",
@@ -277,7 +311,8 @@
     "district": "human",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/OneAquaHealth",
-    "description": "An urban-stream workspace that connects citizen observations to budgeted field visits, accountable tasks and documented rechecks."
+    "description": "An urban-stream workspace that connects citizen observations to budgeted field visits, accountable tasks and documented rechecks.",
+    "subtitle": "A stream-care workspace for turning community observations into fieldwork and rechecks."
   },
   {
     "id": "evorozen",
@@ -285,7 +320,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/evorozen",
-    "description": "A supplier-credit desk that connects invoices, receiving records and credit notes, keeping partial recoveries visibly open."
+    "description": "A supplier-credit desk that connects invoices, receiving records and credit notes, keeping partial recoveries visibly open.",
+    "subtitle": "A supplier-credit tracker that reconciles invoices, deliveries and partial repayments."
   },
   {
     "id": "DAISI",
@@ -293,7 +329,8 @@
     "district": "systems",
     "language": "Python",
     "url": "https://github.com/shi1720/DAISI",
-    "description": "A Singapore hawker-closure planning desk that connects public schedules, neighbourhood context and constrained meal-support scenarios."
+    "description": "A Singapore hawker-closure planning desk that connects public schedules, neighbourhood context and constrained meal-support scenarios.",
+    "subtitle": "A planning desk for coordinating meal support around Singapore hawker-centre closures."
   },
   {
     "id": "Computer-Use-Automation-System",
@@ -301,7 +338,8 @@
     "district": "agents",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/Computer-Use-Automation-System",
-    "description": "A system that turns model-discovered legacy workflows into typed, versioned browser capabilities with deterministic replay."
+    "description": "A system that turns model-discovered legacy workflows into typed, versioned browser capabilities with deterministic replay.",
+    "subtitle": "A browser-automation system that turns discovered workflows into repeatable, typed tools."
   },
   {
     "id": "Hack-Away-Hunger",
@@ -309,7 +347,8 @@
     "district": "human",
     "language": "Python",
     "url": "https://github.com/shi1720/Hack-Away-Hunger",
-    "description": "A coordination workspace that helps pantry networks protect local reserves while moving available food to nearby unmet needs."
+    "description": "A coordination workspace that helps pantry networks protect local reserves while moving available food to nearby unmet needs.",
+    "subtitle": "A food-pantry coordination tool for sharing surplus while protecting local reserves."
   },
   {
     "id": "Hack-The-Weather",
@@ -317,7 +356,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/Hack-The-Weather",
-    "description": "A maize-drying operations desk that connects station observations to capacity-aware jobs, measured moisture and an auditable ledger."
+    "description": "A maize-drying operations desk that connects station observations to capacity-aware jobs, measured moisture and an auditable ledger.",
+    "subtitle": "A maize-drying planner that connects weather observations, drying jobs and measured moisture."
   },
   {
     "id": "Galuxium-Nexus-V2",
@@ -325,7 +365,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/Galuxium-Nexus-V2",
-    "description": "A scope-change workspace where clients can add budget, exchange deliverables or defer, with the agreement updated atomically."
+    "description": "A scope-change workspace where clients can add budget, exchange deliverables or defer, with the agreement updated atomically.",
+    "subtitle": "A client-project tool for agreeing scope changes, budget increases and delivery trade-offs."
   },
   {
     "id": "HACK47",
@@ -333,7 +374,8 @@
     "district": "systems",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/HACK47",
-    "description": "A recall-rehearsal workspace that traces ingredient lots, carries uncertainty forward and preserves what was known before evidence was repaired."
+    "description": "A recall-rehearsal workspace that traces ingredient lots, carries uncertainty forward and preserves what was known before evidence was repaired.",
+    "subtitle": "A food-recall rehearsal tool for tracing ingredient lots and repairing missing evidence."
   },
   {
     "id": "shadeshift",
@@ -341,7 +383,8 @@
     "district": "human",
     "language": "TypeScript",
     "url": "https://github.com/shi1720/shadeshift",
-    "description": "A planning studio that turns heat and transit context into a constrained investment plan for outdoor arrivals and queues."
+    "description": "A planning studio that turns heat and transit context into a constrained investment plan for outdoor arrivals and queues.",
+    "subtitle": "A planning tool for prioritizing shade investments around outdoor queues and transit arrivals."
   },
   {
     "id": "pharma-ai",
@@ -349,7 +392,8 @@
     "district": "systems",
     "description": "A bilingual medication recall workspace connecting affected inventory, source-cited AI drafts, pharmacist approval and department reconciliation.",
     "language": "TypeScript",
-    "url": "https://pillora-care.web.app"
+    "url": "https://pillora-care.web.app",
+    "subtitle": "A bilingual medication-recall workspace with AI drafts and pharmacist approval."
   },
   {
     "id": "afterhours-tenth-prescription",
@@ -357,7 +401,8 @@
     "district": "human",
     "description": "A pixel-art horror game about recovering forgotten names across ten haunted pharmacy wards, with light, stealth and narrative choices.",
     "language": "GDScript",
-    "url": "https://github.com/shi1720/afterhours-tenth-prescription"
+    "url": "https://github.com/shi1720/afterhours-tenth-prescription",
+    "subtitle": "A browser horror game with stealth, limited light and ten haunted pharmacy wards."
   },
   {
     "id": "tidelume",
@@ -365,6 +410,7 @@
     "district": "human",
     "description": "An atmospheric puzzle voyage across twelve islands, using mirrors, changing tides and remembered light to reach the final lighthouse.",
     "language": "GDScript",
-    "url": "https://github.com/shi1720/tidelume-play"
+    "url": "https://github.com/shi1720/tidelume-play",
+    "subtitle": "A puzzle game about guiding light through mirrors and changing tides across twelve islands."
   }
 ]

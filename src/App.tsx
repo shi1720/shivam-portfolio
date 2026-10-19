@@ -129,7 +129,7 @@ export default function App() {
   const filtered = projects.filter(
     (p) =>
       (filter === "all" || p.district === filter) &&
-      `${p.name} ${p.description} ${p.language}`
+      `${p.name} ${p.subtitle} ${p.description} ${p.language}`
         .toLowerCase()
         .includes(search.toLowerCase()),
   );
@@ -328,6 +328,8 @@ export default function App() {
                     <button
                       className={activeId === p.id ? "active" : ""}
                       key={p.id}
+                      aria-label={`${String(i + 1).padStart(2, "0")} ${p.name}${["OfferLoop-Job-CRM", "paperbridge", "margin-studio", "kept", "signsprout-xr", "zusage"].includes(p.id) ? " Featured project" : ""}`}
+                      aria-describedby={`purpose-${p.id}`}
                       onMouseEnter={() => setActiveId(p.id)}
                       onFocus={() => setActiveId(p.id)}
                       onClick={() => chooseProject(p)}
@@ -335,7 +337,10 @@ export default function App() {
                       <span className="work-number">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="work-project-name">{p.name}</span>
+                      <span className="work-project-copy">
+                        <span className="work-project-name">{p.name}</span>
+                        <span className="work-project-subtitle" id={`purpose-${p.id}`}>{p.subtitle}</span>
+                      </span>
                       {["OfferLoop-Job-CRM", "paperbridge", "margin-studio", "kept", "signsprout-xr", "zusage"].includes(p.id) && (
                         <span className="work-featured" aria-label="Featured project">
                           <Star size={12} aria-hidden="true" /> <span>Featured</span>
@@ -487,6 +492,12 @@ export default function App() {
                   a pioneering, successful network of AI-first schools.
                 </p>
                 <a className="text-link research-about-link" href="#research">Explore my research <ArrowUpRight size={18} /></a>
+                <aside className="writing-invitation">
+                  <p className="eyebrow">SOME HUMAN REQUIRED / MY WRITING</p>
+                  <h3>What still needs a human?</h3>
+                  <p>I write about AI, technology and building useful products, with room for the cities, experiences and unexpected ideas that shape how we think. For curious people figuring out what to build, what to question and where human judgment matters.</p>
+                  <a className="text-link" href="https://somehumanrequired.substack.com/" target="_blank" rel="noreferrer">Read Some Human Required <ArrowUpRight size={17} /></a>
+                </aside>
                 <p className="earlier-work">
                   Before this, I worked on founding Giggles, a product company,
                   alongside research work and engineering and product roles at
@@ -585,6 +596,12 @@ export default function App() {
                   {copied ? "Copied" : "Copy"}
                 </button>
               </div>
+              <aside className="writing-invitation writing-contact">
+                <p className="eyebrow">STAY IN THE CONVERSATION</p>
+                <h3>Some Human Required</h3>
+                <p>My publication on AI, product and the human side of a changing world. Read a piece, follow an idea or subscribe for the next one.</p>
+                <a className="text-link" href="https://somehumanrequired.substack.com/" target="_blank" rel="noreferrer">Read on Substack <ArrowUpRight size={17} /></a>
+              </aside>
               <div className="contact-social">
                 <a
                   href="https://github.com/shi1720"
@@ -623,6 +640,7 @@ export default function App() {
               {r.name}
             </a>
           ))}
+          <a className="dock-writing" href="https://somehumanrequired.substack.com/" target="_blank" rel="noreferrer" aria-label="Writing: Some Human Required"><span aria-hidden="true">↗</span>Writing</a>
           <AIGuideEntry blocked={chatOpen || !!selected} open={chatOpen} onAsk={ask} />
         </nav>
         <span className="dock-side-label dock-copyright">

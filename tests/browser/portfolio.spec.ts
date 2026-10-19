@@ -376,3 +376,22 @@ test("Margin is featured with working media and a private-source boundary", asyn
   await expect.poll(() => dialog.locator(".case-gallery img").evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0))).toBe(true);
   expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBeTruthy();
 });
+
+test("project purposes are visible and writing is reachable throughout the portfolio", async ({ page }, testInfo) => {
+  await page.goto('/#work');
+  await expect(page.locator('.work-project-subtitle')).toHaveCount(46);
+  await page.getByRole('textbox', { name: 'Search projects' }).fill('PayPal sandbox');
+  await expect(page.locator('.work-list > button')).toHaveCount(1);
+  await expect(page.locator('.work-list > button')).toContainText('Kept');
+  await page.locator('.work-list > button').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: `test-results/${testInfo.project.name}-project-purpose.png` });
+  for (const room of ['about', 'contact']) {
+    await page.goto('/#' + room);
+    await expect(page.locator('.studio-dock .dock-writing')).toHaveAttribute('href', 'https://somehumanrequired.substack.com/');
+    const writing = page.locator('.writing-invitation');
+    await expect(writing.locator('a')).toHaveAttribute('href', 'https://somehumanrequired.substack.com/');
+    await writing.scrollIntoViewIfNeeded();
+    await expect(writing).toBeVisible();
+    await page.screenshot({ path: `test-results/${testInfo.project.name}-${room}-writing.png` });
+  }
+});
